@@ -1,3 +1,4 @@
+import Home from '@/components/screens/home/Home'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -6,5 +7,5 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-	return <h1>HomePage</h1>
+	return <Home />
 }
