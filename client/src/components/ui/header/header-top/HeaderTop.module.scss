@@ -1,0 +1,48 @@
+.top {
+	padding: 16px 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.search {
+		width: 700px;
+		background-color: #eff4f4;
+		display: flex;
+		align-items: center;
+		padding: 13px 16px 11px 18px;
+		gap: 16px;
+		border-radius: 5px;
+		cursor: pointer;
+
+		.input {
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 17px;
+			color: #071f45;
+		}
+	}
+
+	.auth {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		.register {
+			border-radius: 5px;
+			background: #6523e3;
+			transition: 0.2s ease;
+			width: 120px;
+			height: 36px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 17px;
+			color: #fff;
+
+			&:hover {
+				background-color: #834fe8;
+			}
+		}
+	}
+}
