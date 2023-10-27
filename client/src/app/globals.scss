@@ -33,13 +33,6 @@ ol {
 	margin: 0 auto;
 }
 
-.link {
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 36px;
-	color: #071f45;
-	transition: 0.2s ease;
-	&:hover {
-		color: #6523e3;
-	}
+:root {
+	--purple: #071f45;
 }

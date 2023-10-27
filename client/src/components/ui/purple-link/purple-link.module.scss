@@ -1,0 +1,11 @@
+.link {
+	font-size: 16px;
+	line-height: 1.6;
+	font-weight: 500;
+	color: var(--purple);
+
+	transition: 0.2s ease;
+	&:hover {
+		color: #6523e3;
+	}
+}
