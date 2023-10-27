@@ -1,0 +1,68 @@
+.item {
+	width: 313px;
+	height: 370px;
+	border-radius: 3px;
+	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+	position: relative;
+
+	.container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		.background {
+			position: relative;
+			> img {
+				border-top-right-radius: 3px;
+				border-top-left-radius: 3px;
+			}
+
+			.overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 130px;
+				opacity: 0;
+				background-color: rgba(0, 0, 0, 0.3);
+				cursor: pointer;
+				transition: 0.2s ease;
+				border-top-right-radius: 3px;
+				border-top-left-radius: 3px;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.logoBlock {
+			width: 120px;
+			height: 120px;
+			border: 10px solid #fff;
+			position: relative;
+			top: -40px;
+			box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.1);
+
+			> img {
+				position: relative;
+				top: -15px;
+			}
+		}
+
+		.name {
+			font-size: 22px;
+			font-weight: 500;
+			line-height: 25px;
+			color: #272727;
+		}
+
+		.link {
+			position: absolute;
+			bottom: 10px;
+			&:hover {
+				color: #46546c;
+			}
+		}
+	}
+}

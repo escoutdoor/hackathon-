@@ -1,0 +1,60 @@
+.home {
+	.banner {
+		width: 100%;
+		background-color: rgba(113, 0, 234, 1);
+		background-image: radial-gradient(
+				at 41% 85%,
+				rgba(73, 0, 183, 0.5) 0px,
+				transparent 50%
+			),
+			radial-gradient(at 67% 5%, rgba(6, 29, 60, 0.7) 0px, transparent 50%),
+			radial-gradient(at 33% 27%, rgba(73, 0, 183, 0.7) 0px, transparent 50%),
+			radial-gradient(at 100% 99%, rgba(113, 0, 234, 1) 0px, transparent 50%),
+			radial-gradient(at 88% 6%, rgba(6, 29, 60, 0.9) 0px, transparent 50%),
+			radial-gradient(at 48% 57%, rgba(73, 0, 183, 0.9) 0px, transparent 50%),
+			radial-gradient(at 0% 74%, rgba(167, 114, 242, 1) 0px, transparent 50%),
+			radial-gradient(at 4% 62%, rgba(167, 114, 242, 0.5) 0px, transparent 50%);
+
+		.container {
+			padding: 56px 0px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+			margin: 0 auto;
+			width: 600px;
+
+			.title {
+				font-size: 37px;
+				font-weight: 700;
+				line-height: 46px;
+				color: #e4ff38;
+				display: inline-block;
+				text-align: center;
+			}
+
+			.search {
+				width: 100%;
+				background-color: #eff4f4;
+				display: flex;
+				align-items: center;
+				padding: 15px 20px;
+				gap: 16px;
+				border-radius: 5px;
+				cursor: pointer;
+
+				.input {
+					font-size: 15px;
+					font-weight: 500;
+					line-height: 17px;
+					color: #071f45;
+				}
+
+				> svg {
+					font-size: 16px;
+					color: var(--purple);
+				}
+			}
+		}
+	}
+}
