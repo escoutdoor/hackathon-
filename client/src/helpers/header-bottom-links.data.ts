@@ -52,3 +52,31 @@ export const headerBottomLinks: IHeaderBottomItem[] = [
 		href: '',
 	},
 ]
+
+export const headerBottomMoreLinks: IHeaderBottomItem[] = [
+	{
+		id: 1,
+		text: 'Entertainment',
+		href: '',
+	},
+	{
+		id: 2,
+		text: 'Gifts & Flowers',
+		href: '',
+	},
+	{
+		id: 3,
+		text: 'Finance',
+		href: '',
+	},
+	{
+		id: 4,
+		text: 'Home & Utilities',
+		href: '',
+	},
+	{
+		id: 5,
+		text: 'Books, Mags & News',
+		href: '',
+	},
+]
