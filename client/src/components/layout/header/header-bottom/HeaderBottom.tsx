@@ -1,4 +1,4 @@
-import s from './HeaderBottom.module.scss'
+import s from './header-bottom.module.scss'
 import { FC } from 'react'
 import { headerBottomLinks } from '@/helpers/header-bottom-links.data'
 import HeaderBottomItem from './header-bottom-item/HeaderBottomItem'

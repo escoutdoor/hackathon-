@@ -1,8 +1,6 @@
 import { FC } from 'react'
-import s from './DiscountItem.module.scss'
+import s from './discounted-item.module.scss'
 import Image from 'next/image'
-import img from './../../../../public/images/default_image.jpg'
-import img1 from './../../../../public/images/data.svg'
 import Link from 'next/link'
 
 const DiscountItem: FC = () => {
@@ -10,12 +8,22 @@ const DiscountItem: FC = () => {
 		<div className={s.item}>
 			<div className={s.container}>
 				<div className={s.background}>
-					<Image width={313} height={130} src={img} alt='' />
+					{/* <Image
+						width={313}
+						height={130}
+						src={'/images/default_image.jpg'}
+						alt="default_image"
+					/> */}
 					<div className={s.overlay}></div>
 				</div>
 
 				<div className={s.logoBlock}>
-					<Image width={100} height={130} src={img1} alt='' />
+					{/* <Image
+						width={100}
+						height={130}
+						src={'/images/data.svg'}
+						alt="data"
+					/> */}
 				</div>
 				<span className={s.name}>25% Student Discount</span>
 				<Link href={'#'} className={s.link}>

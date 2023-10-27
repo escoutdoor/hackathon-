@@ -1,15 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC } from 'react'
 import s from './footer.module.scss'
-import Banner from './banner/Banner';
+import Banner from './banner/Banner'
 
-const Footer:FC = () => {
-	
+const Footer: FC = () => {
 	return (
 		<footer className={s.footer}>
-			<div className="footerWrap">
-				<Banner/>
+			<div className={s.wrapper}>
+				<Banner />
 			</div>
 		</footer>
 	)
 }
-export default Footer;
+export default Footer

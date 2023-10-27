@@ -1,3 +1,8 @@
 .footer {
-	margin-top: auto;
+	max-height: 1000px;
+
+	.wrapper {
+		width: 100%;
+		margin: 0 auto;
+	}
 }
