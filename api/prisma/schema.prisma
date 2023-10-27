@@ -9,3 +9,95 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+    id          String @id @default(cuid())
+
+    createdAt   DateTime @default(now()) @map("created_at")
+    updatedAt   DateTime @updatedAt @map("updated_at")
+
+    email       String @unique
+    password    String
+
+    firstName   String @map("first_name")
+    lastName    String @map("last_name")
+
+    avatarPath  String @default("/images/avatars/no-avatar.png") @map("avatar_path")
+
+    address     Address?
+
+    favorites   Favorite[]
+}
+
+model Address {
+    id          String @id @default(cuid())
+    createdAt   DateTime @default(now()) @map("created_at")
+    updatedAt   DateTime @updatedAt @map("updated_at")
+
+    country     String?
+    city        String?
+    street      String?
+    phone       String?
+
+	user		User? @relation(fields: [userId], references: [id]) 
+	userId		String? @map("user_id") @unique
+}
+
+model Favorite {
+  id          String @id @default(cuid())
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  discount     Discount? @relation(fields: [discountId], references: [id])
+  discountId   String? @map("discount_id")
+
+  user        User? @relation(fields: [userId], references: [id])
+  userId      String? @map("user_id")
+}
+
+model Category {
+  id              String @id @default(cuid())
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  name            String   @unique
+
+  brands          Brand[]
+}
+
+model Brand {
+  id              String @id @default(cuid())
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  name            String   @unique
+  description     String
+  image           String  @default("")
+
+  offerType       EnumOfferType @default(STUDENT_DISCOUNT) @map("offer_type")
+  categories      Category[]
+  discounts       Discount[]
+}
+
+model Discount {
+  id              String @id @default(cuid())
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  name            String  @unique
+  image           String  @default("")
+
+  description     String
+
+  brand           Brand? @relation(fields: [brandId], references: [id])
+  brandId         String? @map("brand_id")
+
+  favorites       Favorite[]
+}
+
+enum EnumOfferType {
+  STUDENT_DISCOUNT
+  GENERAL_SALE
+  FREEBIE
+  COMPETITION
+}
