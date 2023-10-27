@@ -1,3 +1,4 @@
+'use client'
 import { FC } from 'react'
 import s from './header.module.scss'
 import HeaderTop from './header-top/HeaderTop'
@@ -7,8 +8,10 @@ const Header: FC = () => {
 	return (
 		<header className={s.header}>
 			<div className="wrapper">
-				<HeaderTop />
-				<HeaderBottom />
+				<div className={s.content}>
+					<HeaderTop />
+					<HeaderBottom />
+				</div>
 			</div>
 		</header>
 	)

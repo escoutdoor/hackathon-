@@ -8,3 +8,5 @@ export const loginSchema = z.object({
 		message: 'Пароль має бути не менше 6 символів',
 	}),
 })
+
+export type TLoginSchema = z.infer<typeof loginSchema>

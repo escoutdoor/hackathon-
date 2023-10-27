@@ -28,10 +28,12 @@ ol {
 }
 
 .wrapper {
-	width: 1250px;
+	max-width: 1250px;
 	margin: 0 auto;
+	padding: 0px 24px;
 }
 
 :root {
-	--purple: #071f45;
+	--dark-blue: #071f45;
+	--purple: #6523e3;
 }

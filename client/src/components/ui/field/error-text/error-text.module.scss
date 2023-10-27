@@ -1,0 +1,21 @@
+.error {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 10px 15px;
+	border-radius: 4px;
+	border: 1px solid var(--purple);
+	margin: 8px 0px;
+
+	.text {
+		color: var(--purple);
+		line-height: 14px;
+		font-size: 12px;
+	}
+
+	> svg {
+		font-size: 20px;
+		color: var(--purple);
+	}
+}
