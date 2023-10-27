@@ -87,9 +87,7 @@ export class UserService {
 					},
 				},
 			},
-			include: {
-				favorites: true,
-			},
+			select: returnUserFields,
 		})
 	}
 }

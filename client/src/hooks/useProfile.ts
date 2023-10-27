@@ -5,11 +5,16 @@ import { UserService } from '@/services/user/user.service'
 export const useProfile = () => {
 	const { user } = useAuth()
 
-	const { data: profile, isLoading } = useQuery({
+	const {
+		data: profile,
+		isLoading,
+		error,
+	} = useQuery({
 		queryKey: ['profile', user?.id],
 		queryFn: () => UserService.getProfile(),
 		select: ({ data }) => data,
+		enabled: !!user?.id,
 	})
 
-	return { profile, isLoading }
+	return { profile, isLoading, error }
 }

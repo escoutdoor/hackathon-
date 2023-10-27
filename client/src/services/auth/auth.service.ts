@@ -4,32 +4,33 @@ import Cookies from 'js-cookie'
 import axios from 'axios'
 import { getContentType } from '@/api/api.helper'
 import { EnumTokens, saveToStorage } from './auth.helper'
+import { instance } from '@/api/api.interceptor'
 
 const AUTH_URL = '/api/auth'
 
 export const AuthService = {
 	async register(data: ICreateUserInfo) {
-		// const response = await instance<IAuthResponse>({
-		// 	method: 'POST',
-		// 	url: `${AUTH_URL}/register`,
-		// 	data,
-		// })
-		// if (response.data.accessToken) {
-		// 	saveToStorage(response.data)
-		// }
-		// return response.data
+		const response = await instance<IAuthResponse>({
+			method: 'POST',
+			url: `${AUTH_URL}/register`,
+			data,
+		})
+		if (response.data.accessToken) {
+			saveToStorage(response.data)
+		}
+		return response.data
 	},
 
 	async login(data: ILoginInfo) {
-		// const response = await instance<string, { data: IAuthResponse }>({
-		// 	method: 'POST',
-		// 	url: `${this.AUTH_URL}/login`,
-		// 	data,
-		// })
-		// if (response.data.accessToken) {
-		// 	saveToStorage(response.data)
-		// }
-		// return response.data
+		const response = await instance<string, { data: IAuthResponse }>({
+			method: 'POST',
+			url: `${AUTH_URL}/login`,
+			data,
+		})
+		if (response.data.accessToken) {
+			saveToStorage(response.data)
+		}
+		return response.data
 	},
 
 	async getNewTokens() {

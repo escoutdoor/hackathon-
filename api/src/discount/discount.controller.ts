@@ -22,8 +22,8 @@ export class DiscountController {
 		return await this.discountService.create(dto)
 	}
 
-	@Get('id')
-	async discountById(@Param() id: string) {
+	@Get(':id')
+	async discountById(@Param('id') id: string) {
 		return await this.discountService.discountById(id)
 	}
 }

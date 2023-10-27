@@ -3,5 +3,5 @@ export const returnDiscountFields = {
 	name: true,
 	description: true,
 	image: true,
-	brand: true,
+	brandName: true,
 }
