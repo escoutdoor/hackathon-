@@ -1,0 +1,47 @@
+.more {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	height: fit-content;
+
+	&:hover .dropdown {
+		height: fit-content;
+	}
+
+	.linkContainer {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+
+		&:hover .moreIcon {
+			color: #6523e3;
+		}
+
+		.link {
+			font-size: 16px;
+			line-height: 1.6;
+			font-weight: 500;
+			color: var(--purple);
+			cursor: pointer;
+
+			transition: 0.2s ease;
+			&:hover {
+				color: #6523e3;
+			}
+		}
+
+		.moreIcon {
+			color: #acafaf;
+			transition: 0.2s ease;
+		}
+	}
+
+	.dropdown {
+		overflow: hidden;
+		height: 0;
+		position: absolute;
+		top: 25px;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+		width: 250px;
+	}
+}

@@ -1,0 +1,58 @@
+.banner {
+	height: 486px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(113,0,234,1);
+  background-image: radial-gradient( at 41% 85%,rgba(73,0,183,0.5) 0px,transparent 50% ),radial-gradient(at 67% 5%,rgba(6,29,60,0.7) 0px,transparent 50%),radial-gradient(at 33% 27%,rgba(73,0,183,0.7) 0px,transparent 50%),radial-gradient(at 100% 99%,rgba(113,0,234,1) 0px,transparent 50%),radial-gradient(at 88% 6%,rgba(6,29,60,0.9) 0px,transparent 50%),radial-gradient(at 48% 57%,rgba(73,0,183,0.9) 0px,transparent 50%),radial-gradient(at 0% 74%,rgba(167,114,242,1) 0px,transparent 50%),radial-gradient(at 4% 62%,rgba(167,114,242,0.5) 0px,transparent 50%);
+
+	.bannerWrap {
+		display: flex;
+		flex-direction: row;
+		gap: 50px;
+	}
+	.contentWrap {
+		width: 464px;
+		display: flex;
+		margin-top: 100px;
+		flex-direction: column;
+		gap: 20px;
+		.buttons {
+			display: flex;
+			align-content: center;
+			gap: 20px;
+			height: 54px;
+			.linksWrap {
+				padding: 5px 0;
+
+			}
+		}
+	}
+	.title {
+		font-family: 'Rubik', sans-serif;
+		text-transform: uppercase;
+		line-height: 1.25em;
+		font-size: 44px;
+		color: #e4ff38;
+		font-weight: bold;
+	}
+	.text {
+		font-family: 'Lato', sans-serif;
+		line-height: 1.25em;
+    color: #FFFFFF;
+    font-size: 27px;
+	}
+	.buttonLink {
+		width: 150px;
+		height: 48px;
+		background-color: #E4FF38;
+		border-radius: 5px;
+		cursor: pointer;
+		.link {
+			color: var(--purple);
+			font-family: 'Rubik', sans-serif;
+			font-weight: 700;
+		}
+	}
+}
