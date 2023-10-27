@@ -8,22 +8,22 @@ const DiscountItem: FC = () => {
 		<div className={s.item}>
 			<div className={s.container}>
 				<div className={s.background}>
-					{/* <Image
+					<Image
 						width={313}
 						height={130}
-						src={'/images/default_image.jpg'}
-						alt="default_image"
-					/> */}
+						src={'/images/img/default_image.jpg'}
+						alt='default_image'
+					/>
 					<div className={s.overlay}></div>
 				</div>
 
 				<div className={s.logoBlock}>
-					{/* <Image
+					<Image
 						width={100}
 						height={130}
-						src={'/images/data.svg'}
-						alt="data"
-					/> */}
+						src={'/images/img/data.svg'}
+						alt='data'
+					/>
 				</div>
 				<span className={s.name}>25% Student Discount</span>
 				<Link href={'#'} className={s.link}>
