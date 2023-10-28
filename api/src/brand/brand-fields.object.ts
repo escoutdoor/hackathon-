@@ -6,4 +6,7 @@ export const returnBrandFields = {
 	description: true,
 	image: true,
 	categories: true,
+	discounts: {
+		select: returnDiscountFields,
+	},
 }

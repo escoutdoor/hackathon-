@@ -2,11 +2,16 @@
 import { NextPage } from 'next'
 import s from './home.module.scss'
 import { FiSearch } from 'react-icons/fi'
-import DiscountItem from '@/components/ui/discount-item/DiscountItem'
+import DiscountItem from '@/components/ui/brand-item/BrandItem'
 import Carousel from './carousel/Carousel'
 import BrandList from '@/components/ui/brand-list/BrandList'
+import { useFilteredBrands } from '@/hooks/useFilteredBrands'
 
 const Home: NextPage = () => {
+	const { brands, isLoading } = useFilteredBrands({
+		categories: ['food-drink'],
+	})
+
 	return (
 		<div className={s.home}>
 			<div className={s.banner}>
@@ -21,8 +26,7 @@ const Home: NextPage = () => {
 				</div>
 			</div>
 			<div className="wrapper">
-				<DiscountItem />
-				<BrandList />
+				<BrandList brands={brands} isLoading={isLoading} />
 				<Carousel />
 			</div>
 		</div>

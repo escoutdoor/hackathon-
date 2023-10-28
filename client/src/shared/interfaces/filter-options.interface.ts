@@ -6,7 +6,7 @@ export interface IFilterOptions {
 }
 
 export type OfferType =
-	| 'student-discount'
+	| 'STUDENT_DISCOUNT'
 	| 'general-sale'
 	| 'freebie'
 	| 'competition'
