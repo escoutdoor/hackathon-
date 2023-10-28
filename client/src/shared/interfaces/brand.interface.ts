@@ -1,4 +1,4 @@
-import { EnumOfferType, TCategory } from './filter-options.interface'
+import { OfferType, TCategory } from './filter-options.interface'
 
 export interface IBrand {
 	id: string
@@ -6,7 +6,7 @@ export interface IBrand {
 	description: string
 	image: string
 	categories: TCategory[]
-	offerType: EnumOfferType
+	offerType: OfferType
 }
 
 export interface IBrandResponse {
