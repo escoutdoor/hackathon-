@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BRANDS = '/api/brands'
+const BRANDS = '/brands'
 
 export const BrandsService = {
 	async brandById(brandId: string) {

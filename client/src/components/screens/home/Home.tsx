@@ -1,5 +1,6 @@
+'use client'
 import { NextPage } from 'next'
-import s from './Home.module.scss'
+import s from './home.module.scss'
 import { FiSearch } from 'react-icons/fi'
 import { Swiper } from 'swiper/react'
 import DiscountItem from '@/components/ui/discount-item/DiscountItem'
@@ -18,8 +19,9 @@ const Home: NextPage = () => {
 					</div>
 				</div>
 			</div>
-			<div className='wrapper'>
+			<div className="wrapper">
 				<DiscountItem />
+				<Swiper></Swiper>
 			</div>
 		</div>
 	)
