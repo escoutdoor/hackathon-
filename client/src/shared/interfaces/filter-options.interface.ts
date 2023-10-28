@@ -1,17 +1,15 @@
 export interface IFilterOptions {
-	offerType?: EnumOfferType[]
+	offerType?: OfferType[]
 	categories?: TCategory[]
-	brands?: string[]
 	searchTerm?: string
 	sortBy?: EnumBrandSort
 }
 
-export enum EnumOfferType {
-	STUDENT_DISCOUNT = 'STUDENT_DISCOUNT',
-	GENERAL_SALE = 'GENERAL_SALE',
-	FREEBIE = 'FREEBIE',
-	COMPETITION = 'COMPETITION',
-}
+export type OfferType =
+	| 'student-discount'
+	| 'general-sale'
+	| 'freebie'
+	| 'competition'
 
 export type TCategory =
 	| 'trending-now'
