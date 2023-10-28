@@ -1,13 +1,12 @@
 export interface IFilterOptions {
 	offerType?: OfferType[]
 	categories?: TCategory[]
-	brands?: string[]
 	searchTerm?: string
 	sortBy?: EnumBrandSort
 }
 
 export type OfferType =
-	| 'STUDENT_DISCOUNT'
+	| 'student-discount'
 	| 'general-sale'
 	| 'freebie'
 	| 'competition'
