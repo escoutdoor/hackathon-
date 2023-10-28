@@ -7,9 +7,10 @@ import {
 	UsePipes,
 	ValidationPipe,
 	HttpCode,
+	Query,
 } from '@nestjs/common'
 import { BrandService } from './brand.service'
-import { BrandDto } from './brand.dto'
+import { BrandDto, GetBrandsDto } from './brand.dto'
 
 @Controller('brands')
 export class BrandController {
@@ -30,5 +31,11 @@ export class BrandController {
 	@Get('/similar/:id')
 	async getSimilarById(@Param('id') id: string) {
 		return await this.brandService.getSimilarById(id)
+	}
+
+	@UsePipes(new ValidationPipe())
+	@Get('')
+	async getAll(@Query() dto: GetBrandsDto) {
+		return await this.brandService.getAll(dto)
 	}
 }

@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.scss'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 import Header from '@/components/layout/header/Header'
 import Footer from '@/components/layout/footer/Footer'
 import Providers from '@/utils/provider'
@@ -29,9 +32,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={montserrat.className}>
 				<Header />
-				{/* <Providers> */}
-				{children}
-				{/* </Providers> */}
+				<Providers>{children}</Providers>
 				<Footer />
 			</body>
 		</html>

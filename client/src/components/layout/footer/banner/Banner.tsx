@@ -26,7 +26,7 @@ const Banner: FC = () => {
 								<Image
 									width={135}
 									height={45}
-									src={'/images/img/apple.png'}
+									src={'/images/img/footer/apple.png'}
 									alt="img"
 								/>
 							</Link>
@@ -38,7 +38,7 @@ const Banner: FC = () => {
 									width={135}
 									height={45}
 									alt="img"
-									src={'/images/img/Google_Play.png'}
+									src={'/images/img/footer/Google_Play.png'}
 								/>
 							</Link>
 						</div>
@@ -47,7 +47,7 @@ const Banner: FC = () => {
 				<Image
 					width={507}
 					height={480}
-					src={'/images/img/banner_app.png'}
+					src={'/images/img/footer/banner_app.png'}
 					alt="img"
 				/>
 			</div>
