@@ -27,19 +27,19 @@ const Login: FC = () => {
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<Field
 				{...register('email')}
-				label="Email address"
+				label='Email address'
 				error={errors.email?.message}
-				type="email"
+				type='email'
 				required
 			/>
 			<Field
 				{...register('password')}
-				label="Password"
+				label='Password'
 				error={errors.password?.message}
-				type="password"
+				type='password'
 				required
 			/>
-			<Button type="submit" disabled={!isValid}>
+			<Button type='submit' disabled={!isValid}>
 				Login
 			</Button>
 		</form>

@@ -1,0 +1,41 @@
+.buttons {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	top: -140px;
+
+	.prev {
+		position: relative;
+		left: 20px;
+		z-index: 100;
+	}
+
+	.next {
+		position: relative;
+		right: 20px;
+		z-index: 100;
+	}
+
+	> button {
+		width: 30px;
+		height: 30px;
+		background-color: #fff;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		transition: 0.2s ease;
+
+		&:hover {
+			background-color: #f7f7f9;
+		}
+
+		.chevron {
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
