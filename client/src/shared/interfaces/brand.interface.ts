@@ -1,5 +1,6 @@
 import { IDiscount } from './discount.interface'
 import { OfferType, TCategory } from './filter-options.interface'
+import { OfferType, TCategory } from './filter-options.interface'
 
 export interface IBrand {
 	id: string
@@ -9,6 +10,7 @@ export interface IBrand {
 	categories: TCategory[]
 	offerType: OfferType
 	discounts: IDiscount[]
+	offerType: OfferType
 }
 
 export interface IBrandResponse {
