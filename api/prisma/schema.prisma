@@ -22,7 +22,7 @@ model User {
   firstName   String @map("first_name")
   lastName    String @map("last_name")
 
-  avatarPath  String @default("/images/avatars/no-avatar.png") @map("avatar_path")
+  avatarPath  String @default("no-avatar.png") @map("avatar_path")
 
   address     Address?
 
@@ -39,8 +39,8 @@ model Address {
   street      String?
   phone       String?
 
-  user		  User? @relation(fields: [userId], references: [id]) 
-  userId	  String? @map("user_id") @unique
+  user		    User? @relation(fields: [userId], references: [id]) 
+  userId	    String? @map("user_id") @unique
 }
 
 model Favorite {
@@ -62,7 +62,7 @@ model Brand {
 
   name            String @unique
   description     String
-  image           String  @default("")
+  image           String  @default("no-brand.png")
 
   offerType       EnumOfferType @default(STUDENT_DISCOUNT) @map("offer_type")
   categories      String[] @default([])
@@ -74,13 +74,19 @@ model Discount {
   createdAt       DateTime @default(now()) @map("created_at")
   updatedAt       DateTime @updatedAt @map("updated_at")
 
-  name            String  @unique
+  name            String 
   image           String  @default("")
 
-  description     String
+  description     String[] @default([])
 
-  brand           Brand? @relation(fields: [brandName], references: [name])
-  brandName       String? @map("brand_name")
+  discountCode    String? @map("discount_code") @default("D0bР94Ku")
+
+  url             String  @default("github.com/escoutdoor/hackathon-students-premium")
+
+  conditions      String[] @default([])
+
+  brand           Brand @relation(fields: [brandName], references: [name])
+  brandName       String @map("brand_name") 
 
   favorites       Favorite[]
 }

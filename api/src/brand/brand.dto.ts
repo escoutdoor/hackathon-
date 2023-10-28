@@ -1,5 +1,11 @@
 import { EnumOfferType } from '@prisma/client'
-import { ArrayMinSize, IsArray, IsEnum, IsString } from 'class-validator'
+import {
+	ArrayMinSize,
+	IsArray,
+	IsEnum,
+	IsOptional,
+	IsString,
+} from 'class-validator'
 
 export type TCategory =
 	| 'trending-now'
@@ -25,11 +31,9 @@ export class BrandDto {
 	@IsString()
 	image: string
 
+	@IsOptional()
 	@IsEnum(EnumOfferType)
 	offerType: EnumOfferType
-
-	@IsString()
-	brandName: string
 
 	@IsArray()
 	@IsString({ each: true })

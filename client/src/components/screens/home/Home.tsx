@@ -1,12 +1,8 @@
 'use client'
-'use client'
 import { NextPage } from 'next'
 import s from './home.module.scss'
 import { FiSearch } from 'react-icons/fi'
 import DiscountItem from '@/components/ui/discount-item/DiscountItem'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
 import Carousel from './carousel/Carousel'
 
 const Home: NextPage = () => {
@@ -23,8 +19,8 @@ const Home: NextPage = () => {
 					</div>
 				</div>
 			</div>
-			<div className='wrapper'>
-				{/* <DiscountItem /> */}
+			<div className="wrapper">
+				<DiscountItem />
 				<Carousel />
 			</div>
 		</div>
