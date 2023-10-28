@@ -4,6 +4,7 @@ import s from './home.module.scss'
 import { FiSearch } from 'react-icons/fi'
 import DiscountItem from '@/components/ui/discount-item/DiscountItem'
 import Carousel from './carousel/Carousel'
+import BrandList from '@/components/ui/brand-list/BrandList'
 
 const Home: NextPage = () => {
 	return (
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
 			</div>
 			<div className="wrapper">
 				<DiscountItem />
+				<BrandList />
 				<Carousel />
 			</div>
 		</div>

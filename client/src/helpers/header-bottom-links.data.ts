@@ -4,42 +4,42 @@ export const headerBottomLinks: IHeaderBottomItem[] = [
 	{
 		id: 1,
 		text: 'Trending Now',
-		href: '',
+		href: 'trending-now',
 	},
 	{
 		id: 2,
 		text: 'All',
-		href: '',
+		href: 'all',
 	},
 	{
 		id: 3,
 		text: 'Fashion',
-		href: '',
+		href: 'fashion',
 	},
 	{
 		id: 4,
 		text: 'Food & Drink',
-		href: '',
+		href: 'food-drink',
 	},
 	{
 		id: 5,
 		text: 'Tech & Mobile',
-		href: '',
+		href: 'tech-mobile',
 	},
 	{
 		id: 6,
 		text: 'Beauty',
-		href: '',
+		href: 'beauty',
 	},
 	{
 		id: 7,
 		text: 'Health & Fitness',
-		href: '',
+		href: 'health-fitness',
 	},
 	{
 		id: 8,
 		text: 'Travel',
-		href: '',
+		href: 'travel',
 	},
 	{
 		id: 9,
@@ -52,26 +52,26 @@ export const headerBottomMoreLinks: IHeaderBottomItem[] = [
 	{
 		id: 1,
 		text: 'Entertainment',
-		href: '',
+		href: 'entertainment',
 	},
 	{
 		id: 2,
 		text: 'Gifts & Flowers',
-		href: '',
+		href: 'gifts-flowers',
 	},
 	{
 		id: 3,
 		text: 'Finance',
-		href: '',
+		href: 'finance',
 	},
 	{
 		id: 4,
 		text: 'Home & Utilities',
-		href: '',
+		href: 'home-utilities',
 	},
 	{
 		id: 5,
 		text: 'Books, Mags & News',
-		href: '',
+		href: 'books-mags-news',
 	},
 ]
