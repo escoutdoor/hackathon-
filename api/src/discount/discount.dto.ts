@@ -1,5 +1,6 @@
 import {
 	ArrayMinSize,
+	IsArray,
 	IsOptional,
 	IsString,
 	MinLength,
@@ -32,8 +33,26 @@ export class DiscountDto {
 	})
 	@IsString()
 	name: string
+
+	@IsArray()
+	@IsString({ each: true })
+	description: string[]
+
 	@IsString()
-	image?: string
+	image: string
+
+	@IsOptional()
 	@IsString()
-	description: string
+	discountCode?: string
+
+	@IsString()
+	url: string
+
+	@IsOptional()
+	@IsArray()
+	@IsString({ each: true })
+	conditions?: string[]
+
+	@IsString()
+	brandName: string
 }

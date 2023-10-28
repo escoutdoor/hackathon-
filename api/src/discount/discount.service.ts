@@ -10,7 +10,9 @@ export class DiscountService {
 	async discountById(id: string) {
 		return await this.prisma.discount.findUnique({
 			where: { id },
-			select: returnDiscountFields,
+			select: {
+				...returnDiscountFields,
+			},
 		})
 	}
 
