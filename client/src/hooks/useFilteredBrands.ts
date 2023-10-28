@@ -6,7 +6,6 @@ export const useFilteredBrands = (options: IFilterOptions) => {
 	const { data, isLoading, error } = useQuery({
 		queryKey: ['brands'],
 		queryFn: async () => await BrandsService.getFilteredBrands(options),
-		enabled: !!Object.keys(options).length,
 		select: ({ data }) => data,
 	})
 

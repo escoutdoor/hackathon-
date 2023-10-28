@@ -1,6 +1,7 @@
 export interface IFilterOptions {
 	offerType?: OfferType[]
 	categories?: TCategory[]
+	brands?: string[]
 	searchTerm?: string
 	sortBy?: EnumBrandSort
 }

@@ -3,14 +3,13 @@ import { PrismaService } from 'src/prisma.service'
 import { BrandDto, GetBrandsDto } from './brand.dto'
 import { returnBrandFields } from './brand-fields.object'
 import { EnumOfferType, Prisma } from '@prisma/client'
-import { split } from 'src/utils/split'
 
 @Injectable()
 export class BrandService {
 	constructor(private prisma: PrismaService) {}
 
 	async getAll(dto: GetBrandsDto) {
-		const { sortBy, searchTerm, categories } = dto
+		const { sortBy, searchTerm } = dto
 
 		const orderBy: Prisma.BrandOrderByWithRelationInput[] = []
 
@@ -44,7 +43,12 @@ export class BrandService {
 						},
 						{
 							categories: {
-								has: searchTerm,
+								hasSome: [searchTerm],
+							},
+						},
+						{
+							offerType: {
+								equals: searchTerm as EnumOfferType,
 							},
 						},
 					],
@@ -52,14 +56,7 @@ export class BrandService {
 			: {}
 
 		const brands = await this.prisma.brand.findMany({
-			where: {
-				...(categories && {
-					categories: {
-						hasSome: split(categories),
-					},
-				}),
-				...searchTermFilter,
-			},
+			where: searchTermFilter,
 			orderBy,
 			select: returnBrandFields,
 			take: 24,

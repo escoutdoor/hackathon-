@@ -1,5 +1,4 @@
 import { EnumOfferType } from '@prisma/client'
-import { Transform } from 'class-transformer'
 import {
 	ArrayMinSize,
 	IsArray,
@@ -11,11 +10,18 @@ import {
 export class GetBrandsDto {
 	@IsOptional()
 	@IsEnum(EnumOfferType)
-	offerType?: EnumOfferType[]
+	offerType?: EnumOfferType
+
+	@IsOptional() // remove this
+	@IsArray()
+	@IsString({ each: true })
+	@ArrayMinSize(1)
+	categories: TCategory[]
 
 	@IsOptional()
-	@IsString()
-	categories: string
+	@IsString({ each: true })
+	@ArrayMinSize(1)
+	brands?: string[]
 
 	@IsOptional()
 	@IsString()
