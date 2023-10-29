@@ -1,6 +1,5 @@
-'use client'
 import { NextPage } from 'next'
-import s from './home.module.scss'
+import s from './Home.module.scss'
 import { FiSearch } from 'react-icons/fi'
 import DiscountItem from '@/components/ui/discount-item/DiscountItem'
 import Carousel from './carousel/Carousel'
@@ -25,7 +24,7 @@ const Home: NextPage = () => {
 					</div>
 				</div>
 			</div>
-			<div className="wrapper">
+			<div className='wrapper'>
 				<DiscountList discounts={discounts} isLoading={isLoading} />
 				<Carousel />
 			</div>

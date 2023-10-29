@@ -17,8 +17,8 @@ const HeaderTop: FC = () => {
 				<Image
 					width={172}
 					height={36}
-					src="https://cdn.studentbeans.com/static/web/assets/images/sb_dark_logo.svg"
-					alt="logo"
+					src='https://cdn.studentbeans.com/static/web/assets/images/sb_dark_logo.svg'
+					alt='logo'
 				/>
 			</Link>
 
@@ -27,7 +27,7 @@ const HeaderTop: FC = () => {
 				<p className={s.input}>Search Student Beans</p>
 			</div>
 			<div className={s.auth}>
-				<PurpleLink href="#">Login</PurpleLink>
+				<PurpleLink href='/auth?tab=login'>Login</PurpleLink>
 				<Button
 					style={{
 						width: '120px',

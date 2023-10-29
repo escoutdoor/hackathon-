@@ -13,16 +13,17 @@ const DiscountItem: FC<{ item: IDiscount }> = ({ item }) => {
 						width={313}
 						height={130}
 						src={`/images/img/discounts/${item.image}`}
-						alt="default_image"
+						alt='default_image'
 					/>
 					<div className={s.overlay}></div>
 				</div>
+
 				<div className={s.logoBlock}>
 					<Image
 						width={100}
 						height={130}
 						src={`/images/img/brands/${item.brand.image}`}
-						alt="data"
+						alt='data'
 					/>
 				</div>
 				<span className={s.name}>{item.name}</span>

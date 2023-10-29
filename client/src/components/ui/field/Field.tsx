@@ -17,7 +17,6 @@ const Field = forwardRef<HTMLInputElement, IField>(function Comp(
 		<div className={s.field}>
 			<label>
 				<h1 className={s.title}>{label}</h1>
-				{required && <span className={s.required}>*</span>}
 			</label>
 			<input className={s.input} {...rest} ref={ref} />
 			<ErrorText>{error}</ErrorText>
