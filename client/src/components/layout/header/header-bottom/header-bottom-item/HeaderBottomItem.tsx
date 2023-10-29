@@ -9,7 +9,7 @@ import HeaderBottomMoreItem from './header-bottom-more-item/HeaderBottomMoreItem
 
 const HeaderBottomItem: FC<{ item: IHeaderBottomItem }> = ({ item }) => {
 	return (
-		<li>
+		<li className={s.item}>
 			{item.text === 'More' ? (
 				<span className={s.more}>
 					<div className={s.linkContainer}>
@@ -23,7 +23,7 @@ const HeaderBottomItem: FC<{ item: IHeaderBottomItem }> = ({ item }) => {
 					</ul>
 				</span>
 			) : (
-				<PurpleLink href={item.href}>{item.text}</PurpleLink>
+				<PurpleLink href={`/${item.href}`}>{item.text}</PurpleLink>
 			)}
 		</li>
 	)

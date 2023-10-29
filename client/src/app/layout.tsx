@@ -32,7 +32,9 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={montserrat.className}>
 				<Header />
-				<Providers>{children}</Providers>
+				<>
+					<Providers>{children}</Providers>
+				</>
 				<Footer />
 			</body>
 		</html>

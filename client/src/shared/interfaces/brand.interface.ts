@@ -1,12 +1,14 @@
-import { OfferType, TCategory } from './filter-options.interface'
+import { IDiscount } from './discount.interface'
+import { ICategory, IOfferType } from './filter-options.interface'
 
 export interface IBrand {
 	id: string
 	name: string
 	description: string
 	image: string
-	categories: TCategory[]
-	offerType: OfferType
+	category: ICategory
+	offerType: IOfferType
+	discounts: IDiscount[]
 }
 
 export interface IBrandImageNameId {

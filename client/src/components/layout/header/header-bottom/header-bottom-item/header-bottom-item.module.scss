@@ -1,47 +1,53 @@
-.more {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	height: fit-content;
-
-	&:hover .dropdown {
-		height: fit-content;
+.item {
+	> a {
+		line-height: 50px;
 	}
 
-	.linkContainer {
+	.more {
 		display: flex;
-		align-items: center;
-		gap: 5px;
+		flex-direction: column;
+		position: relative;
+		height: fit-content;
 
-		&:hover .moreIcon {
-			color: #6523e3;
+		&:hover .dropdown {
+			height: fit-content;
 		}
 
-		.link {
-			font-size: 16px;
-			line-height: 1.6;
-			font-weight: 500;
-			color: var(--purple);
-			cursor: pointer;
+		.linkContainer {
+			display: flex;
+			align-items: center;
+			gap: 5px;
 
-			transition: 0.2s ease;
-			&:hover {
-				color: #6523e3;
+			&:hover .moreIcon {
+				color: var(--purple);
+			}
+
+			.link {
+				font-size: 16px;
+				line-height: 1.6;
+				font-weight: 500;
+				color: var(--purple);
+				cursor: pointer;
+
+				transition: 0.2s ease;
+				&:hover {
+					color: var(--purple);
+				}
+			}
+
+			.moreIcon {
+				color: #acafaf;
+				transition: 0.2s ease;
 			}
 		}
 
-		.moreIcon {
-			color: #acafaf;
-			transition: 0.2s ease;
+		.dropdown {
+			overflow: hidden;
+			height: 0;
+			position: absolute;
+			top: 25px;
+			box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+			width: 250px;
 		}
-	}
-
-	.dropdown {
-		overflow: hidden;
-		height: 0;
-		position: absolute;
-		top: 25px;
-		box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
-		width: 250px;
 	}
 }

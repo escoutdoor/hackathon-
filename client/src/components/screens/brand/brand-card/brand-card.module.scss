@@ -1,0 +1,28 @@
+.card {
+	display: flex;
+	align-items: flex-start;
+	padding: 40px 0px;
+
+	.preview {
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		background-color: #fff;
+
+		> img {
+		}
+
+		margin-right: 40px;
+	}
+
+	.title {
+		color: #272727;
+		font-size: 24px;
+		line-height: 1.25;
+	}
+
+	.description {
+		margin: 12px 0px 16px;
+		color: #272727;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+}

@@ -8,7 +8,7 @@ import DiscountList from '@/components/ui/discount-list/DiscountList'
 import { useFilteredDiscounts } from '@/hooks/useFilteredDiscounts'
 
 const Home: NextPage = () => {
-	const { discounts, isLoading } = useFilteredDiscounts({
+	const { discounts, isLoading, length } = useFilteredDiscounts({
 		category: 'food-drink',
 	})
 
@@ -26,7 +26,11 @@ const Home: NextPage = () => {
 				</div>
 			</div>
 			<div className="wrapper">
-				<DiscountList discounts={discounts} isLoading={isLoading} />
+				<DiscountList
+					discounts={discounts}
+					isLoading={isLoading}
+					length={length as number}
+				/>
 				<Carousel />
 			</div>
 		</div>

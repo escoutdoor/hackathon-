@@ -1,0 +1,13 @@
+.item {
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+
+	&.active {
+		color: #fff;
+		background: var(--purple);
+	}
+
+	&:hover {
+		background: var(--gray);
+	}
+}

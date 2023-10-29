@@ -1,36 +1,37 @@
-import { FC } from 'react'
+'use client'
 import s from './discount-item.module.scss'
+import { IDiscount } from '@/shared/interfaces/discount.interface'
 import Image from 'next/image'
 import Link from 'next/link'
-import { IDiscount } from '@/shared/interfaces/discount.interface'
+import { FC } from 'react'
+import DiscountItemText from './discount-item-text/DiscountItemText'
 
 const DiscountItem: FC<{ item: IDiscount }> = ({ item }) => {
 	return (
-		<div className={s.item}>
-			<div className={s.container}>
-				<div className={s.background}>
+		<li className={s.item}>
+			<Link href={`/brands/${item.brand.id}`}>
+				<Image
+					src={`/images/img/discounts/${item.image}`}
+					width={0}
+					height={0}
+					sizes="100vw"
+					className={s.background}
+					alt="background-image"
+				/>
+				<div className={s.logo__box}>
 					<Image
-						width={313}
-						height={130}
-						src={`/images/img/discounts/${item.image}`}
-						alt="default_image"
-					/>
-					<div className={s.overlay}></div>
-				</div>
-				<div className={s.logoBlock}>
-					<Image
-						width={100}
-						height={130}
 						src={`/images/img/brands/${item.brand.image}`}
-						alt="data"
+						width={0}
+						height={0}
+						sizes="100vw"
+						className={s.logo}
+						alt="logo"
 					/>
 				</div>
-				<span className={s.name}>{item.name}</span>
-				<Link href={`/brands/${item.brand.id}`} className={s.link}>
-					Online at {item.name}
-				</Link>
-			</div>
-		</div>
+				<DiscountItemText item={item} />
+			</Link>
+		</li>
 	)
 }
+
 export default DiscountItem
