@@ -5,5 +5,9 @@ export const returnBrandFields = {
 	name: true,
 	description: true,
 	image: true,
-	categories: true,
+	categoryName: true,
+	offerTypeName: true,
+	discounts: {
+		select: returnDiscountFields,
+	},
 }

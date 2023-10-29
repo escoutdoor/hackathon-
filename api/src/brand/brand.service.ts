@@ -1,75 +1,13 @@
 import { Injectable } from '@nestjs/common'
 import { PrismaService } from 'src/prisma.service'
-import { BrandDto, GetBrandsDto } from './brand.dto'
+import { BrandDto } from './brand.dto'
 import { returnBrandFields } from './brand-fields.object'
-import { EnumOfferType, Prisma } from '@prisma/client'
-import { split } from 'src/utils/split'
+import { Prisma } from '@prisma/client'
+import { returnDiscountFields } from 'src/discount/discount-fields.object'
 
 @Injectable()
 export class BrandService {
 	constructor(private prisma: PrismaService) {}
-
-	async getAll(dto: GetBrandsDto) {
-		const { sortBy, searchTerm, categories } = dto
-
-		const orderBy: Prisma.BrandOrderByWithRelationInput[] = []
-
-		switch (sortBy) {
-			case 'popularity':
-				orderBy.push({
-					createdAt: 'desc',
-				})
-				break
-			case 'date':
-				orderBy.push({
-					createdAt: 'desc',
-				})
-				break
-			default:
-				orderBy.push({
-					createdAt: 'desc',
-				})
-				break
-		}
-
-		const searchTermFilter: Prisma.BrandWhereInput = searchTerm
-			? {
-					OR: [
-						{ name: { contains: searchTerm, mode: 'insensitive' } },
-						{
-							description: {
-								contains: searchTerm,
-								mode: 'insensitive',
-							},
-						},
-						{
-							categories: {
-								has: searchTerm,
-							},
-						},
-					],
-			  }
-			: {}
-
-		const brands = await this.prisma.brand.findMany({
-			where: {
-				...(categories && {
-					categories: {
-						hasSome: split(categories),
-					},
-				}),
-				...searchTermFilter,
-			},
-			orderBy,
-			select: returnBrandFields,
-			take: 24,
-		})
-
-		return {
-			brands,
-			length: brands.length,
-		}
-	}
 
 	async brandById(id: string) {
 		return await this.prisma.brand.findUnique({
@@ -91,11 +29,16 @@ export class BrandService {
 
 		return await this.prisma.brand.findMany({
 			where: {
-				categories: {
-					hasSome: brand.categories,
-				},
 				name: {
 					contains: brand.name,
+					mode: 'insensitive',
+				},
+				offerTypeName: {
+					contains: brand.offerTypeName,
+					mode: 'insensitive',
+				},
+				categoryName: {
+					contains: brand.categoryName,
 					mode: 'insensitive',
 				},
 				id: {
