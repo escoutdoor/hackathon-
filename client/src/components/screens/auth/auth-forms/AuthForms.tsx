@@ -4,7 +4,6 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { FC } from 'react'
 import Login from './login/Login'
 import Register from './register/Register'
-import cn from 'clsx'
 
 const AuthForms: FC = () => {
 	const { get } = useSearchParams()

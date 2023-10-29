@@ -4,7 +4,6 @@
 	margin-bottom: 10px;
 
 	> label {
-		display: flex;
 		margin-bottom: 5px;
 		color: var(--dark-blue);
 		font-weight: 700;
@@ -12,11 +11,6 @@
 		.title {
 			font-size: 11px;
 			line-height: 1.6;
-		}
-
-		.required {
-			font-size: 14px;
-			padding: 0px 5px;
 		}
 	}
 

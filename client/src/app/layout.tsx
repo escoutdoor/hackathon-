@@ -36,18 +36,11 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={montserrat.className}>
-				{pathname === '/auth' ? (
-					<Providers>
-						<AuthHeader />
-						<Auth />
-					</Providers>
-				) : (
-					<>
-						<Header />
-						<Providers>{children}</Providers>
-						<Footer />
-					</>
-				)}
+				<>
+					{pathname !== '/auth' && <Header />}
+					<Providers>{children}</Providers>
+					{pathname !== '/auth' && <Footer />}
+				</>
 			</body>
 		</html>
 	)
