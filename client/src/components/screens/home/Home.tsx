@@ -1,3 +1,4 @@
+'use client'
 import { NextPage } from 'next'
 import s from './Home.module.scss'
 import { FiSearch } from 'react-icons/fi'

@@ -2,7 +2,6 @@
 import { Dispatch, FC, SetStateAction } from 'react'
 
 import s from './menu-overlay.module.scss'
-import cn from 'clsx'
 import { RxCross1 } from 'react-icons/rx'
 import Button from '../../button/Button'
 import { menuOverlayLinks } from '@/helpers/menu-overlay-links'
@@ -15,11 +14,14 @@ const MenuOverlay: FC<{
 }> = ({ active, setActive }) => {
 	const { push } = useRouter()
 	return (
-		<div className={cn(s.menu, { [s.active]: active })}>
+		<div className={active ? `${s.menu} ${s.active}` : s.menu}>
 			<div className={s.sidebar}>
 				<div className={s.container}>
 					<div className={s.top}>
-						<div className={s.cross} onClick={() => setActive(false)}>
+						<div
+							className={s.cross}
+							onClick={() => setActive(false)}
+						>
 							<RxCross1 />
 						</div>
 					</div>
@@ -47,7 +49,9 @@ const MenuOverlay: FC<{
 				<div className={s.container}>
 					<div className={s.links}>
 						{menuOverlayLinks.map(item => (
-							<PurpleLink href={item.href}>{item.text}</PurpleLink>
+							<PurpleLink key={item.id} href={item.href}>
+								{item.text}
+							</PurpleLink>
 						))}
 					</div>
 				</div>
