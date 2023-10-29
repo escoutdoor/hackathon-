@@ -9,9 +9,9 @@ import { useFilteredBrands } from '@/hooks/useFilteredBrands'
 import { FaChevronRight } from 'react-icons/fa'
 
 const Home: NextPage = () => {
-	// const { brands, isLoading } = useFilteredBrands({
-	// 	categories: ['food-drink'],
-	// })
+	const { brands, isLoading } = useFilteredBrands({
+		categories: ['food-drink'],
+	})
 
 	return (
 		<div className={s.home}>
@@ -27,7 +27,6 @@ const Home: NextPage = () => {
 				</div>
 			</div>
 			<div className='wrapper'>
-				{/* <BrandList brands={brands} isLoading={isLoading} /> */}
 				<Carousel />
 				<div className={s.brandTitle}>
 					<h2 className={s.text}>Recommended For You</h2>
@@ -36,6 +35,7 @@ const Home: NextPage = () => {
 						<FaChevronRight />
 					</div>
 				</div>
+				<BrandList brands={brands} isLoading={isLoading} />
 			</div>
 		</div>
 	)

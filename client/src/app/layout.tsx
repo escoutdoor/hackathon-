@@ -7,6 +7,7 @@ import 'swiper/css/navigation'
 import Header from '@/components/layout/header/Header'
 import Footer from '@/components/layout/footer/Footer'
 import Providers from '@/utils/provider'
+import { useSearchParams } from 'next/navigation'
 
 const montserrat = Montserrat({
 	subsets: ['latin'],

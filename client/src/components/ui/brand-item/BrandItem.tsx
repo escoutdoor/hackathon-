@@ -12,28 +12,18 @@ const BrandItem: FC<{ item: IBrand }> = ({ item }) => {
 					<Image
 						width={313}
 						height={130}
-<<<<<<< HEAD:client/src/components/ui/discount-item/DiscountItem.tsx
-						src={'/images/img/default_image.jpg'}
+						src={`/images/img/discounts/${item.discounts[0].image}`}
 						alt='default_image'
 					/>
-=======
-						src={`/images/img/discounts/${item.discounts[0].image}`}
-						alt="default_image"
-					/> */}
->>>>>>> main:client/src/components/ui/brand-item/BrandItem.tsx
+
 					<div className={s.overlay}></div>
 				</div>
 				<div className={s.logoBlock}>
 					<Image
 						width={100}
 						height={130}
-<<<<<<< HEAD:client/src/components/ui/discount-item/DiscountItem.tsx
-						src={'/images/img/data.svg'}
-						alt='data'
-=======
 						src={`/images/img/brands/${item.image}`}
-						alt="data"
->>>>>>> main:client/src/components/ui/brand-item/BrandItem.tsx
+						alt='data'
 					/>
 				</div>
 				<span className={s.name}>{item.name}</span>

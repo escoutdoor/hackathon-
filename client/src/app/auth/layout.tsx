@@ -1,9 +1,13 @@
+import AuthHeader from '@/components/ui/auth-header/AuthHeader'
 import { FC, PropsWithChildren } from 'react'
 
 const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
 	return (
 		<div>
-			<div className="wrapper">{children}</div>
+			<div>
+				<AuthHeader />
+				{children}
+			</div>
 		</div>
 	)
 }
