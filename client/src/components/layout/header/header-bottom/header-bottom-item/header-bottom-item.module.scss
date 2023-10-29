@@ -11,11 +11,8 @@
 
 		&:hover .dropdown {
 			height: fit-content;
+			transition: 0.2s ease;
 		}
-	&:hover .dropdown {
-		height: fit-content;
-		transition: 0.2s ease;
-	}
 
 		.linkContainer {
 			display: flex;
@@ -32,32 +29,33 @@
 				font-weight: 500;
 				color: var(--purple);
 				cursor: pointer;
-		.link {
-			font-size: 16px;
-			line-height: 1.6;
-			font-weight: 500;
-			color: #071f45;
-			cursor: pointer;
+				.link {
+					font-size: 16px;
+					line-height: 1.6;
+					font-weight: 500;
+					color: #071f45;
+					cursor: pointer;
 
-				transition: 0.2s ease;
-				&:hover {
-					color: var(--purple);
+					transition: 0.2s ease;
+					&:hover {
+						color: var(--purple);
+					}
+				}
+
+				.moreIcon {
+					color: #acafaf;
+					transition: 0.2s ease;
 				}
 			}
 
-			.moreIcon {
-				color: #acafaf;
-				transition: 0.2s ease;
+			.dropdown {
+				overflow: hidden;
+				height: 0;
+				position: absolute;
+				top: 25px;
+				box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+				width: 250px;
 			}
-		}
-
-		.dropdown {
-			overflow: hidden;
-			height: 0;
-			position: absolute;
-			top: 25px;
-			box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
-			width: 250px;
 		}
 	}
 }
