@@ -9,7 +9,8 @@ export interface IBrand {
 	offerType: OfferType
 }
 
-export interface IBrandResponse {
-	brands: IBrand[]
-	length: number
+export interface IBrandImageNameId {
+	id: string
+	name: string
+	image: string
 }

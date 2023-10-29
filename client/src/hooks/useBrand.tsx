@@ -6,6 +6,7 @@ export const useBrand = (brandId: string) => {
 		data: brand,
 		isLoading,
 		error,
+		refetch,
 	} = useQuery({
 		queryKey: ['brand', { brandId }],
 		queryFn: () => BrandsService.brandById(brandId),
@@ -17,5 +18,6 @@ export const useBrand = (brandId: string) => {
 		brand,
 		isLoading,
 		error,
+		refetch,
 	}
 }

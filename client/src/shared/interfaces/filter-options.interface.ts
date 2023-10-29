@@ -1,8 +1,10 @@
 export interface IFilterOptions {
-	offerType?: OfferType[]
-	categories?: TCategory[]
+	offerTypes?: OfferType[]
+	category?: TCategory
 	searchTerm?: string
-	sortBy?: EnumBrandSort
+	sortBy?: 'popularity' | 'date'
+	limit?: number
+	brands?: string[]
 }
 
 export type OfferType =
@@ -25,8 +27,3 @@ export type TCategory =
 	| 'home-utilities'
 	| 'books-mags-news'
 	| 'all'
-
-export enum EnumBrandSort {
-	POPULARITY = 'popularity',
-	DATE = 'date',
-}

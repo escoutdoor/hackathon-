@@ -3,7 +3,9 @@
 import React from 'react'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { Provider } from 'react-redux'
-import { store } from '@/store/store'
+import { persistor, store } from '@/store/store'
+import { PersistGate } from 'redux-persist/integration/react'
+import AuthProvider from '@/providers/AuthProvider'
 
 function Providers({ children }: React.PropsWithChildren) {
 	const queryClient = new QueryClient({
@@ -16,9 +18,11 @@ function Providers({ children }: React.PropsWithChildren) {
 
 	return (
 		<Provider store={store}>
-			<QueryClientProvider client={queryClient}>
-				{children}
-			</QueryClientProvider>
+			<PersistGate loading={null} persistor={persistor}>
+				<QueryClientProvider client={queryClient}>
+					<AuthProvider>{children}</AuthProvider>
+				</QueryClientProvider>
+			</PersistGate>
 		</Provider>
 	)
 }

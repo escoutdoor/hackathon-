@@ -9,7 +9,7 @@ const LinkBox: React.FC = () => {
 				<h1 className={s.linkTitle}>Work With Us</h1>
 				<ul className={s.linkList}>
 					{footerBottomLink.map(link => (
-						<Link href={link.href}>
+						<Link key={link.id} href={link.href}>
 							<li className={s.linkText}>{link.text}</li>
 						</Link>
 					))}
@@ -20,7 +20,7 @@ const LinkBox: React.FC = () => {
 				<h1 className={s.linkTitle}>Work With Us</h1>
 				<ul className={s.linkList}>
 					{footerBottomLink.map(link => (
-						<Link href={link.href}>
+						<Link key={link.id} href={link.href}>
 							<li className={s.linkText}>{link.text}</li>
 						</Link>
 					))}
@@ -31,7 +31,7 @@ const LinkBox: React.FC = () => {
 				<h1 className={s.linkTitle}>Work With Us</h1>
 				<ul className={s.linkList}>
 					{footerBottomLink.map(link => (
-						<Link href={link.href}>
+						<Link key={link.id} href={link.href}>
 							<li className={s.linkText}>{link.text}</li>
 						</Link>
 					))}
