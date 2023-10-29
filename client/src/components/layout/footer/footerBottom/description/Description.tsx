@@ -1,4 +1,4 @@
-import { IFooterBottomDesc } from '@/interfaces/footer-bottom.interface'
+
 import s from './description.module.scss'
 import { desc } from '@/helpers/footer-bottom.data'
 

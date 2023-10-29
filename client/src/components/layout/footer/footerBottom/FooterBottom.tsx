@@ -8,15 +8,10 @@ import {
 	IFooterBottomLink,
 } from '@/interfaces/footer-bottom.interface'
 
-import { FaInstagram } from 'react-icons/fa'
-import { SiTiktok } from 'react-icons/si'
-import { FaTwitter } from 'react-icons/fa'
-import { BsYoutube } from 'react-icons/bs'
-import { footerBottomIcon, footerIcons } from '@/helpers/footer-bottom.data'
 import LinkBox from './linkBox/LinkBox'
 import Grade from './grade/Grade'
 import Description from './description/Description'
-import { IconType } from 'react-icons'
+import FooterIcon from './footer-icon/FooterIcon'
 
 const FooterBottom: FC<{
 	item: IFooterBottomItem
@@ -34,12 +29,8 @@ const FooterBottom: FC<{
 						alt="logo"
 					/>
 				</Link>
-				<ul className={s.iconList}>
-					{footerIcons.map(item => {
-						const { Icon } = item
-						return <Icon key={item.id} />
-					})}
-				</ul>
+				
+					<FooterIcon/>
 			</div>
 
 			<div className={s.contentBlock}>
