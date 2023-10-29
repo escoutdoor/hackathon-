@@ -1,3 +1,4 @@
+'use client'
 import { Dispatch, FC, SetStateAction } from 'react'
 
 import s from './menu-overlay.module.scss'
@@ -6,12 +7,13 @@ import { RxCross1 } from 'react-icons/rx'
 import Button from '../../button/Button'
 import { menuOverlayLinks } from '@/helpers/menu-overlay-links'
 import PurpleLink from '../../purple-link/PurpleLink'
+import { useRouter } from 'next/navigation'
 
 const MenuOverlay: FC<{
 	active: boolean
 	setActive: Dispatch<SetStateAction<boolean>>
 }> = ({ active, setActive }) => {
-	console.log(active)
+	const { push } = useRouter()
 	return (
 		<div className={cn(s.menu, { [s.active]: active })}>
 			<div className={s.sidebar}>
@@ -22,8 +24,23 @@ const MenuOverlay: FC<{
 						</div>
 					</div>
 					<div className={s.buttons}>
-						<Button>Sign up</Button>
-						<button className={s.login}>Login</button>
+						<Button
+							onClick={() => {
+								push('/auth?tab=register')
+								setActive(false)
+							}}
+						>
+							Sign up
+						</Button>
+						<button
+							className={s.login}
+							onClick={() => {
+								push('/auth?tab=login')
+								setActive(false)
+							}}
+						>
+							Login
+						</button>
 					</div>
 				</div>
 				<hr />

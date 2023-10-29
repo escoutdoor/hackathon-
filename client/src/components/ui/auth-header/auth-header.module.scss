@@ -3,7 +3,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin: 0 auto;
+	margin: 15px auto;
 
 	.left {
 		padding: 9px 12px 7px;
@@ -21,6 +21,11 @@
 		&:hover {
 			background-color: #c1c9d7;
 		}
+	}
+
+	.middle {
+		position: relative;
+		left: -60px;
 	}
 
 	.right {
