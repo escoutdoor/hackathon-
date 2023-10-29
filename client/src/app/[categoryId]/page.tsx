@@ -3,7 +3,7 @@ import Category from '@/components/screens/category/Category'
 import { useFilteredDiscounts } from '@/hooks/useFilteredDiscounts'
 import { useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
-import { TCategory } from '@/shared/interfaces/filter-options.interface'
+import { CategorySlug } from '@/shared/interfaces/filter-options.interface'
 
 export default function CategoryPage({
 	params,
@@ -12,7 +12,7 @@ export default function CategoryPage({
 }) {
 	const { discounts, length, refetch, isLoading } = useFilteredDiscounts({
 		// offerTypes: ['student-discount'],
-		// category: params.categoryId as TCategory,
+		category: params.categoryId as CategorySlug,
 		sortBy: 'popularity',
 		limit: 40,
 	})

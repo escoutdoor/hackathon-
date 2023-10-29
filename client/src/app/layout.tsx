@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
 	const pathname = usePathname()
 	return (
-		<html lang='en'>
+		<html lang="en">
 			<body className={montserrat.className}>
 				<>
 					{pathname !== '/auth' && <Header />}

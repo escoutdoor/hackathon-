@@ -34,11 +34,11 @@ export class BrandService {
 					mode: 'insensitive',
 				},
 				offerTypeName: {
-					contains: brand.offerTypeName,
+					contains: brand.offerType.name,
 					mode: 'insensitive',
 				},
 				categoryName: {
-					contains: brand.categoryName,
+					contains: brand.category.name,
 					mode: 'insensitive',
 				},
 				id: {

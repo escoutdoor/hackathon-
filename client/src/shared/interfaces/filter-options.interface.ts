@@ -1,19 +1,31 @@
 export interface IFilterOptions {
-	offerTypes?: OfferType[]
-	category?: TCategory
+	offerTypes?: OfferTypeSlug[]
+	category?: CategorySlug
 	searchTerm?: string
 	sortBy?: 'popularity' | 'date'
 	limit?: number
 	brands?: string[]
 }
 
-export type OfferType =
+export interface ICategory {
+	id: number
+	name: string
+	slug: CategorySlug
+}
+
+export interface IOfferType {
+	id: string
+	name: string
+	slug: OfferTypeSlug
+}
+
+export type OfferTypeSlug =
 	| 'student-discount'
 	| 'general-sale'
 	| 'freebie'
 	| 'competition'
 
-export type TCategory =
+export type CategorySlug =
 	| 'trending-now'
 	| 'fashion'
 	| 'food-drink'

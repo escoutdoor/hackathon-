@@ -1,8 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Montserrat', sans-serif;
+	font-family: var(--var-montserrat), sans-serif;
 }
 
 a {
@@ -36,6 +40,7 @@ ol {
 :root {
 	--dark-blue: #071f45;
 	--purple: #6523e3;
+	--gray: #eff4f4;
 	--swiper-pagination-bullet-inactive-color: #d2d6d6;
 	--swiper-pagination-color: #272727;
 	--swiper-pagination-bottom: 20px;

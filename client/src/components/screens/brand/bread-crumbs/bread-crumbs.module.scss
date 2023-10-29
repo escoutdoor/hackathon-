@@ -1,0 +1,33 @@
+.bread__crumbs {
+	display: flex;
+	align-items: center;
+	padding: 18px 0px 18px 20px;
+
+	.icon {
+		font-size: 24px;
+		color: #46546c;
+	}
+
+	.separator {
+		margin: 0px 10px;
+		font-size: 18px;
+		color: #46546c;
+	}
+
+	.category__link {
+		font-size: 16px;
+		line-height: 1.4;
+		color: var(--dark-blue);
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			color: #46546c;
+		}
+	}
+
+	.brand__name {
+		font-size: 16px;
+		line-height: 1.4;
+		color: var(--dark-blue);
+	}
+}

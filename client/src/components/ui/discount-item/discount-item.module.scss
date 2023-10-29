@@ -1,68 +1,46 @@
 .item {
-	width: 313px;
+	width: 100%;
+	max-width: 285px;
 	height: 370px;
-	border-radius: 3px;
-	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
-	position: relative;
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 5px;
 
-	.container {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
+	> a {
+		display: block;
+		height: 100%;
+		padding-bottom: 20px;
 
 		.background {
-			position: relative;
-			> img {
-				border-top-right-radius: 3px;
-				border-top-left-radius: 3px;
-			}
-
-			.overlay {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 130px;
-				opacity: 0;
-				background-color: rgba(0, 0, 0, 0.3);
-				cursor: pointer;
-				transition: 0.2s ease;
-				border-top-right-radius: 3px;
-				border-top-left-radius: 3px;
-
-				&:hover {
-					opacity: 1;
-				}
-			}
+			border-radius: 5px;
+			width: 100%;
+			height: 130px;
+			background: #f1f1f1;
+			object-fit: cover;
+			transition: all 0.3s ease-in-out;
 		}
 
-		.logoBlock {
+		.logo__box {
 			width: 120px;
 			height: 120px;
-			border: 10px solid #fff;
+			border-radius: 5px;
 			position: relative;
-			top: -40px;
-			box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.1);
+			margin: -50px auto 0 auto;
+			background: #fff;
+			box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+				rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
-			> img {
-				position: relative;
-				top: -15px;
+			.logo {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
 			}
 		}
+	}
 
-		.name {
-			font-size: 22px;
-			font-weight: 500;
-			line-height: 25px;
-			color: #272727;
-		}
-
-		.link {
-			position: absolute;
-			bottom: 10px;
-			&:hover {
-				color: #46546c;
-			}
+	&:hover {
+		.background {
+			filter: brightness(0.8);
 		}
 	}
 }
