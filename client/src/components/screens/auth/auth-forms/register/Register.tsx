@@ -75,73 +75,136 @@ const Register: FC<{
 						.
 					</div>
 				</>
+			) : activePage === 'detailsname' ? (
+				<>
+					<div className={s.progressbar}>
+						<div className={s.progress} />
+					</div>
+					<h2
+						className={s.title}
+						style={{ margin: '20px 0', textAlign: 'center' }}
+					>
+						Your Details
+					</h2>
+					<Field
+						{...register('firstName')}
+						label='First name'
+						error={errors.firstName?.message}
+						type='text'
+						required
+					/>
+					<Field
+						{...register('lastName')}
+						label='Last name'
+						error={errors.lastName?.message}
+						type='text'
+						required
+					/>
+					<div className={s.date}>
+						<Field
+							{...register('day')}
+							error={errors.day?.message}
+							type='number'
+							placeholder='DD'
+							required
+							maxLength={2}
+						/>
+
+						<Field
+							{...register('month')}
+							error={errors.month?.message}
+							type='number'
+							placeholder='MM'
+							required
+							maxLength={2}
+						/>
+
+						<Field
+							{...register('year')}
+							error={errors.year?.message}
+							type='number'
+							placeholder='YYYY'
+							required
+							maxLength={4}
+						/>
+					</div>
+					{!errors.day?.message &&
+					!errors.month?.message &&
+					!errors.year?.message ? null : (
+						<ErrorText>Please enter a valid date of birth</ErrorText>
+					)}
+					<div className={s.buttonBlock}>
+						<Button
+							onClick={() => setActivePage('studentstatus')}
+							disabled={Object.keys(errors).length !== 0}
+						>
+							Continue
+						</Button>
+					</div>
+				</>
+			) : activePage === 'studentstatus' ? (
+				<>
+					<div className={s.progressbar}>
+						<div className={`${s.progress} ${s.double}`} />
+					</div>
+					<h2
+						className={s.title}
+						style={{ margin: '20px 0', textAlign: 'center' }}
+					>
+						Verify your student status
+					</h2>
+					<Field
+						{...register('graduationYear')}
+						label='Graduation year'
+						error={errors.graduationYear?.message}
+						type='text'
+						required
+						defaultValue={2023}
+						style={{ marginBottom: '20px' }}
+					/>
+					<Field
+						{...register('studentEmail')}
+						label='Student email address
+'
+						error={errors.email?.message}
+						type='email'
+						required
+						placeholder='e.g. name@nmu.one'
+					/>
+					<Button
+						onClick={() => setActivePage('country')}
+						disabled={Object.keys(errors).length !== 0}
+						style={{ marginTop: '20px' }}
+					>
+						Continue
+					</Button>
+				</>
 			) : (
-				activePage === 'detailsname' && (
+				activePage === 'country' && (
 					<>
 						<div className={s.progressbar}>
-							<div className={s.progress} />
+							<div className={`${s.progress} ${s.triple}`} />
 						</div>
 						<h2
 							className={s.title}
 							style={{ margin: '20px 0', textAlign: 'center' }}
 						>
-							Your Details
+							Where do you study?
 						</h2>
 						<Field
-							{...register('firstName')}
-							label='First name'
-							error={errors.firstName?.message}
+							{...register('institution')}
+							label='Institution'
+							error={errors.institution?.message}
 							type='text'
 							required
+							placeholder='Search for your institution'
 						/>
-						<Field
-							{...register('lastName')}
-							label='Last name'
-							error={errors.lastName?.message}
-							type='text'
-							required
-						/>
-						<div className={s.date}>
-							<Field
-								{...register('day')}
-								error={errors.day?.message}
-								type='number'
-								placeholder='DD'
-								required
-								maxLength={2}
-							/>
-
-							<Field
-								{...register('month')}
-								error={errors.month?.message}
-								type='number'
-								placeholder='MM'
-								required
-								maxLength={2}
-							/>
-
-							<Field
-								{...register('year')}
-								error={errors.year?.message}
-								type='number'
-								placeholder='YYYY'
-								required
-								maxLength={4}
-							/>
-						</div>
-						{!errors.day?.message &&
-						!errors.month?.message &&
-						!errors.year?.message ? null : (
-							<ErrorText>Please enter a valid date of birth</ErrorText>
-						)}
-						<div className={s.buttonBlock}>
-							<Button
-								onClick={() => setActivePage('detailsname')}
-								disabled={Object.keys(errors).length !== 0}
-							>
-								Continue
-							</Button>
-						</div>
+						<Button
+							disabled={Object.keys(errors).length !== 0}
+							style={{ marginTop: '20px' }}
+						>
+							Continue
+						</Button>
 					</>
 				)
 			)}

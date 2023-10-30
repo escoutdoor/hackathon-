@@ -1,12 +1,5 @@
 import { z } from 'zod'
-
-function isValidNumber(value: string | number, min: number, max: number) {
-	const numericValue = Number(value)
-	if (isNaN(numericValue)) {
-		return false // Значение NaN, не является числом
-	}
-	return numericValue >= min && numericValue <= max
-}
+import { universities } from '../../helpers/universities'
 
 export const registerSchema = z.object({
 	email: z.string().email({
@@ -80,6 +73,42 @@ export const registerSchema = z.object({
 		},
 		{
 			message: `Year error`,
+		}
+	),
+	graduationYear: z.string().refine(
+		value => {
+			if (typeof value === 'string') {
+				const numericValue = Number(value)
+				if (isNaN(numericValue)) {
+					return false
+				}
+				return (
+					numericValue >= new Date().getFullYear() &&
+					new Date().getFullYear() + 5
+				)
+			} else if (typeof value === 'number') {
+				return (
+					value >= new Date().getFullYear() &&
+					value <= new Date().getFullYear() + 5
+				)
+			}
+			return false
+		},
+		{
+			message: `Write down right year of graduation`,
+		}
+	),
+	studentEmail: z.string().email({
+		message: 'Email is invalid',
+	}),
+	institution: z.string().refine(
+		value => {
+			if (!universities.includes(value)) {
+				return false
+			}
+		},
+		{
+			message: `There is no such university in our database. Please, contact us to add your university to our database`,
 		}
 	),
 })

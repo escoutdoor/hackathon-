@@ -43,4 +43,22 @@
 	> input[type='number'] {
 		max-width: 55px;
 	}
+
+	.students {
+		display: flex;
+		align-items: center;
+		gap: 3px;
+		margin-bottom: 5px;
+
+		> svg {
+			font-size: 40px;
+		}
+
+		> span {
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 21px;
+			color: #46546c;
+		}
+	}
 }
