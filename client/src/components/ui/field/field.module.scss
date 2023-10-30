@@ -3,6 +3,10 @@
 	flex-direction: column;
 	margin-bottom: 10px;
 
+	&.year .input {
+		max-width: 80px;
+	}
+
 	> label {
 		margin-bottom: 5px;
 		color: var(--dark-blue);
@@ -29,5 +33,14 @@
 		&:focus {
 			border: 1px solid var(--purple);
 		}
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+	}
+	> input[type='number'] {
+		max-width: 55px;
 	}
 }

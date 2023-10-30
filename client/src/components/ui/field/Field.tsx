@@ -4,7 +4,7 @@ import ErrorText from './error-text/ErrorText'
 
 interface IField
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className'> {
-	label: string
+	label?: string
 	error?: string
 	required?: boolean
 }
@@ -14,12 +14,12 @@ const Field = forwardRef<HTMLInputElement, IField>(function Comp(
 	ref
 ) {
 	return (
-		<div className={s.field}>
+		<div className={rest.maxLength === 4 ? `${s.field} ${s.year}` : s.field}>
 			<label>
 				<h1 className={s.title}>{label}</h1>
 			</label>
 			<input className={s.input} {...rest} ref={ref} />
-			<ErrorText>{error}</ErrorText>
+			{!rest.maxLength && <ErrorText>{error}</ErrorText>}
 		</div>
 	)
 })

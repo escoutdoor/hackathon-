@@ -77,4 +77,25 @@
 			text-decoration: underline;
 		}
 	}
+
+	.progressbar {
+		width: 374px;
+		height: 8px;
+		background-color: var(--gray);
+		display: flex;
+		border-radius: 8px;
+
+		.progress {
+			width: 93.5px;
+			height: 100%;
+			background-color: var(--purple);
+			border-radius: 8px;
+		}
+	}
+
+	.date {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
 }
