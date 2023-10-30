@@ -1,0 +1,51 @@
+.categories {
+	margin-top: 20px;
+	p {
+		line-height: 1.25em;
+    color: var(--swiper-pagination-color);
+    font-size: 18px;
+		font-weight: 900;
+	}
+	.categoriesWrap {
+		width: 100%;
+		margin-top: 20px;
+		.category {
+			display: flex;
+			align-items: center;
+				.block {
+					width: 312px;
+					height: 103px;	
+					display: flex;
+					align-items: center;
+					gap: 10px;
+					border-radius: 5px;
+					padding-left: 10px;
+					font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+					&:hover {
+						background-color: rgba(192, 198, 207, 0.393);
+					}
+					.title {
+						line-height: 1.5em;
+    				color: var(--dark-blue);
+    				font-size: 17px;
+					}
+					.news {
+						font-size: 15px;
+						line-height: 1.5em;
+    				color: rgb(70, 84, 108);
+					}
+					.info {
+						font-size: 12px;
+						color: var(--dark-blue);
+						line-height: 1.5em;
+					}
+				}
+			}
+		}
+		.blockWrap {
+			display: flex;
+			flex-wrap: wrap;
+			row-gap: 10px;
+			column-gap: 30px;
+		}
+}

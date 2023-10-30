@@ -10,7 +10,6 @@ import { useRouter } from 'next/navigation'
 import Modal from '@/components/layout/header/header-top/modal/Modal'
 
 
-
 const HeaderTop: FC = () => {
 	const { push } = useRouter()
 
@@ -31,7 +30,7 @@ const HeaderTop: FC = () => {
 					/>
 				</Link>
 
-				<div className={s.search} onClick={setIsModalOpen}>
+				<div className={s.search} onClick={() => setIsModalOpen(true)}>
 					<FiSearch/>
 					<p className={s.input}>Search Student Beans</p>
 				</div>
