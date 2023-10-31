@@ -1,15 +1,15 @@
 'use client'
-import { TLoginSchema, loginSchema } from '@/libs/schemas/login.schema'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Dispatch, FC, SetStateAction, useState } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 import { useActions } from '@/hooks/useActions'
-import Field from '@/components/ui/field/Field'
-import Button from '@/components/ui/button/Button'
-import s from './../auth-forms.module.scss'
 import { TRegisterSchema, registerSchema } from '@/libs/schemas/register.schema'
-import Link from 'next/link'
-import ErrorText from '@/components/ui/field/error-text/ErrorText'
+import CreatePage from './createPage/CreatePage'
+import DetailsPage from './detailsPage/DetailsPage'
+import StudentsPage from './studentPage/StudentPage'
+import InstitutionPage from './institutionPage/InstitutionPage'
+import Loader from './loader/Loader'
+import CheckPage from './checkPage/CheckPage'
 
 const Register: FC<{
 	activePage: string
@@ -21,6 +21,8 @@ const Register: FC<{
 		register: register,
 		formState: { errors, isValid },
 		handleSubmit,
+		getValues,
+		control,
 	} = useForm<TRegisterSchema>({
 		mode: 'onChange',
 		resolver: zodResolver(registerSchema),
@@ -33,179 +35,41 @@ const Register: FC<{
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			{activePage === 'create' ? (
-				<>
-					<div className={s.textBlock}>
-						<h2 className={s.title}>Create an account</h2>
-						<span className={s.text}>
-							Register for discounts on all your fave brands.
-						</span>
-					</div>
-
-					<Field
-						{...register('email')}
-						label='Email address'
-						error={errors.email?.message}
-						type='email'
-						required
-					/>
-					<Field
-						{...register('password')}
-						label='Password'
-						error={errors.password?.message}
-						type='password'
-						required
-					/>
-					<div className={s.buttonBlock}>
-						<Button
-							onClick={() => setActivePage('detailsname')}
-							disabled={Object.keys(errors).length !== 0}
-						>
-							Let's go
-						</Button>
-					</div>
-					<div className={s.policy}>
-						By continuing to create an account, you agree to Student Beans'{' '}
-						<Link className={s.link} href={'#'}>
-							Terms & Conditions
-						</Link>{' '}
-						and{' '}
-						<Link className={s.link} href={'#'}>
-							Privacy Policy
-						</Link>
-						.
-					</div>
-				</>
+				<CreatePage
+					register={register}
+					errors={errors}
+					setActivePage={setActivePage}
+				/>
 			) : activePage === 'detailsname' ? (
-				<>
-					<div className={s.progressbar}>
-						<div className={s.progress} />
-					</div>
-					<h2
-						className={s.title}
-						style={{ margin: '20px 0', textAlign: 'center' }}
-					>
-						Your Details
-					</h2>
-					<Field
-						{...register('firstName')}
-						label='First name'
-						error={errors.firstName?.message}
-						type='text'
-						required
-					/>
-					<Field
-						{...register('lastName')}
-						label='Last name'
-						error={errors.lastName?.message}
-						type='text'
-						required
-					/>
-					<div className={s.date}>
-						<Field
-							{...register('day')}
-							error={errors.day?.message}
-							type='number'
-							placeholder='DD'
-							required
-							maxLength={2}
-						/>
-
-						<Field
-							{...register('month')}
-							error={errors.month?.message}
-							type='number'
-							placeholder='MM'
-							required
-							maxLength={2}
-						/>
-
-						<Field
-							{...register('year')}
-							error={errors.year?.message}
-							type='number'
-							placeholder='YYYY'
-							required
-							maxLength={4}
-						/>
-					</div>
-					{!errors.day?.message &&
-					!errors.month?.message &&
-					!errors.year?.message ? null : (
-						<ErrorText>Please enter a valid date of birth</ErrorText>
-					)}
-					<div className={s.buttonBlock}>
-						<Button
-							onClick={() => setActivePage('studentstatus')}
-							disabled={Object.keys(errors).length !== 0}
-						>
-							Continue
-						</Button>
-					</div>
-				</>
+				<DetailsPage
+					register={register}
+					errors={errors}
+					setActivePage={setActivePage}
+				/>
 			) : activePage === 'studentstatus' ? (
-				<>
-					<div className={s.progressbar}>
-						<div className={`${s.progress} ${s.double}`} />
-					</div>
-					<h2
-						className={s.title}
-						style={{ margin: '20px 0', textAlign: 'center' }}
-					>
-						Verify your student status
-					</h2>
-					<Field
-						{...register('graduationYear')}
-						label='Graduation year'
-						error={errors.graduationYear?.message}
-						type='text'
-						required
-						defaultValue={2023}
-						style={{ marginBottom: '20px' }}
-					/>
-					<Field
-						{...register('studentEmail')}
-						label='Student email address
-'
-						error={errors.email?.message}
-						type='email'
-						required
-						placeholder='e.g. name@nmu.one'
-					/>
-					<Button
-						onClick={() => setActivePage('country')}
-						disabled={Object.keys(errors).length !== 0}
-						style={{ marginTop: '20px' }}
-					>
-						Continue
-					</Button>
-				</>
+				<StudentsPage
+					register={register}
+					errors={errors}
+					setActivePage={setActivePage}
+				/>
+			) : activePage === 'country' ? (
+				<InstitutionPage
+					register={register}
+					errors={errors}
+					setActivePage={setActivePage}
+					control={control}
+					getValues={getValues}
+				/>
+			) : activePage === 'loader' ? (
+				<Loader />
 			) : (
-				activePage === 'country' && (
-					<>
-						<div className={s.progressbar}>
-							<div className={`${s.progress} ${s.triple}`} />
-						</div>
-						<h2
-							className={s.title}
-							style={{ margin: '20px 0', textAlign: 'center' }}
-						>
-							Where do you study?
-						</h2>
-						<Field
-							{...register('institution')}
-							label='Institution'
-							error={errors.institution?.message}
-							type='text'
-							required
-							placeholder='Search for your institution'
-						/>
-						<Button
-							disabled={Object.keys(errors).length !== 0}
-							style={{ marginTop: '20px' }}
-						>
-							Continue
-						</Button>
-					</>
+				activePage === 'checkemail' && (
+					<CheckPage
+						register={register}
+						errors={errors}
+						setActivePage={setActivePage}
+						getValues={getValues}
+					/>
 				)
 			)}
 		</form>

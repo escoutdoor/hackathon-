@@ -101,16 +101,15 @@ export const registerSchema = z.object({
 	studentEmail: z.string().email({
 		message: 'Email is invalid',
 	}),
-	institution: z.string().refine(
-		value => {
-			if (!universities.includes(value)) {
-				return false
-			}
-		},
-		{
+	institution: z
+		.object({
+			label: z.string(),
+			value: z.number(),
+		})
+		.refine(value => universities.includes(value.label), {
 			message: `There is no such university in our database. Please, contact us to add your university to our database`,
-		}
-	),
+		}),
+	verifyCode: z.string(),
 })
 
 export type TRegisterSchema = z.infer<typeof registerSchema>
