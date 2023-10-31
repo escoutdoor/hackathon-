@@ -1,5 +1,6 @@
+'use client'
 import Field from '@/components/ui/field/Field'
-import { Dispatch, FC, SetStateAction } from 'react'
+import { Dispatch, FC, SetStateAction, useEffect } from 'react'
 import s from './details-page.module.scss'
 import ErrorText from '@/components/ui/field/error-text/ErrorText'
 import Button from '@/components/ui/button/Button'
@@ -8,9 +9,27 @@ interface IDetailsPage {
 	register: any
 	errors: any
 	setActivePage: Dispatch<SetStateAction<string>>
+	watch: any
+	setValue: any
 }
 
-const DetailsPage: FC<IDetailsPage> = ({ register, errors, setActivePage }) => {
+const DetailsPage: FC<IDetailsPage> = ({
+	register,
+	errors,
+	setActivePage,
+	watch,
+	setValue,
+}) => {
+	const day = watch('day')
+	const month = watch('month')
+	const year = watch('year')
+
+	useEffect(() => {
+		if (day && month && year) {
+			const dateOfBirth = new Date(`${year}-${month}-${day}`)
+			setValue('dateOfBirth', dateOfBirth)
+		}
+	}, [day, month, year, setValue])
 	return (
 		<>
 			<div className={s.progressbar}>

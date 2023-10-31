@@ -23,6 +23,8 @@ const Register: FC<{
 		handleSubmit,
 		getValues,
 		control,
+		watch,
+		setValue,
 	} = useForm<TRegisterSchema>({
 		mode: 'onChange',
 		resolver: zodResolver(registerSchema),
@@ -45,6 +47,8 @@ const Register: FC<{
 					register={formRegister}
 					errors={errors}
 					setActivePage={setActivePage}
+					watch={watch}
+					setValue={setValue}
 				/>
 			) : activePage === 'studentstatus' ? (
 				<StudentsPage
