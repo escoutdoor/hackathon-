@@ -25,8 +25,24 @@ model User {
   avatarPath  String @default("no-avatar.png") @map("avatar_path")
 
   address     Address?
+  student     Student?
 
   favorites   Favorite[]
+}
+
+model Student {
+  id              String @id @default(cuid())
+
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  email           String @unique
+  university      String
+
+  user            User @relation(fields: [userId], references: [id])
+  userId          String @map("user_id") @unique
+
+  graduationYear  Int @map("graduation_year")
 }
 
 model Address {

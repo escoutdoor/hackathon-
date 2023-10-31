@@ -1,4 +1,4 @@
-import { IsEmail, IsString, MinLength } from 'class-validator'
+import { IsEmail, IsInt, IsString, Min, MinLength } from 'class-validator'
 
 export class LoginDto {
 	@IsString()
@@ -31,4 +31,14 @@ export class RegisterDto {
 	})
 	@IsString()
 	lastName: string
+
+	@IsString()
+	@IsEmail()
+	studentsEmail: string
+
+	@IsInt()
+	@Min(2023, {
+		message: 'Graduation year must be at least 2023',
+	})
+	graduationYear: number
 }
