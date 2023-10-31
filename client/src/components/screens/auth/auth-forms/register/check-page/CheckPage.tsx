@@ -19,14 +19,14 @@ const CheckPage: FC<IDetailsPage> = ({
 	setActivePage,
 	getValues,
 }) => {
-	const [wrongCodeError, setWrongCodeError] = useState<boolean>(false)
+	const [wrongCodeError, setWrongCodeError] = useState<string>('')
 
 	const checkCode = () => {
 		const values = getValues()
 		if (values.verifyCode === verificationCode) {
-			setWrongCodeError(false)
+			setWrongCodeError('right')
 		} else {
-			setWrongCodeError(true)
+			setWrongCodeError('wrong')
 		}
 	}
 
@@ -54,12 +54,19 @@ const CheckPage: FC<IDetailsPage> = ({
 			<Field
 				{...register('verifyCode')}
 				label='Verification code'
-				error={wrongCodeError ? 'Wrong code' : errors.verifyCode?.message}
+				error={
+					wrongCodeError === 'wrong' ? 'Wrong code' : errors.verifyCode?.message
+				}
 				type='text'
 				required
 				placeholder='Write here verification code'
 			/>
-			<Button onClick={checkCode} style={{ marginTop: '20px' }}>
+			<Button
+				disabled={wrongCodeError === 'wrong' || wrongCodeError === ''}
+				onClick={checkCode}
+				style={{ marginTop: '20px' }}
+				type='submit'
+			>
 				Continue
 			</Button>
 		</>

@@ -4,21 +4,21 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Dispatch, FC, SetStateAction } from 'react'
 import { useActions } from '@/hooks/useActions'
 import { TRegisterSchema, registerSchema } from '@/libs/schemas/register.schema'
-import CreatePage from './createPage/CreatePage'
-import DetailsPage from './detailsPage/DetailsPage'
-import StudentsPage from './studentPage/StudentPage'
-import InstitutionPage from './institutionPage/InstitutionPage'
+import CreatePage from './create-page/CreatePage'
+import DetailsPage from './details-page/DetailsPage'
+import StudentsPage from './student-page/StudentPage'
+import InstitutionPage from './institution-page/InstitutionPage'
 import Loader from './loader/Loader'
-import CheckPage from './checkPage/CheckPage'
+import CheckPage from './check-page/CheckPage'
 
 const Register: FC<{
 	activePage: string
 	setActivePage: Dispatch<SetStateAction<string>>
 }> = ({ activePage, setActivePage }) => {
-	const { login } = useActions()
+	const { register } = useActions()
 
 	const {
-		register: register,
+		register: formRegister,
 		formState: { errors, isValid },
 		handleSubmit,
 		getValues,
@@ -29,32 +29,32 @@ const Register: FC<{
 	})
 
 	const onSubmit: SubmitHandler<TRegisterSchema> = data => {
-		login(data)
+		register(data)
 	}
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			{activePage === 'create' ? (
 				<CreatePage
-					register={register}
+					register={formRegister}
 					errors={errors}
 					setActivePage={setActivePage}
 				/>
 			) : activePage === 'detailsname' ? (
 				<DetailsPage
-					register={register}
+					register={formRegister}
 					errors={errors}
 					setActivePage={setActivePage}
 				/>
 			) : activePage === 'studentstatus' ? (
 				<StudentsPage
-					register={register}
+					register={formRegister}
 					errors={errors}
 					setActivePage={setActivePage}
 				/>
 			) : activePage === 'country' ? (
 				<InstitutionPage
-					register={register}
+					register={formRegister}
 					errors={errors}
 					setActivePage={setActivePage}
 					control={control}
@@ -65,7 +65,7 @@ const Register: FC<{
 			) : (
 				activePage === 'checkemail' && (
 					<CheckPage
-						register={register}
+						register={formRegister}
 						errors={errors}
 						setActivePage={setActivePage}
 						getValues={getValues}
