@@ -36,6 +36,9 @@ export class RegisterDto {
 	@IsEmail()
 	studentsEmail: string
 
+	@IsString()
+	university: string
+
 	@IsInt()
 	@Min(2023, {
 		message: 'Graduation year must be at least 2023',

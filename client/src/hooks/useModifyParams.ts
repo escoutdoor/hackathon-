@@ -1,9 +1,9 @@
 import { useCallback } from 'react'
-import { useRouter } from 'next/router'
-import { useSearchParams } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 export const useModifyParams = () => {
-	const router = useRouter()
+	const pathname = usePathname()
+	const { push } = useRouter()
 	const searchParams = useSearchParams()
 
 	const updateQueryParam = useCallback(
@@ -34,13 +34,11 @@ export const useModifyParams = () => {
 			}
 
 			newQueryString = params.toString()
-			newUrl = `${router.pathname}${
-				newQueryString ? `?${newQueryString}` : ''
-			}`
+			newUrl = `${pathname}${newQueryString ? `?${newQueryString}` : ''}`
 
-			router.push(newUrl, undefined, { shallow: true, scroll: false })
+			push(newUrl, { scroll: false })
 		},
-		[searchParams, router]
+		[searchParams, pathname]
 	)
 
 	return { updateQueryParam }
