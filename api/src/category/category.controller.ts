@@ -26,4 +26,9 @@ export class CategoryController {
 	async createCategory(@Body() category: CategoryDto) {
 		return await this.categoryService.createCategory(category)
 	}
+
+	@Get('')
+	async getAll() {
+		return await this.categoryService.getAll()
+	}
 }

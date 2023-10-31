@@ -1,18 +1,26 @@
 'use client'
-import { useModifyParams } from '@/hooks/useModifyParams'
 import s from './category-header-item.module.scss'
 import { FC } from 'react'
 import { ICategory } from '@/shared/interfaces/filter-options.interface'
+import { usePathname, useRouter } from 'next/navigation'
 
 const CategoryHeaderItem: FC<{ category: ICategory }> = ({ category }) => {
-	const { updateQueryParam } = useModifyParams()
+	const { push } = useRouter()
+	const pathname = usePathname()
 
 	const handleClick = () => {
-		updateQueryParam('category', category.slug)
+		push(`/${category.slug}`)
 	}
 
 	return (
-		<li className={s.item} onClick={handleClick}>
+		<li
+			className={
+				pathname.includes(category.slug)
+					? `${s.item} ${s.active}`
+					: s.item
+			}
+			onClick={handleClick}
+		>
 			{category.name}
 		</li>
 	)

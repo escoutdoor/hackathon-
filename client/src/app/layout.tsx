@@ -1,16 +1,10 @@
 'use client'
-import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.scss'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
 import Header from '@/components/layout/header/Header'
 import Footer from '@/components/layout/footer/Footer'
 import Providers from '@/utils/provider'
 import { usePathname } from 'next/navigation'
-import AuthHeader from '@/components/ui/auth-header/AuthHeader'
-import Auth from '@/components/screens/auth/Auth'
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
