@@ -1,5 +1,5 @@
 'use client'
-import { Dispatch, FC, SetStateAction } from 'react'
+import { Dispatch, FC, SetStateAction, useState } from 'react'
 
 import s from './menu-overlay.module.scss'
 import { RxCross1 } from 'react-icons/rx'
@@ -13,15 +13,13 @@ const MenuOverlay: FC<{
 	setActive: Dispatch<SetStateAction<boolean>>
 }> = ({ active, setActive }) => {
 	const { push } = useRouter()
+
 	return (
 		<div className={active ? `${s.menu} ${s.active}` : s.menu}>
 			<div className={s.sidebar}>
 				<div className={s.container}>
 					<div className={s.top}>
-						<div
-							className={s.cross}
-							onClick={() => setActive(false)}
-						>
+						<div className={s.cross} onClick={() => setActive(false)}>
 							<RxCross1 />
 						</div>
 					</div>
