@@ -24,57 +24,57 @@ export const registerSchema = z.object({
 		.max(20, {
 			message: "Last name can't be longer than 20 characters",
 		}),
-	// day: z.string().refine(
-	// 	value => {
-	// 		if (typeof value === 'string') {
-	// 			const numericValue = Number(value)
-	// 			if (isNaN(numericValue)) {
-	// 				return false
-	// 			}
-	// 			return numericValue >= 1 && numericValue <= 31
-	// 		} else if (typeof value === 'number') {
-	// 			return value >= 1 && value <= 31
-	// 		}
-	// 		return false
-	// 	},
-	// 	{
-	// 		message: 'Day error',
-	// 	}
-	// ),
-	// month: z.string().refine(
-	// 	value => {
-	// 		if (typeof value === 'string') {
-	// 			const numericValue = Number(value)
-	// 			if (isNaN(numericValue)) {
-	// 				return false
-	// 			}
-	// 			return numericValue >= 1 && numericValue <= 12
-	// 		} else if (typeof value === 'number') {
-	// 			return value >= 1 && value <= 12
-	// 		}
-	// 		return false
-	// 	},
-	// 	{
-	// 		message: 'Month error',
-	// 	}
-	// ),
-	// year: z.string().refine(
-	// 	value => {
-	// 		if (typeof value === 'string') {
-	// 			const numericValue = Number(value)
-	// 			if (isNaN(numericValue)) {
-	// 				return false
-	// 			}
-	// 			return numericValue >= 1900 && numericValue <= new Date().getFullYear()
-	// 		} else if (typeof value === 'number') {
-	// 			return value >= 1900 && value <= new Date().getFullYear()
-	// 		}
-	// 		return false
-	// 	},
-	// 	{
-	// 		message: `Year error`,
-	// 	}
-	// ),
+	day: z.string().refine(
+		value => {
+			if (typeof value === 'string') {
+				const numericValue = Number(value)
+				if (isNaN(numericValue)) {
+					return false
+				}
+				return numericValue >= 1 && numericValue <= 31
+			} else if (typeof value === 'number') {
+				return value >= 1 && value <= 31
+			}
+			return false
+		},
+		{
+			message: 'Day error',
+		}
+	),
+	month: z.string().refine(
+		value => {
+			if (typeof value === 'string') {
+				const numericValue = Number(value)
+				if (isNaN(numericValue)) {
+					return false
+				}
+				return numericValue >= 1 && numericValue <= 12
+			} else if (typeof value === 'number') {
+				return value >= 1 && value <= 12
+			}
+			return false
+		},
+		{
+			message: 'Month error',
+		}
+	),
+	year: z.string().refine(
+		value => {
+			if (typeof value === 'string') {
+				const numericValue = Number(value)
+				if (isNaN(numericValue)) {
+					return false
+				}
+				return numericValue >= 1900 && numericValue <= new Date().getFullYear()
+			} else if (typeof value === 'number') {
+				return value >= 1900 && value <= new Date().getFullYear()
+			}
+			return false
+		},
+		{
+			message: `Year error`,
+		}
+	),
 	dateOfBirth: z.date(),
 	graduationYear: z.string().refine(
 		value => {

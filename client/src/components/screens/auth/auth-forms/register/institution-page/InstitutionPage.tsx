@@ -3,13 +3,20 @@ import { Dispatch, FC, SetStateAction } from 'react'
 import s from './institution-page.module.scss'
 import Button from '@/components/ui/button/Button'
 import { useSendCode } from '@/hooks/useSendCode'
+import {
+	Control,
+	FieldErrors,
+	UseFormGetValues,
+	UseFormRegister,
+} from 'react-hook-form'
+import { TRegisterSchema } from '@/libs/schemas/register.schema'
 
 interface IDetailsPage {
-	register: any
-	errors: any
+	register: UseFormRegister<TRegisterSchema>
+	errors: FieldErrors<TRegisterSchema>
 	setActivePage: Dispatch<SetStateAction<string>>
-	control: any
-	getValues: any
+	control: Control<TRegisterSchema>
+	getValues: UseFormGetValues<TRegisterSchema>
 }
 
 const InstitutionPage: FC<IDetailsPage> = ({
