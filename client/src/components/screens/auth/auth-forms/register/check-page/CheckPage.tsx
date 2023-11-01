@@ -5,12 +5,14 @@ import s from './check-page.module.scss'
 import Button from '@/components/ui/button/Button'
 import Image from 'next/image'
 import { useSendCode } from '@/hooks/useSendCode'
+import { FieldErrors, UseFormGetValues, UseFormRegister } from 'react-hook-form'
+import { TRegisterSchema } from '@/libs/schemas/register.schema'
 
 interface IDetailsPage {
-	register: any
-	errors: any
+	register: UseFormRegister<TRegisterSchema>
+	errors: FieldErrors<TRegisterSchema>
 	setActivePage: Dispatch<SetStateAction<string>>
-	getValues: any
+	getValues: UseFormGetValues<TRegisterSchema>
 }
 
 const CheckPage: FC<IDetailsPage> = ({

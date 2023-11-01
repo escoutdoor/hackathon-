@@ -2,10 +2,12 @@ import Field from '@/components/ui/field/Field'
 import { Dispatch, FC, SetStateAction } from 'react'
 import s from './student-page.module.scss'
 import Button from '@/components/ui/button/Button'
+import { FieldErrors, UseFormRegister } from 'react-hook-form'
+import { TRegisterSchema } from '@/libs/schemas/register.schema'
 
 interface IDetailsPage {
-	register: any
-	errors: any
+	register: UseFormRegister<TRegisterSchema>
+	errors: FieldErrors<TRegisterSchema>
 	setActivePage: Dispatch<SetStateAction<string>>
 }
 

@@ -4,13 +4,20 @@ import { Dispatch, FC, SetStateAction, useEffect } from 'react'
 import s from './details-page.module.scss'
 import ErrorText from '@/components/ui/field/error-text/ErrorText'
 import Button from '@/components/ui/button/Button'
+import {
+	FieldErrors,
+	UseFormRegister,
+	UseFormSetValue,
+	UseFormWatch,
+} from 'react-hook-form'
+import { TRegisterSchema } from '@/libs/schemas/register.schema'
 
 interface IDetailsPage {
-	register: any
-	errors: any
+	register: UseFormRegister<TRegisterSchema>
+	errors: FieldErrors<TRegisterSchema>
 	setActivePage: Dispatch<SetStateAction<string>>
-	watch: any
-	setValue: any
+	watch: UseFormWatch<TRegisterSchema>
+	setValue: UseFormSetValue<TRegisterSchema>
 }
 
 const DetailsPage: FC<IDetailsPage> = ({

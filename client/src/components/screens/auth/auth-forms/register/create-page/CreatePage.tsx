@@ -3,10 +3,12 @@ import s from './create-page.module.scss'
 import Field from '@/components/ui/field/Field'
 import Button from '@/components/ui/button/Button'
 import Link from 'next/link'
+import { TRegisterSchema } from '@/libs/schemas/register.schema'
+import { FieldErrors, UseFormRegister } from 'react-hook-form'
 
 interface ICreatePage {
-	register: any
-	errors: any
+	register: UseFormRegister<TRegisterSchema>
+	errors: FieldErrors<TRegisterSchema>
 	setActivePage: Dispatch<SetStateAction<string>>
 }
 
