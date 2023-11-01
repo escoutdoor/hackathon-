@@ -4,6 +4,8 @@ import { IBrand } from '@/shared/interfaces/brand.interface'
 import BreadCrumbs from './bread-crumbs/BreadCrumbs'
 import BrandCard from './brand-card/BrandCard'
 import DiscountList from '@/components/ui/discount-list/DiscountList'
+import DetailedDiscountItem from '@/components/ui/detailed-discount-item/DetailedDiscountItem'
+import DiscountCarousel from './discount-carousel/DiscountCarousel'
 
 const Brand: FC<{ brand: IBrand; isLoading: boolean }> = ({
 	brand,
@@ -29,6 +31,7 @@ const Brand: FC<{ brand: IBrand; isLoading: boolean }> = ({
 						isLoading={isLoading}
 						length={brand?.discounts?.length}
 					/>
+					{brand && <DiscountCarousel discounts={brand.discounts} />}
 				</div>
 			</div>
 		</div>
