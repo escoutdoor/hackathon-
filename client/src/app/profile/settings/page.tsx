@@ -1,9 +1,9 @@
-
+'use client'
+import Body from '@/components/layout/body/Body'
 import s from './page.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import {MdOutlineMenu} from 'react-icons/md'
-import Body from './body/Body'
 
 const page:React.FC = () => {
 	

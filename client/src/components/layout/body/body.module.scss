@@ -1,0 +1,50 @@
+.block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	.form {
+		display: flex;
+		gap: 100px;
+		margin-top: 40px;
+		.input {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 255px;
+			height: 180px;
+			border-radius: 30%;
+
+			&:hover {
+				border: 3px dashed rgb(101, 35, 227);
+			}
+			.block {
+				position: absolute;
+				> input::file-selector-button {
+					position: absolute;
+					background-image: url('/images/avatars/no-avatar.png');
+					border: none;
+					color: transparent;
+					width: 180px;
+					height: 180px;
+				}
+			}
+			
+		}
+
+		.about {
+			width: 235px;	
+			height: 120px;
+
+			> p {
+				font-style: initial;
+				font-size: 14px;
+				color: var(--dark-blue);
+			}
+			.link {
+				text-decoration: underline;
+			}
+		}
+	}
+}
