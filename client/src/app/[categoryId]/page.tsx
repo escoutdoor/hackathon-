@@ -23,8 +23,6 @@ export default function CategoryPage({
 		refetch()
 	}, [searchParams])
 
-	console.log('discounts', discounts)
-
 	return (
 		<Category
 			discounts={discounts || []}

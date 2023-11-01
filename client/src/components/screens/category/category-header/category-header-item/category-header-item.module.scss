@@ -1,6 +1,10 @@
 .item {
-	transition: all 0.3s ease-in-out;
+	display: inline-flex;
+	white-space: nowrap;
 	cursor: pointer;
+	border-radius: 8px;
+	padding: 0.5rem 1rem;
+	transition: all 0.3s ease-in-out;
 
 	&.active {
 		color: #fff;
@@ -9,5 +13,9 @@
 
 	&:hover {
 		background: var(--gray);
+
+		&.active {
+			background: var(--purple);
+		}
 	}
 }

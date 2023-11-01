@@ -1,70 +1,81 @@
 'use client'
-import { TLoginSchema, loginSchema } from '@/libs/schemas/login.schema'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { FC } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 import { useActions } from '@/hooks/useActions'
-import Field from '@/components/ui/field/Field'
-import Button from '@/components/ui/button/Button'
-import s from './../auth-forms.module.scss'
 import { TRegisterSchema, registerSchema } from '@/libs/schemas/register.schema'
-import Link from 'next/link'
+import CreatePage from './create-page/CreatePage'
+import DetailsPage from './details-page/DetailsPage'
+import StudentsPage from './student-page/StudentPage'
+import InstitutionPage from './institution-page/InstitutionPage'
+import Loader from './loader/Loader'
+import CheckPage from './check-page/CheckPage'
 
-const Register: FC = () => {
-	const { login } = useActions()
+const Register: FC<{
+	activePage: string
+	setActivePage: Dispatch<SetStateAction<string>>
+}> = ({ activePage, setActivePage }) => {
+	const { register } = useActions()
 
 	const {
-		register: register,
+		register: formRegister,
 		formState: { errors, isValid },
 		handleSubmit,
+		getValues,
+		control,
+		watch,
+		setValue,
 	} = useForm<TRegisterSchema>({
 		mode: 'onChange',
 		resolver: zodResolver(registerSchema),
 	})
 
 	const onSubmit: SubmitHandler<TRegisterSchema> = data => {
-		login(data)
+		register(data)
 	}
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<div className={s.textBlock}>
-				<h2 className={s.title}>Create an account</h2>
-				<span className={s.text}>
-					Register for discounts on all your fave brands.
-				</span>
-			</div>
-
-			<Field
-				{...register('email')}
-				label='Email address'
-				error={errors.email?.message}
-				type='email'
-				required
-			/>
-			<Field
-				{...register('password')}
-				label='Password'
-				error={errors.password?.message}
-				type='password'
-				required
-			/>
-			<div className={s.buttonBlock}>
-				<Button type='submit' disabled={Object.keys(errors).length !== 0}>
-					Let's go
-				</Button>
-			</div>
-			<div className={s.policy}>
-				By continuing to create an account, you agree to Student Beans'{' '}
-				<Link className={s.link} href={'#'}>
-					Terms & Conditions
-				</Link>{' '}
-				and{' '}
-				<Link className={s.link} href={'#'}>
-					Privacy Policy
-				</Link>
-				.
-			</div>
+			{activePage === 'create' ? (
+				<CreatePage
+					register={formRegister}
+					errors={errors}
+					setActivePage={setActivePage}
+				/>
+			) : activePage === 'detailsname' ? (
+				<DetailsPage
+					register={formRegister}
+					errors={errors}
+					setActivePage={setActivePage}
+					watch={watch}
+					setValue={setValue}
+				/>
+			) : activePage === 'studentstatus' ? (
+				<StudentsPage
+					register={formRegister}
+					errors={errors}
+					setActivePage={setActivePage}
+				/>
+			) : activePage === 'country' ? (
+				<InstitutionPage
+					register={formRegister}
+					errors={errors}
+					setActivePage={setActivePage}
+					control={control}
+					getValues={getValues}
+				/>
+			) : activePage === 'loader' ? (
+				<Loader />
+			) : (
+				activePage === 'checkemail' && (
+					<CheckPage
+						register={formRegister}
+						errors={errors}
+						setActivePage={setActivePage}
+						getValues={getValues}
+					/>
+				)
+			)}
 		</form>
 	)
 }

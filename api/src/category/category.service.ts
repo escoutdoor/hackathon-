@@ -21,4 +21,10 @@ export class CategoryService {
 			data: category,
 		})
 	}
+
+	async getAll() {
+		return await this.prisma.category.findMany({
+			select: returnCategoryFields,
+		})
+	}
 }

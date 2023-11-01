@@ -1,13 +1,10 @@
 .forms {
-	// box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-	border-top-right-radius: 5px;
-	border-top-left-radius: 5px;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
 
 	.switch {
 		display: flex;
 		align-items: center;
-		// border-top-right-radius: 8px;
-		// border-top-left-radius: 8px;
 		.item {
 			width: 220px;
 			padding: 14px 2px;
@@ -51,30 +48,24 @@
 		background-color: #fff;
 		padding: 50px 32px 32px;
 		z-index: 1000;
-	}
+		border-bottom-right-radius: 8px;
+		border-bottom-left-radius: 8px;
 
-	.textBlock {
-		text-align: center;
-		margin: 30px auto;
-	}
+		.textBlock {
+			text-align: center;
+			margin: 30px auto;
 
-	.buttonBlock {
-		margin-top: 30px;
-	}
+			.text {
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 24px;
+				color: var(--black);
+				text-align: center;
+			}
+		}
 
-	.policy {
-		width: 270px;
-		margin: 20px auto 0px;
-		text-align: center;
-		font-size: 13px;
-		font-weight: 400;
-		line-height: 20px;
-		color: var(--black);
-
-		.link {
-			cursor: pointer;
-			color: var(--purple);
-			text-decoration: underline;
+		.buttonBlock {
+			margin-top: 30px;
 		}
 	}
 }
