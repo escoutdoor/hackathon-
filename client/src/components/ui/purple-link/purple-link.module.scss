@@ -2,10 +2,10 @@
 	font-size: 16px;
 	line-height: 1.6;
 	font-weight: 500;
-	color: var(--purple);
+	color: #071f45;
 
 	transition: 0.2s ease;
 	&:hover {
-		color: #6523e3;
+		color: var(--purple);
 	}
 }

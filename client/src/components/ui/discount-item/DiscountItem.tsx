@@ -1,36 +1,37 @@
-import { FC } from 'react'
-import s from './discounted-item.module.scss'
+'use client'
+import s from './discount-item.module.scss'
+import { IDiscount } from '@/shared/interfaces/discount.interface'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FC } from 'react'
+import DiscountItemText from './discount-item-text/DiscountItemText'
 
-const DiscountItem: FC = () => {
+const DiscountItem: FC<{ item: IDiscount }> = ({ item }) => {
 	return (
-		<div className={s.item}>
-			<div className={s.container}>
-				<div className={s.background}>
-					{/* <Image
-						width={313}
-						height={130}
-						src={'/images/default_image.jpg'}
-						alt="default_image"
-					/> */}
-					<div className={s.overlay}></div>
+		<li className={s.item}>
+			<Link href={`/brands/${item.brand.id}`}>
+				<Image
+					src={`/images/img/discounts/${item.image}`}
+					width={0}
+					height={0}
+					sizes="100vw"
+					className={s.background}
+					alt="background-image"
+				/>
+				<div className={s.logo__box}>
+					<Image
+						src={`/images/img/brands/${item.brand.image}`}
+						width={0}
+						height={0}
+						sizes="100vw"
+						className={s.logo}
+						alt="logo"
+					/>
 				</div>
-
-				<div className={s.logoBlock}>
-					{/* <Image
-						width={100}
-						height={130}
-						src={'/images/data.svg'}
-						alt="data"
-					/> */}
-				</div>
-				<span className={s.name}>25% Student Discount</span>
-				<Link href={'#'} className={s.link}>
-					Online at Sephora
-				</Link>
-			</div>
-		</div>
+				<DiscountItemText item={item} />
+			</Link>
+		</li>
 	)
 }
+
 export default DiscountItem

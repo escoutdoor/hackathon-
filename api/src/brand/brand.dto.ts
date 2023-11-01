@@ -1,36 +1,4 @@
-import { EnumOfferType } from '@prisma/client'
-import {
-	ArrayMinSize,
-	IsArray,
-	IsEnum,
-	IsOptional,
-	IsString,
-} from 'class-validator'
-
-export class GetBrandsDto {
-	@IsOptional()
-	@IsEnum(EnumOfferType)
-	offerType?: EnumOfferType
-
-	@IsOptional() // remove this
-	@IsArray()
-	@IsString({ each: true })
-	@ArrayMinSize(1)
-	categories: TCategory[]
-
-	@IsOptional()
-	@IsString({ each: true })
-	@ArrayMinSize(1)
-	brands?: string[]
-
-	@IsOptional()
-	@IsString()
-	searchTerm?: string
-
-	@IsOptional()
-	@IsString()
-	sortBy?: 'popularity' | 'date'
-}
+import { IsString } from 'class-validator'
 
 export class BrandDto {
 	@IsString()
@@ -42,18 +10,14 @@ export class BrandDto {
 	@IsString()
 	image: string
 
-	@IsOptional()
-	@IsEnum(EnumOfferType)
-	offerType: EnumOfferType
+	@IsString()
+	offerTypeName: string
 
-	@IsArray()
-	@IsString({ each: true })
-	@ArrayMinSize(1)
-	categories: TCategory[]
+	@IsString()
+	categoryName: string
 }
 
 export type TCategory =
-	| 'trending-now'
 	| 'fashion'
 	| 'food-drink'
 	| 'tech-mobile'
@@ -65,4 +29,5 @@ export type TCategory =
 	| 'finance'
 	| 'home-utilities'
 	| 'books-mags-news'
-	| 'all'
+
+// student discount | general sale | freebie | competition

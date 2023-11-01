@@ -1,3 +1,4 @@
+import { Transform } from 'class-transformer'
 import {
 	ArrayMinSize,
 	IsArray,
@@ -34,4 +35,32 @@ export class DiscountDto {
 
 	@IsString()
 	brandName: string
+}
+
+export class GetAllDto {
+	@IsOptional()
+	@IsString()
+	searchTerm?: string
+
+	@IsOptional()
+	@Transform(({ value }) => value.split(',').map(v => v.trim()))
+	@IsArray()
+	offerTypes?: string[]
+
+	@IsOptional()
+	@Transform(({ value }) => value.split(',').map(v => v.trim()))
+	@IsArray()
+	brands?: string[]
+
+	@IsOptional()
+	@IsString()
+	category?: string
+
+	@IsOptional()
+	@IsString()
+	limit?: string
+
+	@IsOptional()
+	@IsString()
+	sortBy?: 'popularity' | 'date'
 }

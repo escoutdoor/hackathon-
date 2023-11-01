@@ -6,6 +6,7 @@
 
 	&:hover .dropdown {
 		height: fit-content;
+		transition: 0.2s ease;
 	}
 
 	.linkContainer {
@@ -21,7 +22,7 @@
 			font-size: 16px;
 			line-height: 1.6;
 			font-weight: 500;
-			color: var(--purple);
+			color: #071f45;
 			cursor: pointer;
 
 			transition: 0.2s ease;

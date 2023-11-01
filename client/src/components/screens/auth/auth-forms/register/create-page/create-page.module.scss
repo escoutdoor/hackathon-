@@ -1,0 +1,32 @@
+.policy {
+	width: 270px;
+	margin: 20px auto 0px;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 20px;
+	color: var(--black);
+
+	.link {
+		cursor: pointer;
+		color: var(--purple);
+		text-decoration: underline;
+	}
+}
+
+.textBlock {
+	text-align: center;
+	margin: 30px auto;
+
+	.text {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		color: var(--black);
+		text-align: center;
+	}
+}
+
+.buttonBlock {
+	margin-top: 30px;
+}

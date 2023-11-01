@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 import React from 'react';
 import {GrClose} from 'react-icons/gr'
 import s from './modal.module.scss'
 import { IModalProps } from '@/interfaces/header-top-module.interface';
+=======
+import { IModalProps } from '@/interfaces/header-top-module.interface';
+import React from 'react';
+import {GrClose} from 'react-icons/gr'
+import s from './modal.module.scss'
+import Categories from './categories/Categories';
+>>>>>>> main
 
 
 const Modal:React.FC<IModalProps> = ({ isOpen = false, onCloseRequest }) => {
@@ -17,6 +25,10 @@ const Modal:React.FC<IModalProps> = ({ isOpen = false, onCloseRequest }) => {
 					<div className={s.content}>
 						<input type="text" className={s.search} placeholder='Brands, items or categories'/>
 					</div>
+<<<<<<< HEAD
+=======
+					<Categories/>
+>>>>>>> main
 				</div>
 			</div>
 		</div>

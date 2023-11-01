@@ -1,19 +1,44 @@
 'use client'
 import s from './auth-forms.module.scss'
-import { useSearchParams } from 'next/navigation'
-import { FC } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { FC, useState } from 'react'
 import Login from './login/Login'
 import Register from './register/Register'
 
 const AuthForms: FC = () => {
 	const { get } = useSearchParams()
 
-	const tab = get('tab') || 'login'
+	const tab = get('tab') ?? null
+
+	const { push } = useRouter()
+
+	const [activePage, setActivePage] = useState('create')
 
 	return (
 		<div className={s.forms}>
-			<div className={s.header}>
-				{tab === 'login' ? <Login /> : <Register />}
+			{activePage === 'create' && (
+				<div className={s.switch}>
+					<div
+						className={tab === 'login' ? `${s.item}` : `${s.item} ${s.active}`}
+						onClick={() => push('/auth?tab=register')}
+					>
+						Register
+					</div>
+					<div
+						className={tab === 'login' ? `${s.item} ${s.active}` : `${s.item}`}
+						onClick={() => push('/auth?tab=login')}
+					>
+						Login
+					</div>
+				</div>
+			)}
+
+			<div className={s.form}>
+				{tab === 'login' ? (
+					<Login />
+				) : (
+					<Register activePage={activePage} setActivePage={setActivePage} />
+				)}
 			</div>
 		</div>
 	)

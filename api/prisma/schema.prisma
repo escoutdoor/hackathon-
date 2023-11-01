@@ -25,8 +25,24 @@ model User {
   avatarPath  String @default("no-avatar.png") @map("avatar_path")
 
   address     Address?
+  student     Student?
 
   favorites   Favorite[]
+}
+
+model Student {
+  id              String @id @default(cuid())
+
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  email           String @unique
+  university      String
+
+  user            User @relation(fields: [userId], references: [id])
+  userId          String @map("user_id") @unique
+
+  graduationYear  Int @map("graduation_year")
 }
 
 model Address {
@@ -55,6 +71,30 @@ model Favorite {
   userId        String? @map("user_id")
 }
 
+model OfferType {
+  id              String @id @default(cuid())
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  name            String @unique
+  slug            String @unique
+
+  brands          Brand[]
+
+  @@map("offer_type")
+}
+
+model Category {
+  id              String @id @default(cuid())
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  name            String @unique
+  slug            String @unique
+
+  brands          Brand[]
+}
+
 model Brand {
   id              String @id @default(cuid())
   createdAt       DateTime @default(now()) @map("created_at")
@@ -64,8 +104,12 @@ model Brand {
   description     String
   image           String  @default("no-brand.png")
 
-  offerType       EnumOfferType @default(STUDENT_DISCOUNT) @map("offer_type")
-  categories      String[] @default([])
+  offerType       OfferType @relation(fields: [offerTypeName], references: [name])
+  offerTypeName   String @map("offer_type_name")
+
+  category        Category @relation(fields: [categoryName], references: [name])
+  categoryName    String @map("category_name")
+  
   discounts       Discount[]
 }
 
@@ -91,9 +135,3 @@ model Discount {
   favorites       Favorite[]
 }
 
-enum EnumOfferType {
-  STUDENT_DISCOUNT
-  GENERAL_SALE
-  FREEBIE
-  COMPETITION
-}

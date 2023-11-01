@@ -7,13 +7,41 @@
 				rgba(73, 0, 183, 0.5) 0px,
 				transparent 50%
 			),
-			radial-gradient(at 67% 5%, rgba(6, 29, 60, 0.7) 0px, transparent 50%),
-			radial-gradient(at 33% 27%, rgba(73, 0, 183, 0.7) 0px, transparent 50%),
-			radial-gradient(at 100% 99%, rgba(113, 0, 234, 1) 0px, transparent 50%),
-			radial-gradient(at 88% 6%, rgba(6, 29, 60, 0.9) 0px, transparent 50%),
-			radial-gradient(at 48% 57%, rgba(73, 0, 183, 0.9) 0px, transparent 50%),
-			radial-gradient(at 0% 74%, rgba(167, 114, 242, 1) 0px, transparent 50%),
-			radial-gradient(at 4% 62%, rgba(167, 114, 242, 0.5) 0px, transparent 50%);
+			radial-gradient(
+				at 67% 5%,
+				rgba(6, 29, 60, 0.7) 0px,
+				transparent 50%
+			),
+			radial-gradient(
+				at 33% 27%,
+				rgba(73, 0, 183, 0.7) 0px,
+				transparent 50%
+			),
+			radial-gradient(
+				at 100% 99%,
+				rgba(113, 0, 234, 1) 0px,
+				transparent 50%
+			),
+			radial-gradient(
+				at 88% 6%,
+				rgba(6, 29, 60, 0.9) 0px,
+				transparent 50%
+			),
+			radial-gradient(
+				at 48% 57%,
+				rgba(73, 0, 183, 0.9) 0px,
+				transparent 50%
+			),
+			radial-gradient(
+				at 0% 74%,
+				rgba(167, 114, 242, 1) 0px,
+				transparent 50%
+			),
+			radial-gradient(
+				at 4% 62%,
+				rgba(167, 114, 242, 0.5) 0px,
+				transparent 50%
+			);
 
 		.container {
 			padding: 56px 0px;
@@ -35,7 +63,7 @@
 
 			.search {
 				width: 100%;
-				background-color: #eff4f4;
+				background-color: var(--gray);
 				display: flex;
 				align-items: center;
 				padding: 15px 20px;
@@ -54,6 +82,50 @@
 					font-size: 16px;
 					color: var(--purple);
 				}
+			}
+		}
+	}
+
+	.brandTitle {
+		width: 1000px;
+		margin: 0 auto 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.text {
+			font-size: 24px;
+			font-weight: 600;
+			line-height: 30px;
+			color: #071f45;
+		}
+
+		.more {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			cursor: pointer;
+
+			&:hover {
+				.text {
+					color: #b393ff;
+				}
+
+				> svg {
+					color: #b393ff;
+				}
+			}
+
+			.text {
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 24px;
+				color: var(--purple);
+			}
+
+			> svg {
+				font-size: 16px;
+				color: var(--purple);
 			}
 		}
 	}

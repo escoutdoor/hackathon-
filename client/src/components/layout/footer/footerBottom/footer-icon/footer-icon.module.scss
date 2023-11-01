@@ -1,0 +1,13 @@
+.iconList {
+	display: flex;
+	gap: 5px;
+	.icon {
+		font-size: 25px;
+		color: #ffff;
+	}
+	.icon:hover {
+		color: #f3cd47;
+		transition: 0.3s ease-in;
+		cursor: pointer;
+	}
+}

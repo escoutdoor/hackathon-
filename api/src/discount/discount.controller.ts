@@ -7,9 +7,10 @@ import {
 	Body,
 	Get,
 	Param,
+	Query,
 } from '@nestjs/common'
 import { DiscountService } from './discount.service'
-import { DiscountDto } from './discount.dto'
+import { DiscountDto, GetAllDto } from './discount.dto'
 
 @Controller('discounts')
 export class DiscountController {
@@ -25,5 +26,12 @@ export class DiscountController {
 	@Get(':id')
 	async discountById(@Param('id') id: string) {
 		return await this.discountService.discountById(id)
+	}
+
+	@UsePipes(new ValidationPipe({ transform: true }))
+	@HttpCode(200)
+	@Get('')
+	async getAll(@Query() dto: GetAllDto) {
+		return await this.discountService.getAll(dto)
 	}
 }

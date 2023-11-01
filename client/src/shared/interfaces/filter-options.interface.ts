@@ -1,19 +1,31 @@
 export interface IFilterOptions {
-	offerType?: EnumOfferType[]
-	categories?: TCategory[]
-	brands?: string[]
+	offerTypes?: OfferTypeSlug[]
+	category?: CategorySlug
 	searchTerm?: string
-	sortBy?: EnumBrandSort
+	sortBy?: 'popularity' | 'date'
+	limit?: number
+	brands?: string[]
 }
 
-export enum EnumOfferType {
-	STUDENT_DISCOUNT = 'STUDENT_DISCOUNT',
-	GENERAL_SALE = 'GENERAL_SALE',
-	FREEBIE = 'FREEBIE',
-	COMPETITION = 'COMPETITION',
+export interface ICategory {
+	id: string
+	name: string
+	slug: CategorySlug
 }
 
-export type TCategory =
+export interface IOfferType {
+	id: string
+	name: string
+	slug: OfferTypeSlug
+}
+
+export type OfferTypeSlug =
+	| 'student-discount'
+	| 'general-sale'
+	| 'freebie'
+	| 'competition'
+
+export type CategorySlug =
 	| 'trending-now'
 	| 'fashion'
 	| 'food-drink'
@@ -27,8 +39,3 @@ export type TCategory =
 	| 'home-utilities'
 	| 'books-mags-news'
 	| 'all'
-
-export enum EnumBrandSort {
-	POPULARITY = 'popularity',
-	DATE = 'date',
-}

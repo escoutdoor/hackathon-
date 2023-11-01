@@ -1,15 +1,18 @@
-import { EnumOfferType, TCategory } from './filter-options.interface'
+import { IDiscount } from './discount.interface'
+import { ICategory, IOfferType } from './filter-options.interface'
 
 export interface IBrand {
 	id: string
 	name: string
 	description: string
 	image: string
-	categories: TCategory[]
-	offerType: EnumOfferType
+	category: ICategory
+	offerType: IOfferType
+	discounts: IDiscount[]
 }
 
-export interface IBrandResponse {
-	brands: IBrand[]
-	length: number
+export interface IBrandImageNameId {
+	id: string
+	name: string
+	image: string
 }
