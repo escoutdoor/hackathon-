@@ -28,12 +28,12 @@ export default function RootLayout({
 }) {
 	const pathname = usePathname()
 	return (
-		<html lang="en">
+		<html lang='en'>
 			<body className={montserrat.className}>
 				<>
-					{pathname !== '/auth' && <Header />}
+					{pathname !== '/auth' && !pathname.match('/info') && <Header />}
 					<Providers>{children}</Providers>
-					{pathname !== '/auth' && <Footer />}
+					{pathname !== '/auth' && !pathname.match('/info') && <Footer />}
 				</>
 			</body>
 		</html>
