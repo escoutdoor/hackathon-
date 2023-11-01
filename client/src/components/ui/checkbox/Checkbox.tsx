@@ -4,15 +4,15 @@ import { BsCheckLg } from 'react-icons/bs'
 
 interface ICheckbox {
 	title: string
-	selectOption: (title: string) => void
+	onClick: () => void
 	active: boolean
 }
 
-const Checkbox: FC<ICheckbox> = ({ title, selectOption, active }) => {
+const Checkbox: FC<ICheckbox> = ({ title, onClick, active }) => {
 	return (
 		<li
-			className={active ? `${s.item} ${s.active}` : s.item}
-			onClick={() => selectOption(title)}
+			className={active ? `${s.option} ${s.active}` : s.option}
+			onClick={onClick}
 		>
 			<div className={s.checkbox}>
 				<input type="checkbox" />
@@ -20,7 +20,7 @@ const Checkbox: FC<ICheckbox> = ({ title, selectOption, active }) => {
 					<BsCheckLg />
 				</span>
 			</div>
-			<span className={s.item__text}>{title}</span>
+			<span className={s.title}>{title}</span>
 		</li>
 	)
 }

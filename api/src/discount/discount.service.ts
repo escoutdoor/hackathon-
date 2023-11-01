@@ -75,6 +75,8 @@ export class DiscountService {
 					},
 			  }
 
+		console.log(filterOptions)
+
 		const discounts = await this.prisma.discount.findMany({
 			where: filterOptions,
 			select: {

@@ -1,0 +1,19 @@
+.no__result {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	.img {
+		height: auto;
+		width: auto;
+		object-fit: cover;
+		max-height: 500px;
+	}
+
+	> span {
+		font-size: 18px;
+		line-height: 1.4;
+		margin-top: 30px;
+		color: var(--dark-blue);
+	}
+}

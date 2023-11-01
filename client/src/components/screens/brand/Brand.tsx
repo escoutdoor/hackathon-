@@ -18,14 +18,16 @@ const Brand: FC<{ brand: IBrand; isLoading: boolean }> = ({
 						brandName={brand?.name}
 					/>
 					{brand && <BrandCard brand={brand} />}
-					<h1 className={s.counter}>
-						{brand?.discounts.length} Available{' '}
-						{brand?.offerType.name}
-					</h1>
+					{brand && (
+						<h1 className={s.counter}>
+							{brand?.discounts.length} Available{' '}
+							{brand?.offerType.name}
+						</h1>
+					)}
 					<DiscountList
 						discounts={brand?.discounts || []}
 						isLoading={isLoading}
-						length={brand?.discounts.length}
+						length={brand?.discounts?.length}
 					/>
 				</div>
 			</div>

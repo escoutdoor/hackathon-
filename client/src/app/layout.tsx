@@ -8,7 +8,6 @@ import { usePathname } from 'next/navigation'
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
-	weight: ['400', '500', '600', '700'],
 	variable: '--var-montserrat',
 })
 
@@ -30,11 +29,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={montserrat.className}>
-				<>
-					{pathname !== '/auth' && <Header />}
-					<Providers>{children}</Providers>
-					{pathname !== '/auth' && <Footer />}
-				</>
+				{pathname !== '/auth' && <Header />}
+				<Providers>{children}</Providers>
+				{pathname !== '/auth' && <Footer />}
 			</body>
 		</html>
 	)

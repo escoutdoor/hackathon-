@@ -49,4 +49,12 @@ export class BrandService {
 			select: returnBrandFields,
 		})
 	}
+
+	async getAll() {
+		return await this.prisma.brand.findMany({
+			select: {
+				name: true,
+			},
+		})
+	}
 }

@@ -2,21 +2,26 @@ export interface IFilterOptions {
 	offerTypes?: OfferTypeSlug[]
 	category?: CategorySlug
 	searchTerm?: string
-	sortBy?: 'popularity' | 'date'
+	sortBy?: SortByValue
 	limit?: number
 	brands?: string[]
 }
 
 export interface ICategory {
-	id: string
 	name: string
 	slug: CategorySlug
 }
 
 export interface IOfferType {
-	id: string
 	name: string
 	slug: OfferTypeSlug
+}
+
+export type SortByValue = 'popularity' | 'date'
+
+export interface ISortBy {
+	name: string
+	value: SortByValue
 }
 
 export type OfferTypeSlug =

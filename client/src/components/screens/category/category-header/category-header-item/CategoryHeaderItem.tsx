@@ -5,19 +5,16 @@ import { ICategory } from '@/shared/interfaces/filter-options.interface'
 import { usePathname, useRouter } from 'next/navigation'
 
 const CategoryHeaderItem: FC<{ category: ICategory }> = ({ category }) => {
-	const { push } = useRouter()
+	const { replace } = useRouter()
 	const pathname = usePathname()
 
 	const handleClick = () => {
-		push(`/${category.slug}`)
+		replace(`/${category.slug}`)
 	}
-
 	return (
 		<li
 			className={
-				pathname.includes(category.slug)
-					? `${s.item} ${s.active}`
-					: s.item
+				pathname === category.slug ? `${s.item} ${s.active}` : s.item
 			}
 			onClick={handleClick}
 		>

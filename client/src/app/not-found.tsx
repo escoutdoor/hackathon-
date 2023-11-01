@@ -1,3 +1,5 @@
+import NoResult from '@/components/ui/no-result/NoResult'
+
 export default function NotFound() {
-	return <div>not-found</div>
+	return <NoResult message="Something went wrong" />
 }

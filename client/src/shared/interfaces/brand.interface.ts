@@ -16,3 +16,7 @@ export interface IBrandImageNameId {
 	name: string
 	image: string
 }
+
+export interface IBrandName {
+	name: string
+}

@@ -1,10 +1,9 @@
-.item {
+.option {
+	width: 100%;
 	display: flex;
 	align-items: center;
 	margin-bottom: 10px;
-	gap: 10px;
 	cursor: pointer;
-	color: var(--gray);
 
 	> .checkbox {
 		position: relative;
@@ -24,25 +23,31 @@
 		> span {
 			width: 16px;
 			height: 16px;
-			border: 1px solid var(--grayBorder);
-			border-radius: 42px;
-			transition: background 0.2s var(--transition-cubic);
-			padding-right: 2px;
+			border: 2px solid #a2aec3;
+			border-radius: 5px;
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+			padding: 10px;
 
 			> svg {
 				visibility: hidden;
+				font-size: 20px;
 				opacity: 0;
-				transition: opacity 0.2s var(--transition-cubic);
-				color: var(--gray);
+				transition: opacity 0.2s ease-in-out;
+				color: #fff;
 				position: absolute;
-				left: 0;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
 			}
 		}
+
+		margin-right: 15px;
 	}
 
 	&.active {
 		.checkbox span {
-			background: #f1f1f1;
+			background: var(--purple);
+			border-color: var(--purple);
 
 			> svg {
 				visibility: visible;
@@ -51,9 +56,16 @@
 		}
 	}
 
-	.item__text {
-		font-size: 12px;
-		line-height: 2;
-		color: var(--dark-blue);
+	> span {
+		font-size: 16px;
+		line-height: 1.4;
+		font-weight: 500;
+	}
+
+	&:hover {
+		.checkbox {
+			> span {
+			}
+		}
 	}
 }

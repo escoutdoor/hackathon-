@@ -26,7 +26,9 @@ export const useModifyParams = () => {
 					params.append(name, value)
 				}
 			} else {
-				if (value) {
+				const isExists = params.has(name, value)
+
+				if (!isExists) {
 					params.set(name, value)
 				} else {
 					params.delete(name)
