@@ -8,6 +8,7 @@ import {
 	FieldErrors,
 	UseFormGetValues,
 	UseFormRegister,
+	UseFormWatch,
 } from 'react-hook-form'
 import { TRegisterSchema } from '@/libs/schemas/register.schema'
 
@@ -17,6 +18,7 @@ interface IDetailsPage {
 	setActivePage: Dispatch<SetStateAction<string>>
 	control: Control<TRegisterSchema>
 	getValues: UseFormGetValues<TRegisterSchema>
+	watch: UseFormWatch<TRegisterSchema>
 }
 
 const InstitutionPage: FC<IDetailsPage> = ({
@@ -25,7 +27,10 @@ const InstitutionPage: FC<IDetailsPage> = ({
 	setActivePage,
 	control,
 	getValues,
+	watch,
 }) => {
+	const institutionValue = watch('institution')
+
 	const { sendEmail } = useSendCode({
 		setActivePage,
 	})
@@ -54,7 +59,7 @@ const InstitutionPage: FC<IDetailsPage> = ({
 			/>
 			<Button
 				onClick={getFormValues}
-				disabled={Object.keys(errors).length !== 0}
+				disabled={Object.keys(errors).length !== 0 || !institutionValue}
 				style={{ marginTop: '20px' }}
 			>
 				Continue

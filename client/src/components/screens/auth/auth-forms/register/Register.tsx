@@ -19,7 +19,7 @@ const Register: FC<{
 
 	const {
 		register: formRegister,
-		formState: { errors, isValid },
+		formState: { errors },
 		handleSubmit,
 		getValues,
 		control,
@@ -41,6 +41,7 @@ const Register: FC<{
 					register={formRegister}
 					errors={errors}
 					setActivePage={setActivePage}
+					watch={watch}
 				/>
 			) : activePage === 'detailsname' ? (
 				<DetailsPage
@@ -49,12 +50,14 @@ const Register: FC<{
 					setActivePage={setActivePage}
 					watch={watch}
 					setValue={setValue}
+					getValues={getValues}
 				/>
 			) : activePage === 'studentstatus' ? (
 				<StudentsPage
 					register={formRegister}
 					errors={errors}
 					setActivePage={setActivePage}
+					watch={watch}
 				/>
 			) : activePage === 'country' ? (
 				<InstitutionPage
@@ -63,6 +66,7 @@ const Register: FC<{
 					setActivePage={setActivePage}
 					control={control}
 					getValues={getValues}
+					watch={watch}
 				/>
 			) : activePage === 'loader' ? (
 				<Loader />
@@ -73,6 +77,7 @@ const Register: FC<{
 						errors={errors}
 						setActivePage={setActivePage}
 						getValues={getValues}
+						watch={watch}
 					/>
 				)
 			)}

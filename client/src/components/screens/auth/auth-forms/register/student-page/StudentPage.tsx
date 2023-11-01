@@ -2,20 +2,24 @@ import Field from '@/components/ui/field/Field'
 import { Dispatch, FC, SetStateAction } from 'react'
 import s from './student-page.module.scss'
 import Button from '@/components/ui/button/Button'
-import { FieldErrors, UseFormRegister } from 'react-hook-form'
+import { FieldErrors, UseFormRegister, UseFormWatch } from 'react-hook-form'
 import { TRegisterSchema } from '@/libs/schemas/register.schema'
 
 interface IDetailsPage {
 	register: UseFormRegister<TRegisterSchema>
 	errors: FieldErrors<TRegisterSchema>
 	setActivePage: Dispatch<SetStateAction<string>>
+	watch: UseFormWatch<TRegisterSchema>
 }
 
 const StudentsPage: FC<IDetailsPage> = ({
 	register,
 	errors,
 	setActivePage,
+	watch,
 }) => {
+	const graduationYearValue = watch('graduationYear')
+	const studentEmailValue = watch('studentEmail')
 	return (
 		<>
 			<div className={s.progressbar}>
@@ -44,7 +48,11 @@ const StudentsPage: FC<IDetailsPage> = ({
 			/>
 			<Button
 				onClick={() => setActivePage('country')}
-				disabled={Object.keys(errors).length !== 0}
+				disabled={
+					Object.keys(errors).length !== 0 ||
+					!studentEmailValue ||
+					!graduationYearValue
+				}
 				style={{ marginTop: '20px' }}
 			>
 				Continue
