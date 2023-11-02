@@ -7,30 +7,35 @@
 		display: flex;
 		gap: 100px;
 		margin-top: 40px;
-		.input {
-			position: relative;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			width: 255px;
-			height: 180px;
-			border-radius: 30%;
+		
+			.upload {
+				position: relative;
+				width: 100px;
+				margin: auto;
 
-			&:hover {
-				border: 3px dashed rgb(101, 35, 227);
-			}
-			.block {
-				position: absolute;
-				> input::file-selector-button {
+				.img {
+					border-radius: 30%;		
+				}
+				.round {
 					position: absolute;
-					background-image: url('/images/avatars/no-avatar.png');
-					border: none;
-					color: transparent;
-					width: 180px;
-					height: 180px;
+					bottom: 0;
+					right: 0;
+					width: 32px;
+					height: 32px;
+					line-height: 33px;
+					overflow: hidden;
+					.icon {
+						width: 40px;
+						height: 35px;
+						color: blueviolet;
+					}
+					> input[type='file'] {
+						position: absolute;
+						transform: scale(2);
+						opacity: 0;
+					}
 				}
 			}
-			
 		}
 
 		.about {
@@ -47,4 +52,3 @@
 			}
 		}
 	}
-}

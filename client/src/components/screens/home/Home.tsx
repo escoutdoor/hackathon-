@@ -6,9 +6,9 @@ import DiscountItem from '@/components/ui/discount-item/DiscountItem'
 import Carousel from './carousel/Carousel'
 import DiscountList from '@/components/ui/discount-list/DiscountList'
 import { useFilteredDiscounts } from '@/hooks/useFilteredDiscounts'
-import { useState } from 'react'
 import Modal from '@/components/layout/header/header-top/modal/Modal'
-
+import { useState } from 'react'
+import 'swiper/css'
 const Home: NextPage = () => {
 	const { discounts, isLoading, length } = useFilteredDiscounts({
 		category: 'food-drink',

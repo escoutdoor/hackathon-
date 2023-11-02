@@ -1,4 +1,4 @@
-import { FC } from 'react'
+
 import s from './Carousel.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
@@ -7,6 +7,8 @@ import Button from '@/components/ui/button/Button'
 import CarouselButtons from './carousel-buttons/CarouselButtons'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import 'swiper/css'
+import { FC } from 'react'
 
 const Carousel: FC = () => {
 	return (

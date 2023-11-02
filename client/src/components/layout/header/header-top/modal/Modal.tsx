@@ -1,5 +1,4 @@
 import { IModalProps } from '@/interfaces/header-top-module.interface';
-import React from 'react';
 import {GrClose} from 'react-icons/gr'
 import s from './modal.module.scss'
 import Categories from './categories/Categories';

@@ -23,9 +23,9 @@ const HeaderTop: FC = () => {
 			<div className={s.top}>
 				<Link href={'/'}>
 					<Image
-						width={172}
-						height={36}
-						src='https://cdn.studentbeans.com/static/web/assets/images/sb_dark_logo.svg'
+						width={200}
+						height={60}
+						src='/images/logo/logo.png'
 						alt='logo'
 					/>
 				</Link>

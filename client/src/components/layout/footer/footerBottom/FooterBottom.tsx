@@ -23,9 +23,9 @@ const FooterBottom: FC<{
 			<div className={s.icons}>
 				<Link href={'/'}>
 					<Image
-						width={172}
-						height={36}
-						src={'/images/img/footer/logoWhite.png'}
+						width={200}
+						height={60}
+						src={'/images/img/footer/logoWhiteSP.png'}
 						alt="logo"
 					/>
 				</Link>
