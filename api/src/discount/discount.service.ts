@@ -42,10 +42,6 @@ export class DiscountService {
 						},
 						{
 							brand: {
-								name: {
-									contains: searchTerm,
-									mode: 'insensitive',
-								},
 								categoryName: {
 									contains: searchTerm,
 									mode: 'insensitive',
@@ -53,8 +49,9 @@ export class DiscountService {
 							},
 						},
 						{
-							conditions: {
-								hasSome: [searchTerm],
+							brandName: {
+								contains: searchTerm,
+								mode: 'insensitive',
 							},
 						},
 					],

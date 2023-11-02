@@ -29,8 +29,8 @@ const FooterBottom: FC<{
 						alt="logo"
 					/>
 				</Link>
-				
-					<FooterIcon/>
+
+				<FooterIcon />
 			</div>
 
 			<div className={s.contentBlock}>

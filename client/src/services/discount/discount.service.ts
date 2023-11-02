@@ -13,6 +13,7 @@ export const DiscountService = {
 			...(options.brands?.length && {
 				brands: getString(options.brands),
 			}),
+			...(options.category && { category: options.category }),
 		}
 
 		return await axios.get<IDiscountResponse>(`${DISCOUNT}`, {

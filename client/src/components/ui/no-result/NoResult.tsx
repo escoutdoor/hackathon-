@@ -1,3 +1,4 @@
+'use client'
 import s from './no-result.module.scss'
 import { FC } from 'react'
 import Image from 'next/image'

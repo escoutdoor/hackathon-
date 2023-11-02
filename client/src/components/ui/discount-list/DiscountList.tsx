@@ -11,15 +11,17 @@ const DiscountList: FC<{
 	length: number
 }> = ({ discounts, isLoading }) => {
 	return (
-		<ul className={s.list}>
+		<>
 			{discounts?.length ? (
-				discounts?.map(item => (
-					<DiscountItem key={item.id} item={item} />
-				))
+				<ul className={s.list}>
+					{discounts?.map(item => (
+						<DiscountItem key={item.id} item={item} />
+					))}
+				</ul>
 			) : (
 				<NoResult message="No discounts found" />
 			)}
-		</ul>
+		</>
 	)
 }
 

@@ -26,13 +26,15 @@ export const useModifyParams = () => {
 					params.append(name, value)
 				}
 			} else {
-				const isExists = params.has(name, value)
+				const isExists =
+					params.has(name, value) && params.get(name) === value
 
-				if (!isExists) {
-					params.set(name, value)
-				} else {
+				if (isExists) {
 					params.delete(name)
+					return
 				}
+
+				params.set(name, value)
 			}
 
 			newQueryString = params.toString()

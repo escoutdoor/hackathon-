@@ -27,9 +27,11 @@ export const AuthService = {
 			url: `${AUTH_URL}/login`,
 			data,
 		})
+
 		if (response.data.accessToken) {
 			saveToStorage(response.data)
 		}
+
 		return response.data
 	},
 

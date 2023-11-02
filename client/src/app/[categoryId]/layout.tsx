@@ -1,19 +1,14 @@
-import AuthHeader from '@/components/ui/auth-header/AuthHeader'
 import { Metadata } from 'next'
 import { FC, PropsWithChildren } from 'react'
+import RootLayout from '../layout'
 
 export const metadata: Metadata = {
-	title: 'Search Discounts',
-	description: 'Search discounts',
+	title: 'Category',
+	description: 'Category',
 }
 
 const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
-	return (
-		<>
-			<AuthHeader />
-			{children}
-		</>
-	)
+	return <>{children}</>
 }
 
 export default Layout

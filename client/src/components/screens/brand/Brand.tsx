@@ -3,8 +3,6 @@ import { FC } from 'react'
 import { IBrand } from '@/shared/interfaces/brand.interface'
 import BreadCrumbs from './bread-crumbs/BreadCrumbs'
 import BrandCard from './brand-card/BrandCard'
-import DiscountList from '@/components/ui/discount-list/DiscountList'
-import DetailedDiscountItem from '@/components/ui/detailed-discount-item/DetailedDiscountItem'
 import DiscountCarousel from './discount-carousel/DiscountCarousel'
 
 const Brand: FC<{ brand: IBrand; isLoading: boolean }> = ({
@@ -20,17 +18,6 @@ const Brand: FC<{ brand: IBrand; isLoading: boolean }> = ({
 						brandName={brand?.name}
 					/>
 					{brand && <BrandCard brand={brand} />}
-					{brand && (
-						<h1 className={s.counter}>
-							{brand?.discounts.length} Available{' '}
-							{brand?.offerType.name}
-						</h1>
-					)}
-					<DiscountList
-						discounts={brand?.discounts || []}
-						isLoading={isLoading}
-						length={brand?.discounts?.length}
-					/>
 					{brand && <DiscountCarousel discounts={brand.discounts} />}
 				</div>
 			</div>
