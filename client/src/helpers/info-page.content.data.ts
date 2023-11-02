@@ -38,13 +38,13 @@ export const privacyData: IPrivacyData[] = [
 		type: 'list',
 		items: [
 			'Who we are',
-			'What information will Student Beans collect about me and how is it collected',
-			'How will Student Beans use the information it collects about me?',
-			'Why is Student Beans allowed to use my information in this way?',
+			'What information will Students Premium collect about me and how is it collected',
+			'How will Students Premium use the information it collects about me?',
+			'Why is Students Premium allowed to use my information in this way?',
 			'How long will you keep my personal data?',
 			'Do you share my data with any other organizations?',
 			'Your rights',
-			'When will Student Beans contact me?',
+			'When will Students Premium contact me?',
 			'Web browser cookies',
 			'Apps and Devices',
 			'Contact Details',
@@ -80,7 +80,7 @@ export const privacyData: IPrivacyData[] = [
 	{
 		type: 'preTitle',
 		content:
-			'What information will Student Beans collect about me and how is it collected?',
+			'What information will Students Premium collect about me and how is it collected?',
 	},
 	{
 		type: 'text',
@@ -97,18 +97,18 @@ export const privacyData: IPrivacyData[] = [
 		items: [
 			'Your email address;',
 			'Your date and year of birth;',
-			'Information relating to your student status such as your school, college or university. (When you verify your student status to receive your Student Beans ID you can chose a number of methods to verify and some of these may require extra data. You can choose how you verify and which personal data to provide as long as it meets our verification requirements.)',
+			'Information relating to your student status such as your school, college or university. (When you verify your student status to receive your Students Premium ID you can chose a number of methods to verify and some of these may require extra data. You can choose how you verify and which personal data to provide as long as it meets our verification requirements.)',
 		],
 	},
 	{
 		type: 'text',
 		content:
-			'If you’re signed in we’ll also know how you use Student Beans. This helps us give you a better, more personalised service, such as:',
+			'If you’re signed in we’ll also know how you use Students Premium. This helps us give you a better, more personalised service, such as:',
 	},
 	{
 		type: 'text',
 		content:
-			'Information You Give Us: we receive and store any information you provide in relation to Student Beans Services. You can choose not to provide certain information but then you might not be able to take advantage of many of our Services.',
+			'Information You Give Us: we receive and store any information you provide in relation to Students Premium Services. You can choose not to provide certain information but then you might not be able to take advantage of many of our Services.',
 	},
 	{
 		type: 'text',
@@ -129,7 +129,7 @@ export const privacyData: IPrivacyData[] = [
 	{
 		type: 'text',
 		content:
-			'Automatic Information: we automatically receive and store certain types of information when you use our Services, such as information about your use, including your interaction with content and services available through our Services. Like many websites, we use cookies and other unique identifiers and we obtain certain types of information when your web browser or device accesses Student Beans and other content served by or on behalf of Student Beans on other websites.',
+			'Automatic Information: we automatically receive and store certain types of information when you use our Services, such as information about your use, including your interaction with content and services available through our Services. Like many websites, we use cookies and other unique identifiers and we obtain certain types of information when your web browser or device accesses Students Premium and other content served by or on behalf of Students Premium on other websites.',
 	},
 	{
 		type: 'text',
@@ -164,29 +164,30 @@ export const privacyData: IPrivacyData[] = [
 	},
 	{
 		type: 'preTitle',
-		content: 'How will Student Beans use the information it collects about me?',
+		content:
+			'How will Students Premium use the information it collects about me?',
 	},
 	{
 		type: 'text',
 		content:
-			'Information about your age and location helps us see how different people are using the Site and Student Beans and to check we’re ensuring verified access only to exclusive student discounts.',
+			'Information about your age and location helps us see how different people are using the Site and Students Premium and to check we’re ensuring verified access only to exclusive student discounts.',
 	},
 	{
 		type: 'text',
 		content:
-			'Based on what we know about you, we may also show you adverts about Student Beans discounts and services on other websites, such as Facebook, Google, Instagram, Snapchat and Twitter. For instance, to let you know about an increased discount for a brand you love.',
+			'Based on what we know about you, we may also show you adverts about Students Premium discounts and services on other websites, such as Facebook, Google, Instagram, Snapchat and Twitter. For instance, to let you know about an increased discount for a brand you love.',
 	},
 	{
 		type: 'text',
 		content:
-			'We use your data to make the Site and Student Beans better for you and everyone. Your data helps us to operate, improve and maintain our business whilst at the same time enhances your user experience. This allows us to do things like:',
+			'We use your data to make the Site and Students Premium better for you and everyone. Your data helps us to operate, improve and maintain our business whilst at the same time enhances your user experience. This allows us to do things like:',
 	},
 	{
 		type: 'list',
 		items: [
 			'Recommend things we think you’ll like;',
 			'Notify you about things you’ve shown us you like, for example, a brand you like getting discounts from; and',
-			'Personalising parts of the Student Beans service to your tastes, including, for example, emails.',
+			'Personalising parts of the Students Premium service to your tastes, including, for example, emails.',
 		],
 	},
 	{
@@ -204,12 +205,13 @@ export const privacyData: IPrivacyData[] = [
 	},
 	{
 		type: 'preTitle',
-		content: 'Why is Student Beans allowed to use my information in this way?',
+		content:
+			'Why is Students Premium allowed to use my information in this way?',
 	},
 	{
 		type: 'text',
 		content:
-			'Student Beans will only use your personal data in the following circumstances:',
+			'Students Premium will only use your personal data in the following circumstances:',
 	},
 	{
 		type: 'list',
@@ -249,7 +251,7 @@ export const privacyData: IPrivacyData[] = [
 	{
 		type: 'text',
 		content:
-			'If you have not used your Student Beans account in the last year then your account may be classed as dormant or may be deleted in line with this Policy. Please check your inbox to see if we`ve sent you any emails about this recently.',
+			'If you have not used your Students Premium account in the last year then your account may be classed as dormant or may be deleted in line with this Policy. Please check your inbox to see if we`ve sent you any emails about this recently.',
 	},
 	{
 		type: 'preTitle',
@@ -258,14 +260,14 @@ export const privacyData: IPrivacyData[] = [
 	{
 		type: 'text',
 		content:
-			'We use your data to improve your experience. Our service means that we keep your personal data inside Student Beans unless we are required by law to disclose your data or you ask us or give us your permission to share it, for example:',
+			'We use your data to improve your experience. Our service means that we keep your personal data inside Students Premium unless we are required by law to disclose your data or you ask us or give us your permission to share it, for example:',
 	},
 	{
 		type: 'list',
 		items: [
 			'You ask us to or give us your permission to;',
 			'To provide you with a discount or access to a partner’s platform; or',
-			'If you agree to marketing emails and personalisation, to show you relevant messaging on your social media platforms, to let you know about Student Beans discounts we think you’ll enjoy.',
+			'If you agree to marketing emails and personalisation, to show you relevant messaging on your social media platforms, to let you know about Students Premium discounts we think you’ll enjoy.',
 			'Affiliate networks to track sales originating from our service.',
 		],
 	},
@@ -291,7 +293,8 @@ export const privacyData: IPrivacyData[] = [
 	},
 	{
 		type: 'text',
-		content: 'When we share your personal data outside Student Beans we will:',
+		content:
+			'When we share your personal data outside Students Premium we will:',
 	},
 	{
 		type: 'list',
@@ -304,12 +307,12 @@ export const privacyData: IPrivacyData[] = [
 	{
 		type: 'text',
 		content:
-			'If you have registered for a Student Beans account this will also allow you to login to third party partner websites and apps. To provide you with a seamless experience, it may be necessary to share your personal data with third party partner websites you choose to use your Student Beans login to access. We will only share what we need to in order to provide the service you are using and we will never routinely share all of the data we hold about you.',
+			'If you have registered for a Students Premium account this will also allow you to login to third party partner websites and apps. To provide you with a seamless experience, it may be necessary to share your personal data with third party partner websites you choose to use your Students Premium login to access. We will only share what we need to in order to provide the service you are using and we will never routinely share all of the data we hold about you.',
 	},
 	{
 		type: 'text',
 		content:
-			'Your Student Beans account will always be covered by the policies of the Site.',
+			'Your Students Premium account will always be covered by the policies of the Site.',
 	},
 	{
 		type: 'text',
@@ -323,7 +326,7 @@ export const privacyData: IPrivacyData[] = [
 	{
 		type: 'text',
 		content:
-			'Please note that where we provide links to third party websites, plug-ins and applications that are not affiliated with Student Beans such websites are out of our control and are not covered by this Policy. If you access third party websites using the links provided, the operators of these websites may collect information from you that could be used by them, in accordance with their own privacy policies. Please check these policies before you submit any personal data to these websites.',
+			'Please note that where we provide links to third party websites, plug-ins and applications that are not affiliated with Students Premium such websites are out of our control and are not covered by this Policy. If you access third party websites using the links provided, the operators of these websites may collect information from you that could be used by them, in accordance with their own privacy policies. Please check these policies before you submit any personal data to these websites.',
 	},
 	{
 		type: 'preTitle',
@@ -453,24 +456,24 @@ export const privacyData: IPrivacyData[] = [
 	},
 	{
 		type: 'preTitle',
-		content: 'When will Student Beans contact me?',
+		content: 'When will Students Premium contact me?',
 	},
 	{
 		type: 'list',
 		items: [
-			'in relation to any service, activity or online content you have signed up for, in order to ensure that we can deliver the services, e.g. to verify your email when you sign up for a Student Beans account, or to help you reset your password or we need to verify your student status.',
-			'in relation to any correspondence we receive from you or any comment or complaint you make about Student Beans products or services;',
+			'in relation to any service, activity or online content you have signed up for, in order to ensure that we can deliver the services, e.g. to verify your email when you sign up for a Students Premium account, or to help you reset your password or we need to verify your student status.',
+			'in relation to any correspondence we receive from you or any comment or complaint you make about Students Premium products or services;',
 			'in relation to any personalised services you are using;',
-			'in relation to any contribution you have submitted to Student Beans, e.g. on the Student Beans social message boards or via text or voicemail message;',
-			'to invite you to participate in surveys about Student Beans services (participation is always voluntary);',
-			'to update you on any material changes to Student Beans policies and practices; and',
+			'in relation to any contribution you have submitted to Students Premium, e.g. on the Students Premium social message boards or via text or voicemail message;',
+			'to invite you to participate in surveys about Students Premium services (participation is always voluntary);',
+			'to update you on any material changes to Students Premium policies and practices; and',
 			'for marketing purposes, as set out below.',
 		],
 	},
 	{
 		type: 'text',
 		content:
-			'We will never contact you to ask for your Student Beans account password, or other login information. Please be cautious if you receive any emails or calls from people asking for this information and claiming to be from Student Beans.',
+			'We will never contact you to ask for your Students Premium account password, or other login information. Please be cautious if you receive any emails or calls from people asking for this information and claiming to be from Students Premium.',
 	},
 	{
 		type: 'preTitle',
@@ -479,12 +482,12 @@ export const privacyData: IPrivacyData[] = [
 	{
 		type: 'text',
 		content:
-			'Student Beans will only send you marketing emails or contact you on Student Beans platforms where you have agreed to this.',
+			'Students Premium will only send you marketing emails or contact you on Students Premium platforms where you have agreed to this.',
 	},
 	{
 		type: 'text',
 		content:
-			'We offer regular emails, including a weekly update, to let you know about new discounts and services. From time to time we may also contact you to ask your views on issues affecting Student Beans.',
+			'We offer regular emails, including a weekly update, to let you know about new discounts and services. From time to time we may also contact you to ask your views on issues affecting Students Premium.',
 	},
 	{
 		type: 'text',
@@ -494,7 +497,7 @@ export const privacyData: IPrivacyData[] = [
 	{
 		type: 'text',
 		content:
-			'We may use information which we hold about you to show you relevant advertising on third party websites (e.g. Facebook, Google, Instagram, Snapchat and Twitter). This could involve showing you an advertising message where we know you have a Student Beans account and have used Student Beans discounts. If you don’t want to be shown targeted advertising messages from Student Beans, some third party websites allow you to request not to see messages from specific advertisers on that website in future.',
+			'We may use information which we hold about you to show you relevant advertising on third party websites (e.g. Facebook, Google, Instagram, Snapchat and Twitter). This could involve showing you an advertising message where we know you have a Students Premium account and have used Students Premium discounts. If you don’t want to be shown targeted advertising messages from Students Premium, some third party websites allow you to request not to see messages from specific advertisers on that website in future.',
 	},
 	{
 		type: 'preTitle',
@@ -516,26 +519,26 @@ export const privacyData: IPrivacyData[] = [
 	},
 	{
 		type: 'text',
-		content: '2) How does Student Beans use cookies?',
+		content: '2) How does Students Premium use cookies?',
 	},
 	{
 		type: 'text',
 		content:
-			'Information supplied by cookies can help us to understand the profile of our visitors and help us to provide you with a better user experience. It also helps us recognise when you are signed in to your Student Beans account and to provide a more personalised experience. Student Beans uses this type of information to help improve the services it provides to its users.',
+			'Information supplied by cookies can help us to understand the profile of our visitors and help us to provide you with a better user experience. It also helps us recognise when you are signed in to your Students Premium account and to provide a more personalised experience. Students Premium uses this type of information to help improve the services it provides to its users.',
 	},
 	{
 		type: 'text',
-		content: '3) Student Beans cookies and how to reject cookies',
-	},
-	{
-		type: 'text',
-		content:
-			'Full information about how Student Beans uses cookies, and how to control what cookies are set on your device through the Site, can be found on Using Student Beans.',
+		content: '3) Students Premium cookies and how to reject cookies',
 	},
 	{
 		type: 'text',
 		content:
-			'It is important to note that if you change your settings and block certain cookies, you will not be able to take full advantage of some features of Student Beans services, and we might not be able to provide some features you have previously chosen to receive.',
+			'Full information about how Students Premium uses cookies, and how to control what cookies are set on your device through the Site, can be found on Using Students Premium.',
+	},
+	{
+		type: 'text',
+		content:
+			'It is important to note that if you change your settings and block certain cookies, you will not be able to take full advantage of some features of Students Premium services, and we might not be able to provide some features you have previously chosen to receive.',
 	},
 	{
 		type: 'text',
@@ -544,7 +547,7 @@ export const privacyData: IPrivacyData[] = [
 	{
 		type: 'text',
 		content:
-			'Your web browser may also provide Student Beans with information about your device, such as an IP address and details about the browser that you are using. Where requesting local discounts, it may be possible for you to choose to provide Student Beans with access to your device’s location through the web-browser. We use information provided by your browser or by the link that you have clicked to understand the webpage that directed you to Student Beans and this may be captured by performance cookies.',
+			'Your web browser may also provide Students Premium with information about your device, such as an IP address and details about the browser that you are using. Where requesting local discounts, it may be possible for you to choose to provide Students Premium with access to your device’s location through the web-browser. We use information provided by your browser or by the link that you have clicked to understand the webpage that directed you to Students Premium and this may be captured by performance cookies.',
 	},
 	{
 		type: 'text',
@@ -558,17 +561,17 @@ export const privacyData: IPrivacyData[] = [
 	{
 		type: 'text',
 		content:
-			'When you download or use the Student Beans app on your mobile device, information may be accessed from or stored to your device. Most often this is used in a similar way to a web browser cookie, such as by enabling the app to ‘remember’ you or provide you with the content you have requested.',
+			'When you download or use the Students Premium app on your mobile device, information may be accessed from or stored to your device. Most often this is used in a similar way to a web browser cookie, such as by enabling the app to ‘remember’ you or provide you with the content you have requested.',
 	},
 	{
 		type: 'text',
 		content:
-			'Your web browser or device may also provide Student Beans with information about your device, such as a device identifier or IP address. Device identifiers may be collected automatically, such as the device ID, IP address, MAC address, IMEI number and app ID (a unique identifier relating to the particular copy of the app you are running).',
+			'Your web browser or device may also provide Students Premium with information about your device, such as a device identifier or IP address. Device identifiers may be collected automatically, such as the device ID, IP address, MAC address, IMEI number and app ID (a unique identifier relating to the particular copy of the app you are running).',
 	},
 	{
 		type: 'text',
 		content:
-			'When you sign in to the Student Beans app, your sign-in details may be stored securely on the device you are using, so you can access on the same device without needing to enter your sign-in details again.',
+			'When you sign in to the Students Premium app, your sign-in details may be stored securely on the device you are using, so you can access on the same device without needing to enter your sign-in details again.',
 	},
 	{
 		type: 'preTitle',

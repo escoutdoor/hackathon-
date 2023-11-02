@@ -1,5 +1,6 @@
 import { Montserrat } from 'next/font/google'
 import './globals.scss'
+
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
@@ -33,9 +34,13 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={montserrat.className}>
 				<Providers>
+<<<<<<< HEAD
 					<MainLayout>
 						<Providers>{children}</Providers>
 					</MainLayout>
+=======
+					<MainLayout>{children}</MainLayout>
+>>>>>>> oryn
 				</Providers>
 			</body>
 		</html>

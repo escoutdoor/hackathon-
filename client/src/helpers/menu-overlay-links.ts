@@ -8,13 +8,13 @@ export const menuOverlayLinks: IHeaderBottomItem[] = [
 	},
 	{
 		id: 2,
-		text: 'Student Beans',
-		href: 'student-beans',
+		text: 'Students Premium',
+		href: 'students-premium',
 	},
 	{
 		id: 3,
 		text: 'Privacy Policy',
-		href: 'privacy-policy',
+		href: '/info/privacy',
 	},
 	{
 		id: 4,

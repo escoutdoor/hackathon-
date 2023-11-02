@@ -42,16 +42,7 @@ const Field = forwardRef<HTMLInputElement, IField>(function Comp(
 				</div>
 			)}
 			{rest.placeholder !== 'Search for your institution' || !control ? (
-				<input
-					className={s.input}
-					{...rest}
-					ref={ref}
-					// onChange={e => {
-					// 	if (rest.placeholder === 'e.g. name@nmu.one') {
-					// 		studentEmail = e.target.value
-					// 	}
-					// }}
-				/>
+				<input className={s.input} {...rest} ref={ref} />
 			) : (
 				<Controller
 					name="institution"
