@@ -4,6 +4,7 @@ export const returnDiscountFields = {
 	description: true,
 	image: true,
 	brandName: true,
+	conditions: true,
 	brand: {
 		select: {
 			id: true,

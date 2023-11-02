@@ -6,7 +6,7 @@ import { getContentType } from '@/api/api.helper'
 import { EnumTokens, saveToStorage } from './auth.helper'
 import { instance } from '@/api/api.interceptor'
 
-const AUTH_URL = '/auth'
+const AUTH_URL = '/api/auth'
 
 export const AuthService = {
 	async register(data: ICreateUserInfo) {
@@ -27,9 +27,11 @@ export const AuthService = {
 			url: `${AUTH_URL}/login`,
 			data,
 		})
+
 		if (response.data.accessToken) {
 			saveToStorage(response.data)
 		}
+
 		return response.data
 	},
 

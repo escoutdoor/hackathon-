@@ -1,0 +1,16 @@
+.item {
+	width: 100%;
+	max-width: 390px;
+	border-radius: 5px;
+	border-width: 17px 2px 2px 2px;
+	border-color: var(--purple);
+	border-style: solid;
+
+	.container {
+		border-radius: 5px;
+		overflow: hidden;
+
+		> img {
+		}
+	}
+}

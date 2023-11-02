@@ -1,0 +1,15 @@
+.item {
+	padding: 0px 14px 0;
+	border-bottom: 1px solid #e0e4eb;
+
+	.list {
+		max-height: 0px;
+		overflow-y: auto;
+		transition: padding 0.2s ease-in-out;
+
+		&.active {
+			max-height: 200px;
+			padding-bottom: 10px;
+		}
+	}
+}

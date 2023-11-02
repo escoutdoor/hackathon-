@@ -7,11 +7,17 @@ const DISCOUNT = '/api/discounts'
 
 export const DiscountService = {
 	async getAll(options: IFilterOptions) {
+		const params = {
+			...options,
+			offerTypes: getString(options.offerTypes) || 'student-discount',
+			...(options.brands?.length && {
+				brands: getString(options.brands),
+			}),
+			...(options.category && { category: options.category }),
+		}
+
 		return await axios.get<IDiscountResponse>(`${DISCOUNT}`, {
-			params: {
-				...options,
-				offerTypes: getString(options.offerTypes),
-			},
+			params,
 		})
 	},
 }

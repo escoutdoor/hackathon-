@@ -10,6 +10,7 @@ import StudentsPage from './student-page/StudentPage'
 import InstitutionPage from './institution-page/InstitutionPage'
 import Loader from './loader/Loader'
 import CheckPage from './check-page/CheckPage'
+import { useSendCode } from '@/hooks/useSendCode'
 
 const Register: FC<{
 	activePage: string
@@ -19,7 +20,7 @@ const Register: FC<{
 
 	const {
 		register: formRegister,
-		formState: { errors, isValid },
+		formState: { errors },
 		handleSubmit,
 		getValues,
 		control,
@@ -31,8 +32,14 @@ const Register: FC<{
 	})
 
 	const onSubmit: SubmitHandler<TRegisterSchema> = data => {
-		register(data)
+		console.log(data)
+		register({
+			...data,
+			university: data.university.label,
+		})
 	}
+
+	const { sendEmail, verificationCode } = useSendCode({ setActivePage })
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
@@ -41,6 +48,7 @@ const Register: FC<{
 					register={formRegister}
 					errors={errors}
 					setActivePage={setActivePage}
+					watch={watch}
 				/>
 			) : activePage === 'detailsname' ? (
 				<DetailsPage
@@ -49,12 +57,14 @@ const Register: FC<{
 					setActivePage={setActivePage}
 					watch={watch}
 					setValue={setValue}
+					getValues={getValues}
 				/>
 			) : activePage === 'studentstatus' ? (
 				<StudentsPage
 					register={formRegister}
 					errors={errors}
 					setActivePage={setActivePage}
+					watch={watch}
 				/>
 			) : activePage === 'country' ? (
 				<InstitutionPage
@@ -63,6 +73,8 @@ const Register: FC<{
 					setActivePage={setActivePage}
 					control={control}
 					getValues={getValues}
+					watch={watch}
+					sendEmail={sendEmail}
 				/>
 			) : activePage === 'loader' ? (
 				<Loader />
@@ -72,7 +84,8 @@ const Register: FC<{
 						register={formRegister}
 						errors={errors}
 						setActivePage={setActivePage}
-						getValues={getValues}
+						watch={watch}
+						verificationCode={verificationCode}
 					/>
 				)
 			)}

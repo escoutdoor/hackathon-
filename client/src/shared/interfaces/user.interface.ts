@@ -17,7 +17,19 @@ export interface IAddress {
 	street?: string
 }
 
-export interface ICreateUserInfo extends Omit<IUser, 'id' | 'avatarPath'> {}
+export interface ICreateUserInfo {
+	email: string
+
+	firstName: string
+	lastName: string
+
+	password: string
+
+	university: string
+	graduationYear: number
+
+	studentEmail: string
+}
 
 export interface ILoginInfo extends Pick<IUser, 'email'> {
 	password: string

@@ -5,7 +5,9 @@ import s from './details-page.module.scss'
 import ErrorText from '@/components/ui/field/error-text/ErrorText'
 import Button from '@/components/ui/button/Button'
 import {
+	FieldError,
 	FieldErrors,
+	UseFormGetValues,
 	UseFormRegister,
 	UseFormSetValue,
 	UseFormWatch,
@@ -18,6 +20,7 @@ interface IDetailsPage {
 	setActivePage: Dispatch<SetStateAction<string>>
 	watch: UseFormWatch<TRegisterSchema>
 	setValue: UseFormSetValue<TRegisterSchema>
+	getValues: UseFormGetValues<TRegisterSchema>
 }
 
 const DetailsPage: FC<IDetailsPage> = ({
@@ -30,6 +33,9 @@ const DetailsPage: FC<IDetailsPage> = ({
 	const day = watch('day')
 	const month = watch('month')
 	const year = watch('year')
+
+	const firstNameValue = watch('firstName')
+	const lastNameValue = watch('lastName')
 
 	useEffect(() => {
 		if (day && month && year) {
@@ -93,7 +99,14 @@ const DetailsPage: FC<IDetailsPage> = ({
 			<div className={s.buttonBlock}>
 				<Button
 					onClick={() => setActivePage('studentstatus')}
-					disabled={Object.keys(errors).length !== 0}
+					disabled={
+						!day ||
+						!month ||
+						!year ||
+						!firstNameValue ||
+						!lastNameValue ||
+						Object.keys(errors).length !== 0
+					}
 				>
 					Continue
 				</Button>

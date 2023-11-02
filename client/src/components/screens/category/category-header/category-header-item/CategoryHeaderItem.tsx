@@ -5,13 +5,12 @@ import { ICategory } from '@/shared/interfaces/filter-options.interface'
 import { usePathname, useRouter } from 'next/navigation'
 
 const CategoryHeaderItem: FC<{ category: ICategory }> = ({ category }) => {
-	const { push } = useRouter()
+	const { replace, push } = useRouter()
 	const pathname = usePathname()
 
 	const handleClick = () => {
 		push(`/${category.slug}`)
 	}
-
 	return (
 		<li
 			className={

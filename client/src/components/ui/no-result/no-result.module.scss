@@ -1,0 +1,22 @@
+.no__result {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+	align-items: center;
+	flex-direction: column;
+
+	.img {
+		height: auto;
+		width: auto;
+		object-fit: cover;
+		max-height: 500px;
+	}
+
+	> span {
+		font-size: 18px;
+		line-height: 1.4;
+		margin-top: 30px;
+		color: var(--dark-blue);
+	}
+}

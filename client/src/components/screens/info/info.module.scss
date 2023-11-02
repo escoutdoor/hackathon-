@@ -1,0 +1,36 @@
+.wrapper {
+	width: 520px;
+	margin: 0 auto;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		.title {
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 29px;
+			color: var(--black);
+		}
+
+		.text {
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 24px;
+			color: var(--black);
+			list-style-type: decimal;
+		}
+
+		.preTitle {
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 18px;
+			color: var(--black);
+		}
+
+		.list {
+			padding-left: 40px;
+		}
+	}
+}

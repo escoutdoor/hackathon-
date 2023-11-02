@@ -23,7 +23,7 @@ const HeaderBottomItem: FC<{ item: IHeaderBottomItem }> = ({ item }) => {
 					</ul>
 				</span>
 			) : (
-				<PurpleLink href={item.href}>{item.text}</PurpleLink>
+				<PurpleLink href={`/${item.href}`}>{item.text}</PurpleLink>
 			)}
 		</li>
 	)

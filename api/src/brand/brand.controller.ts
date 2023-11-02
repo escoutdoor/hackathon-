@@ -32,4 +32,9 @@ export class BrandController {
 	async getSimilarById(@Param('id') id: string) {
 		return await this.brandService.getSimilarById(id)
 	}
+
+	@Get('')
+	async getAll() {
+		return await this.brandService.getAll()
+	}
 }

@@ -65,7 +65,10 @@ export const registerSchema = z.object({
 				if (isNaN(numericValue)) {
 					return false
 				}
-				return numericValue >= 1900 && numericValue <= new Date().getFullYear()
+				return (
+					numericValue >= 1900 &&
+					numericValue <= new Date().getFullYear()
+				)
 			} else if (typeof value === 'number') {
 				return value >= 1900 && value <= new Date().getFullYear()
 			}
@@ -76,7 +79,7 @@ export const registerSchema = z.object({
 		}
 	),
 	dateOfBirth: z.date(),
-	graduationYear: z.string().refine(
+	graduationYear: z.number().refine(
 		value => {
 			if (typeof value === 'string') {
 				const numericValue = Number(value)
@@ -102,7 +105,7 @@ export const registerSchema = z.object({
 	studentEmail: z.string().email({
 		message: 'Email is invalid',
 	}),
-	institution: z
+	university: z
 		.object({
 			label: z.string(),
 			value: z.number(),

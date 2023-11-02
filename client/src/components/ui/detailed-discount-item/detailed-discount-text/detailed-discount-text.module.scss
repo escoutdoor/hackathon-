@@ -1,0 +1,23 @@
+.text {
+	background-color: #fff;
+	padding: 16px;
+
+	.title {
+		color: #272727;
+		font-size: 14px;
+		line-height: 1.4;
+		max-height: 72px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+
+	.description {
+		color: #a2aec3;
+		font-size: 11px;
+		line-height: 1.4;
+		margin-top: 5px;
+	}
+}

@@ -7,7 +7,7 @@ const CategoryHeader: FC<{ categories: ICategory[] }> = ({ categories }) => {
 	return (
 		<ul className={s.list}>
 			{categories.map(category => (
-				<CategoryHeaderItem key={category.id} category={category} />
+				<CategoryHeaderItem key={category.slug} category={category} />
 			))}
 		</ul>
 	)

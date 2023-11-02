@@ -1,3 +1,4 @@
+import { Transform } from 'class-transformer'
 import { IsEmail, IsInt, IsString, Min, MinLength } from 'class-validator'
 
 export class LoginDto {
@@ -34,12 +35,13 @@ export class RegisterDto {
 
 	@IsString()
 	@IsEmail()
-	studentsEmail: string
+	studentEmail: string
 
 	@IsString()
 	university: string
 
 	@IsInt()
+	@Transform(({ value }) => +value)
 	@Min(2023, {
 		message: 'Graduation year must be at least 2023',
 	})

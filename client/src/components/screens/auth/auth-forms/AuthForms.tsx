@@ -1,9 +1,9 @@
 'use client'
 import s from './auth-forms.module.scss'
-import { useRouter, useSearchParams } from 'next/navigation'
 import { FC, useState } from 'react'
 import Login from './login/Login'
 import Register from './register/Register'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 const AuthForms: FC = () => {
 	const { get } = useSearchParams()

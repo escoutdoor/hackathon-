@@ -1,7 +1,7 @@
 import { instance } from '@/api/api.interceptor'
 import { IUser } from '@/shared/interfaces/user.interface'
 
-const USERS_URL = '/users'
+const USERS_URL = '/api/users'
 
 export const UserService = {
 	async getProfile() {
