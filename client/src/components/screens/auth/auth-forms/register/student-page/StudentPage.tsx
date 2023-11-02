@@ -20,6 +20,7 @@ const StudentsPage: FC<IDetailsPage> = ({
 }) => {
 	const graduationYearValue = watch('graduationYear')
 	const studentEmailValue = watch('studentEmail')
+
 	return (
 		<>
 			<div className={s.progressbar}>
@@ -30,21 +31,21 @@ const StudentsPage: FC<IDetailsPage> = ({
 			</h2>
 			<Field
 				{...register('graduationYear')}
-				label='Graduation year'
+				label="Graduation year"
 				error={errors.graduationYear?.message}
-				type='text'
+				type="text"
 				required
 				defaultValue={2023}
 				style={{ marginBottom: '20px' }}
 			/>
 			<Field
 				{...register('studentEmail')}
-				label='Student email address
-'
+				label="Student email address
+"
 				error={errors.email?.message}
-				type='email'
+				type="email"
 				required
-				placeholder='e.g. name@nmu.one'
+				placeholder="e.g. name@nmu.one"
 			/>
 			<Button
 				onClick={() => setActivePage('country')}

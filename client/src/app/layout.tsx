@@ -29,15 +29,14 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	const pathname = usePathname()
 	return (
-		<html lang='en'>
+		<html lang="en">
 			<body className={montserrat.className}>
-				<>
-					{pathname !== '/auth' && !pathname.match('/info') && <Header />}
-					<Providers>{children}</Providers>
-					{pathname !== '/auth' && !pathname.match('/info') && <Footer />}
-				</>
+				<Providers>
+					<MainLayout>
+						<Providers>{children}</Providers>
+					</MainLayout>
+				</Providers>
 			</body>
 		</html>
 	)

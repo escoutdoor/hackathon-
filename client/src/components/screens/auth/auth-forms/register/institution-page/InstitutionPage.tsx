@@ -29,7 +29,7 @@ const InstitutionPage: FC<IDetailsPage> = ({
 	getValues,
 	watch,
 }) => {
-	const institutionValue = watch('institution')
+	const institutionValue = watch('university')
 
 	const { sendEmail } = useSendCode({
 		setActivePage,
@@ -40,6 +40,8 @@ const InstitutionPage: FC<IDetailsPage> = ({
 		sendEmail(values.studentEmail)
 	}
 
+	console.log(institutionValue)
+
 	return (
 		<>
 			<div className={s.progressbar}>
@@ -49,12 +51,12 @@ const InstitutionPage: FC<IDetailsPage> = ({
 				Where do you study?
 			</h2>
 			<Field
-				{...register('institution')}
-				label='Institution'
-				error={errors.institution?.message}
-				type='text'
+				{...register('university.label')}
+				label="Institution"
+				error={errors.university?.label?.message}
+				type="text"
 				required
-				placeholder='Search for your institution'
+				placeholder="Search for your institution"
 				control={control}
 			/>
 			<Button

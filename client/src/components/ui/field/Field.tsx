@@ -26,7 +26,9 @@ const Field = forwardRef<HTMLInputElement, IField>(function Comp(
 			label: university,
 		}))
 	return (
-		<div className={rest.maxLength === 4 ? `${s.field} ${s.year}` : s.field}>
+		<div
+			className={rest.maxLength === 4 ? `${s.field} ${s.year}` : s.field}
+		>
 			<label>
 				<h1 className={s.title}>{label}</h1>
 			</label>
@@ -52,13 +54,13 @@ const Field = forwardRef<HTMLInputElement, IField>(function Comp(
 				/>
 			) : (
 				<Controller
-					name='institution'
+					name="institution"
 					control={control}
 					render={({ field }) => (
 						<Select
 							{...field}
 							options={universityOptions}
-							placeholder='Search for your institution'
+							placeholder="Search for your institution"
 						/>
 					)}
 				/>
