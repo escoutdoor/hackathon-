@@ -24,7 +24,6 @@ const CheckPage: FC<ICheckPage> = ({
 	verificationCode,
 }) => {
 	const verifyCodeValue = watch('verifyCode')
-
 	const [wrongCodeError, setWrongCodeError] = useState<boolean>(false)
 
 	const checkCode = () => {
@@ -53,23 +52,27 @@ const CheckPage: FC<ICheckPage> = ({
 						src={'/images/img/message.jpg'}
 						width={196}
 						height={123}
-						alt=''
+						alt=""
 						className={s.image}
 					/>
 
 					<Field
 						{...register('verifyCode')}
-						label='Verification code'
-						error={wrongCodeError ? 'Wrong code' : errors.verifyCode?.message}
-						type='text'
+						label="Verification code"
+						error={
+							wrongCodeError
+								? 'Wrong code'
+								: errors.verifyCode?.message
+						}
+						type="text"
 						required
-						placeholder='Write here verification code'
+						placeholder="Write here verification code"
 					/>
 					<Button
 						disabled={!verifyCodeValue}
 						onClick={checkCode}
 						style={{ marginTop: '20px' }}
-						type='submit'
+						type="submit"
 					>
 						Continue
 					</Button>

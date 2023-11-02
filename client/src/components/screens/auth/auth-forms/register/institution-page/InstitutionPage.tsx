@@ -50,7 +50,7 @@ const InstitutionPage: FC<IDetailsPage> = ({
 			<Field
 				{...register('university.label')}
 				label="Institution"
-				error={errors.university?.label?.message}
+				error={errors.university?.message}
 				type="text"
 				required
 				placeholder="Search for your institution"

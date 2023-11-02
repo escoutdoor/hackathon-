@@ -32,7 +32,11 @@ const Register: FC<{
 	})
 
 	const onSubmit: SubmitHandler<TRegisterSchema> = data => {
-		register(data)
+		console.log(data)
+		register({
+			...data,
+			university: data.university.label,
+		})
 	}
 
 	const { sendEmail, verificationCode } = useSendCode({ setActivePage })

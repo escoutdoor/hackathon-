@@ -34,13 +34,9 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={montserrat.className}>
 				<Providers>
-<<<<<<< HEAD
 					<MainLayout>
 						<Providers>{children}</Providers>
 					</MainLayout>
-=======
-					<MainLayout>{children}</MainLayout>
->>>>>>> oryn
 				</Providers>
 			</body>
 		</html>

@@ -79,7 +79,7 @@ export const registerSchema = z.object({
 		}
 	),
 	dateOfBirth: z.date(),
-	graduationYear: z.string().refine(
+	graduationYear: z.number().refine(
 		value => {
 			if (typeof value === 'string') {
 				const numericValue = Number(value)
