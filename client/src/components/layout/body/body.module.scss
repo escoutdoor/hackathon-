@@ -11,10 +11,12 @@
 			.upload {
 				position: relative;
 				width: 100px;
-				margin: auto;
-
+				align-self: flex-start;
 				.img {
-					border-radius: 30%;		
+					border-radius: 30%;
+					&:hover {
+						border: 3px dashed blueviolet;
+					}	
 				}
 				.round {
 					position: absolute;
@@ -24,9 +26,12 @@
 					height: 32px;
 					line-height: 33px;
 					overflow: hidden;
+					
 					.icon {
 						width: 40px;
 						height: 35px;
+						margin-left: -5px;
+						margin-bottom: -10px;
 						color: blueviolet;
 					}
 					> input[type='file'] {
@@ -34,6 +39,10 @@
 						transform: scale(2);
 						opacity: 0;
 					}
+					> input[type=file]::-webkit-file-upload-button {
+						cursor: pointer;
+					}
+
 				}
 			}
 		}

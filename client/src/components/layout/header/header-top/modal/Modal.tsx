@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 import { IModalProps } from '@/interfaces/header-top-module.interface';
 import {GrClose} from 'react-icons/gr'
-=======
-import { IModalProps } from '@/interfaces/header-top-module.interface'
-import React from 'react'
-import { GrClose } from 'react-icons/gr'
->>>>>>> 1a5bb5833a42760100b85f73397f020ca2192811
 import s from './modal.module.scss'
 import Categories from './categories/Categories'
 import { useRouter } from 'next/navigation'
