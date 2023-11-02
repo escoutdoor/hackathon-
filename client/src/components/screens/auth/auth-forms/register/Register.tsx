@@ -1,7 +1,7 @@
 'use client'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Dispatch, FC, SetStateAction } from 'react'
+import { Dispatch, FC, SetStateAction, useState } from 'react'
 import { useActions } from '@/hooks/useActions'
 import { TRegisterSchema, registerSchema } from '@/libs/schemas/register.schema'
 import CreatePage from './create-page/CreatePage'
@@ -11,12 +11,17 @@ import InstitutionPage from './institution-page/InstitutionPage'
 import Loader from './loader/Loader'
 import CheckPage from './check-page/CheckPage'
 import { useSendCode } from '@/hooks/useSendCode'
+import Button from '@/components/ui/button/Button'
 
 const Register: FC<{
 	activePage: string
 	setActivePage: Dispatch<SetStateAction<string>>
 }> = ({ activePage, setActivePage }) => {
 	const { register } = useActions()
+
+	const { sendEmail, verificationCode } = useSendCode({ setActivePage })
+
+	const [wrongCodeError, setWrongCodeError] = useState<boolean>(false)
 
 	const {
 		register: formRegister,
@@ -31,15 +36,20 @@ const Register: FC<{
 		resolver: zodResolver(registerSchema),
 	})
 
-	const onSubmit: SubmitHandler<TRegisterSchema> = data => {
-		console.log(data)
-		register({
-			...data,
-			university: data.university.label,
-		})
-	}
+	const verifyCodeValue = watch('verifyCode')
 
-	const { sendEmail, verificationCode } = useSendCode({ setActivePage })
+	const onSubmit: SubmitHandler<TRegisterSchema> = data => {
+		if (verifyCodeValue === verificationCode) {
+			setWrongCodeError(false)
+			console.log(data)
+
+			const { day, month, year, verifyCode, ...filteredData } = data
+
+			register(filteredData)
+		} else {
+			setWrongCodeError(true)
+		}
+	}
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
@@ -80,13 +90,16 @@ const Register: FC<{
 				<Loader />
 			) : (
 				activePage === 'checkemail' && (
-					<CheckPage
-						register={formRegister}
-						errors={errors}
-						setActivePage={setActivePage}
-						watch={watch}
-						verificationCode={verificationCode}
-					/>
+					<>
+						<CheckPage
+							register={formRegister}
+							errors={errors}
+							setActivePage={setActivePage}
+							watch={watch}
+							verifyCodeValue={verifyCodeValue}
+							wrongCodeError={wrongCodeError}
+						/>
+					</>
 				)
 			)}
 		</form>

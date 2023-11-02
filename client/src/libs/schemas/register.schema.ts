@@ -65,10 +65,7 @@ export const registerSchema = z.object({
 				if (isNaN(numericValue)) {
 					return false
 				}
-				return (
-					numericValue >= 1900 &&
-					numericValue <= new Date().getFullYear()
-				)
+				return numericValue >= 1900 && numericValue <= new Date().getFullYear()
 			} else if (typeof value === 'number') {
 				return value >= 1900 && value <= new Date().getFullYear()
 			}
@@ -110,9 +107,18 @@ export const registerSchema = z.object({
 			label: z.string(),
 			value: z.number(),
 		})
-		.refine(value => universities.includes(value.label), {
-			message: `There is no such university in our database. Please, contact us to add your university to our database`,
-		}),
+		.refine(
+			value => {
+				if (typeof value === 'object') {
+					const university = value.label
+					return universities.includes(university)
+				}
+			},
+			{
+				message: `There is no such university in our database. Please, contact us to add your university to our database`,
+			}
+		)
+		.transform(value => value.label),
 	verifyCode: z.string(),
 })
 
