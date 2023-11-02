@@ -13,10 +13,10 @@ const Home: NextPage = () => {
 	const { discounts, isLoading, length } = useFilteredDiscounts({
 		category: 'food-drink',
 	})
-	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [isModalOpen, setIsModalOpen] = useState(false)
 	const onModalCloseRequest = (): void => {
-    setIsModalOpen(false);
-  };
+		setIsModalOpen(false)
+	}
 
 	return (
 		<div className={s.home}>
@@ -26,12 +26,12 @@ const Home: NextPage = () => {
 						Making student life a little sweeter and a lot cheaper
 					</h1>
 					<div className={s.search} onClick={() => setIsModalOpen(true)}>
-						<FiSearch/>
-						<p className={s.input}>Search Student Beans</p>
+						<FiSearch />
+						<p className={s.input}>Search Students Premium</p>
 					</div>
 				</div>
 			</div>
-			<div className="wrapper">
+			<div className='wrapper'>
 				<DiscountList
 					discounts={discounts}
 					isLoading={isLoading}
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
 				/>
 				<Carousel />
 			</div>
-			<Modal isOpen={isModalOpen} onCloseRequest={onModalCloseRequest}/>
+			<Modal isOpen={isModalOpen} onCloseRequest={onModalCloseRequest} />
 		</div>
 	)
 }

@@ -9,9 +9,9 @@ const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
 
 	return (
 		<>
-			{pathname !== '/auth' && <Header />}
+			{pathname !== '/auth' && !pathname.match('/info') && <Header />}
 			{children}
-			{pathname !== '/auth' && <Footer />}
+			{pathname !== '/auth' && !pathname.match('/info') && <Footer />}
 		</>
 	)
 }

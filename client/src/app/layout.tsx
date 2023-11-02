@@ -1,5 +1,6 @@
 import { Montserrat } from 'next/font/google'
 import './globals.scss'
+
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
@@ -29,15 +30,12 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	const pathname = usePathname()
 	return (
 		<html lang='en'>
 			<body className={montserrat.className}>
-				<>
-					{pathname !== '/auth' && !pathname.match('/info') && <Header />}
-					<Providers>{children}</Providers>
-					{pathname !== '/auth' && !pathname.match('/info') && <Footer />}
-				</>
+				<Providers>
+					<MainLayout>{children}</MainLayout>
+				</Providers>
 			</body>
 		</html>
 	)

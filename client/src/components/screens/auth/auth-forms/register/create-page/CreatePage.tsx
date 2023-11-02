@@ -61,7 +61,7 @@ const CreatePage: FC<ICreatePage> = ({
 				</Button>
 			</div>
 			<div className={s.policy}>
-				By continuing to create an account, you agree to Student Beans'{' '}
+				By continuing to create an account, you agree to Students Premium'{' '}
 				<Link className={s.link} href={'#'}>
 					Terms & Conditions
 				</Link>{' '}

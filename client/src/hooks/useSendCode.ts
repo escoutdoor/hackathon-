@@ -1,3 +1,4 @@
+'use client'
 import { Dispatch, SetStateAction, useState } from 'react'
 import emailjs from '@emailjs/browser'
 
@@ -6,19 +7,18 @@ interface ISendCode {
 }
 
 export const useSendCode = ({ setActivePage }: ISendCode) => {
-	const [verificationCode, setVerificationCode] = useState('')
+	const [verificationCode, setVerificationCode] = useState<string>('')
 
 	const templateParams = {
 		user_email: '',
 		verify_code: '',
 	}
 
-	const sendEmail = async (studentEmail: string) => {
+	const sendEmail = (studentEmail: string) => {
 		genVerifyCode()
 		templateParams.user_email = studentEmail
-		setActivePage('loader')
+
 		templateParams.verify_code &&
-			templateParams.user_email &&
 			emailjs
 				.send(
 					'service_pyb3ye7',
@@ -29,6 +29,7 @@ export const useSendCode = ({ setActivePage }: ISendCode) => {
 				.then(() => {
 					setVerificationCode(templateParams.verify_code)
 					setActivePage('checkemail')
+					console.log(templateParams.verify_code)
 				})
 	}
 
