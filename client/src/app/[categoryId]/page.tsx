@@ -35,7 +35,7 @@ export default function CategoryPage({
 		<Category
 			discounts={discounts || []}
 			length={length as number}
-			isLoading={isLoading}
+			isLoading={false}
 		/>
 	)
 }

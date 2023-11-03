@@ -28,11 +28,6 @@ export class BrandController {
 		return await this.brandService.createBrand(dto)
 	}
 
-	@Get('/similar/:id')
-	async getSimilarById(@Param('id') id: string) {
-		return await this.brandService.getSimilarById(id)
-	}
-
 	@Get('')
 	async getAll() {
 		return await this.brandService.getAll()

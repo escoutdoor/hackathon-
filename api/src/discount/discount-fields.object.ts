@@ -10,6 +10,8 @@ export const returnDiscountFields = {
 			id: true,
 			name: true,
 			image: true,
+			offerTypeName: true,
+			categoryName: true,
 		},
 	},
 }

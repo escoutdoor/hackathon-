@@ -8,6 +8,7 @@ import {
 	FieldErrors,
 	UseFormGetValues,
 	UseFormRegister,
+	UseFormSetValue,
 	UseFormWatch,
 } from 'react-hook-form'
 import { TRegisterSchema } from '@/libs/schemas/register.schema'
@@ -37,8 +38,6 @@ const InstitutionPage: FC<IDetailsPage> = ({
 		sendEmail(values.studentEmail)
 	}
 
-	console.log(institutionValue)
-
 	return (
 		<>
 			<div className={s.progressbar}>
@@ -48,12 +47,12 @@ const InstitutionPage: FC<IDetailsPage> = ({
 				Where do you study?
 			</h2>
 			<Field
-				{...register('university.label')}
-				label="Institution"
+				{...register('university')}
+				label='Institution'
 				error={errors.university?.message}
-				type="text"
+				type='text'
 				required
-				placeholder="Search for your institution"
+				placeholder='Search for your institution'
 				control={control}
 			/>
 			<Button

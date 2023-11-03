@@ -26,9 +26,11 @@ export interface ICreateUserInfo {
 	password: string
 
 	university: string
-	graduationYear: number
+	graduationYear: string
 
 	studentEmail: string
+
+	dateOfBirth: Date | string
 }
 
 export interface ILoginInfo extends Pick<IUser, 'email'> {

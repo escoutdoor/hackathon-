@@ -17,7 +17,7 @@ export const useSendCode = ({ setActivePage }: ISendCode) => {
 	const sendEmail = (studentEmail: string) => {
 		genVerifyCode()
 		templateParams.user_email = studentEmail
-
+		setActivePage('loader')
 		templateParams.verify_code &&
 			emailjs
 				.send(
@@ -29,7 +29,6 @@ export const useSendCode = ({ setActivePage }: ISendCode) => {
 				.then(() => {
 					setVerificationCode(templateParams.verify_code)
 					setActivePage('checkemail')
-					console.log(templateParams.verify_code)
 				})
 	}
 

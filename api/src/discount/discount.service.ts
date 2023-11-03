@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 import { PrismaService } from 'src/prisma.service'
 import { DiscountDto, GetAllDto } from './discount.dto'
 import { returnDiscountFields } from './discount-fields.object'
@@ -90,6 +90,49 @@ export class DiscountService {
 	async discountById(id: string) {
 		return await this.prisma.discount.findUnique({
 			where: { id },
+			select: {
+				...returnDiscountFields,
+			},
+		})
+	}
+
+	async getSimilarById(id: string) {
+		const discount = await this.discountById(id)
+
+		if (!discount) {
+			throw new NotFoundException('Discount not found')
+		}
+
+		return await this.prisma.discount.findMany({
+			where: {
+				id: {
+					not: discount.id,
+				},
+				brandName: {
+					not: discount.brandName,
+				},
+				OR: [
+					{
+						brand: {
+							offerType: {
+								name: discount.brand.offerTypeName,
+							},
+							categoryName: discount.brand.categoryName,
+						},
+					},
+					{
+						description: {
+							hasSome: discount.description,
+						},
+					},
+					{
+						name: {
+							contains: discount.name,
+							mode: 'insensitive',
+						},
+					},
+				],
+			},
 			select: {
 				...returnDiscountFields,
 			},

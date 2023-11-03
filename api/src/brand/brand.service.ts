@@ -24,32 +24,6 @@ export class BrandService {
 		})
 	}
 
-	async getSimilarById(id: string) {
-		const brand = await this.brandById(id)
-
-		return await this.prisma.brand.findMany({
-			where: {
-				name: {
-					contains: brand.name,
-					mode: 'insensitive',
-				},
-				offerTypeName: {
-					contains: brand.offerType.name,
-					mode: 'insensitive',
-				},
-				categoryName: {
-					contains: brand.category.name,
-					mode: 'insensitive',
-				},
-				id: {
-					not: id,
-				},
-			},
-			take: 24,
-			select: returnBrandFields,
-		})
-	}
-
 	async getAll() {
 		return await this.prisma.brand.findMany({
 			select: {

@@ -34,6 +34,7 @@ export class AuthService {
 				lastName: dto.lastName,
 				email: dto.email,
 				password: await hash(dto.password),
+				dateOfBirth: new Date(dto.dateOfBirth),
 				student: {
 					create: {
 						email: dto.studentEmail,
