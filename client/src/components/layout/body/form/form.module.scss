@@ -4,15 +4,14 @@
 	.title {
 		font-size: 13px;
 		line-height: 1.5em;
-		color: rgb(7, 31, 69);	
+		color: rgb(7, 31, 69);
 		font-weight: 900;
 	}
 	.userName {
 		display: flex;
 		justify-content: space-between;
-		
+
 		.name {
-			
 			> input {
 				width: 204px;
 				height: 46px;
@@ -41,7 +40,6 @@
 			border: 1px solid rgb(224, 228, 235);
 			background: rgb(239, 241, 245);
 		}
-		
 	}
 	.data {
 		display: flex;
@@ -93,10 +91,9 @@
 						font-size: 14px;
 						color: rgb(60, 61, 61);
 					}
-					
 				}
 				.check {
-					accent-color: rgb(101, 35, 227);
+					accent-color: var(--purple);
 				}
 			}
 		}
@@ -108,9 +105,14 @@
 		text-transform: uppercase;
 		font-size: 1em;
 		color: #fff;
-		background-color: rgb(101, 35, 227);
+		background-color: var(--purple);
 		border-radius: 2px;
 		font-weight: 700;
 		cursor: pointer;
+		transition: 0.2s ease;
+
+		&:hover {
+			background-color: #0547b2;
+		}
 	}
 }
