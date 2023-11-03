@@ -43,13 +43,22 @@ const Register: FC<{
 			setWrongCodeError(false)
 			console.log(data)
 
-			const { day, month, year, verifyCode, ...filteredData } = data
-
-			register(filteredData)
+			register({
+				...data,
+				university: data.university.label,
+			})
 		} else {
 			setWrongCodeError(true)
 		}
 	}
+
+	// const test = () => {
+	// 	const test1 = getValues()
+	// 	console.log({
+	// 		...test1,
+	// 		university: test1.university.label,
+	// 	})
+	// }
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
@@ -67,7 +76,6 @@ const Register: FC<{
 					setActivePage={setActivePage}
 					watch={watch}
 					setValue={setValue}
-					getValues={getValues}
 				/>
 			) : activePage === 'studentstatus' ? (
 				<StudentsPage
@@ -85,6 +93,7 @@ const Register: FC<{
 					getValues={getValues}
 					watch={watch}
 					sendEmail={sendEmail}
+					setValue={setValue}
 				/>
 			) : activePage === 'loader' ? (
 				<Loader />
@@ -98,7 +107,15 @@ const Register: FC<{
 							watch={watch}
 							verifyCodeValue={verifyCodeValue}
 							wrongCodeError={wrongCodeError}
+							getValues={getValues}
 						/>
+						<Button
+							disabled={!verifyCodeValue}
+							style={{ marginTop: '20px' }}
+							type='submit'
+						>
+							Continue
+						</Button>
 					</>
 				)
 			)}

@@ -109,16 +109,14 @@ export const registerSchema = z.object({
 		})
 		.refine(
 			value => {
-				if (typeof value === 'object') {
-					const university = value.label
-					return universities.includes(university)
-				}
+				const university = value.label
+				return universities.includes(university)
 			},
 			{
 				message: `There is no such university in our database. Please, contact us to add your university to our database`,
 			}
-		)
-		.transform(value => value.label),
+		),
+	// institution: z.string(),
 	verifyCode: z.string(),
 })
 

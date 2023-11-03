@@ -20,7 +20,6 @@ interface IDetailsPage {
 	setActivePage: Dispatch<SetStateAction<string>>
 	watch: UseFormWatch<TRegisterSchema>
 	setValue: UseFormSetValue<TRegisterSchema>
-	getValues: UseFormGetValues<TRegisterSchema>
 }
 
 const DetailsPage: FC<IDetailsPage> = ({
