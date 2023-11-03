@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import s from './footer.module.scss'
-import Banner from './banner/Banner'
 import {
 	IFooterBottomDesc,
 	IFooterBottomItem,
@@ -8,11 +7,10 @@ import {
 } from '@/interfaces/footer-bottom.interface'
 import FooterBottom from './footerBottom/FooterBottom'
 
-const Footer: FC = () => {
+const Footer: FC<{item: IFooterBottomItem, link: IFooterBottomLink, text: IFooterBottomDesc}> = ({item, link, text}) => {
 	return (
 		<footer className={s.footer}>
 			<div className={s.footerWrap}>
-				<Banner />
 				<FooterBottom />
 			</div>
 		</footer>

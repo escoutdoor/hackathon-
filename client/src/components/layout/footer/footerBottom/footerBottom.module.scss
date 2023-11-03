@@ -4,12 +4,14 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	gap: 50px;
 	background-color: var(--purple);
 
 	.icons {
 		height: 109px;
 		display: flex;
 		flex-direction: row;
+		gap: 20px;
 		justify-content: space-around;
 		align-items: center;
 		padding: 40px 20px 35px;
@@ -19,20 +21,33 @@
 		display: flex;
 		align-self: center;
 		flex-wrap: wrap;
-		gap: 100px;
+		gap: 300px;
 	}
-	.line {
-		align-self: center;
-		margin-top: 25px;
-		height: 1px;
-		border: 0.5px solid #707373;
-		width: 90%;
-	}
-	.company {
-		margin-top: 30px;
-		margin-left: 80px;
-		line-height: 1.5em;
-		color: #d2d6d6;
-		font-size: 12px;
+	.end {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		gap: 15px;
+		.line {
+			align-self: center;
+			margin-top: 30px;
+			height: 1px;
+			border: 0.5px solid #707373;
+			width: 90%;
+		}
+		.company {
+			margin-left: 80px;
+			line-height: 1.5em;
+			color: #d2d6d6;
+			font-size: 12px;
+		}
+		.link {
+			display: flex;
+			flex-direction: column;
+			color: #d2d6d6;
+			font-size: 13px;
+			margin-left: 80px;
+		}
 	}
 }
