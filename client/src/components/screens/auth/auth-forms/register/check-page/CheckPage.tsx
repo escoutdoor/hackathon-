@@ -39,9 +39,9 @@ const CheckPage: FC<ICheckPage> = ({
 			</h2>
 			<p className={s.text}>We've sent a verification code</p>
 			<Image
-				src={'/images/img/message.jpg'}
+				src={'/images/img/message.png'}
 				width={196}
-				height={123}
+				height={150}
 				alt=''
 				className={s.image}
 			/>
