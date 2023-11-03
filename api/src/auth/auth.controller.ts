@@ -14,7 +14,7 @@ import { RefreshTokenDto } from './dto/refresh-token.dto'
 export class AuthController {
 	constructor(private readonly authService: AuthService) {}
 
-	@UsePipes(new ValidationPipe())
+	@UsePipes(new ValidationPipe({ transform: true }))
 	@HttpCode(200)
 	@Post('register')
 	async register(@Body() dto: RegisterDto) {

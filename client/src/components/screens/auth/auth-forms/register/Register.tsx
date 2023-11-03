@@ -43,10 +43,7 @@ const Register: FC<{
 			setWrongCodeError(false)
 			console.log(data)
 
-			// register({
-			// 	...data,
-			// 	university: data.university.label,
-			// })
+			register(data)
 		} else {
 			setWrongCodeError(true)
 		}

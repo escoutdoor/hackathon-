@@ -26,7 +26,7 @@ export interface ICreateUserInfo {
 	password: string
 
 	university: string
-	graduationYear: number
+	graduationYear: string
 
 	studentEmail: string
 
