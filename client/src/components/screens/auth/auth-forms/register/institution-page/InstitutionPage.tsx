@@ -21,7 +21,6 @@ interface IDetailsPage {
 	getValues: UseFormGetValues<TRegisterSchema>
 	watch: UseFormWatch<TRegisterSchema>
 	sendEmail: (studentEmail: string) => void
-	setValue: UseFormSetValue<TRegisterSchema>
 }
 
 const InstitutionPage: FC<IDetailsPage> = ({
@@ -31,13 +30,11 @@ const InstitutionPage: FC<IDetailsPage> = ({
 	getValues,
 	watch,
 	sendEmail,
-	setValue,
 }) => {
 	const institutionValue = watch('university')
 
 	const getFormValues = () => {
 		const values = getValues()
-		// setValue('institution', institutionValue.label)
 		sendEmail(values.studentEmail)
 	}
 

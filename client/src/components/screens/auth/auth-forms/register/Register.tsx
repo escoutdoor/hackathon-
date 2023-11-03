@@ -43,22 +43,14 @@ const Register: FC<{
 			setWrongCodeError(false)
 			console.log(data)
 
-			register({
-				...data,
-				university: data.university.label,
-			})
+			// register({
+			// 	...data,
+			// 	university: data.university.label,
+			// })
 		} else {
 			setWrongCodeError(true)
 		}
 	}
-
-	// const test = () => {
-	// 	const test1 = getValues()
-	// 	console.log({
-	// 		...test1,
-	// 		university: test1.university.label,
-	// 	})
-	// }
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
@@ -93,7 +85,6 @@ const Register: FC<{
 					getValues={getValues}
 					watch={watch}
 					sendEmail={sendEmail}
-					setValue={setValue}
 				/>
 			) : activePage === 'loader' ? (
 				<Loader />
@@ -109,13 +100,6 @@ const Register: FC<{
 							wrongCodeError={wrongCodeError}
 							getValues={getValues}
 						/>
-						<Button
-							disabled={!verifyCodeValue}
-							style={{ marginTop: '20px' }}
-							type='submit'
-						>
-							Continue
-						</Button>
 					</>
 				)
 			)}

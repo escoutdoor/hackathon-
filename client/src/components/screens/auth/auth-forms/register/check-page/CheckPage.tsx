@@ -54,6 +54,14 @@ const CheckPage: FC<ICheckPage> = ({
 				required
 				placeholder='Write here verification code'
 			/>
+
+			<Button
+				disabled={!verifyCodeValue}
+				style={{ marginTop: '20px' }}
+				type='submit'
+			>
+				Continue
+			</Button>
 		</>
 	)
 }
