@@ -4,6 +4,7 @@ import { IBrand } from '@/shared/interfaces/brand.interface'
 import BreadCrumbs from './bread-crumbs/BreadCrumbs'
 import BrandCard from './brand-card/BrandCard'
 import DiscountCarousel from './discount-carousel/DiscountCarousel'
+import DiscountSuggestions from './discount-suggestions/DiscountSuggestions'
 
 const Brand: FC<{ brand: IBrand; isLoading: boolean }> = ({
 	brand,
@@ -19,6 +20,14 @@ const Brand: FC<{ brand: IBrand; isLoading: boolean }> = ({
 					/>
 					{brand && <BrandCard brand={brand} />}
 					{brand && <DiscountCarousel discounts={brand.discounts} />}
+					<div className={s.suggestions}>
+						{brand && (
+							<DiscountSuggestions
+								brandId={brand.discounts[0].id}
+								brandName={brand.name}
+							/>
+						)}
+					</div>
 				</div>
 			</div>
 		</div>

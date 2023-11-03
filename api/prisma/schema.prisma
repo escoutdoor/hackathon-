@@ -24,6 +24,8 @@ model User {
 
   avatarPath  String @default("no-avatar.png") @map("avatar_path")
 
+  dateOfBirth DateTime @map("date_of_birth")
+
   address     Address?
   student     Student?
 

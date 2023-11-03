@@ -1,4 +1,7 @@
-import { IDiscountResponse } from '@/shared/interfaces/discount.interface'
+import {
+	IDiscount,
+	IDiscountResponse,
+} from '@/shared/interfaces/discount.interface'
 import { IFilterOptions } from '@/shared/interfaces/filter-options.interface'
 import { getString } from '@/utils/getString'
 import axios from 'axios'
@@ -19,5 +22,9 @@ export const DiscountService = {
 		return await axios.get<IDiscountResponse>(`${DISCOUNT}`, {
 			params,
 		})
+	},
+
+	async getSimilarById(id: string) {
+		return await axios.get<IDiscount[]>(`${DISCOUNT}/similar/${id}`)
 	},
 }

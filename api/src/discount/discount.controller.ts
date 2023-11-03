@@ -34,4 +34,9 @@ export class DiscountController {
 	async getAll(@Query() dto: GetAllDto) {
 		return await this.discountService.getAll(dto)
 	}
+
+	@Get('similar/:id')
+	async similarById(@Param('id') id: string) {
+		return await this.discountService.getSimilarById(id)
+	}
 }

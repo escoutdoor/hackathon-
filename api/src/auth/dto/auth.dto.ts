@@ -1,5 +1,12 @@
 import { Transform } from 'class-transformer'
-import { IsEmail, IsInt, IsString, Min, MinLength } from 'class-validator'
+import {
+	IsEmail,
+	IsInt,
+	IsOptional,
+	IsString,
+	Min,
+	MinLength,
+} from 'class-validator'
 
 export class LoginDto {
 	@IsString()
@@ -39,6 +46,9 @@ export class RegisterDto {
 
 	@IsString()
 	university: string
+
+	@IsString()
+	dateOfBirth: string
 
 	@IsInt()
 	@Transform(({ value }) => +value)

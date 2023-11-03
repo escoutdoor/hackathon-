@@ -8,10 +8,6 @@ export const BrandsService = {
 		return await axios.get<IBrand>(`${BRANDS}/${brandId}`)
 	},
 
-	async getSimilarById(brandId: string) {
-		return await axios.get(`${BRANDS}/similar/${brandId}`)
-	},
-
 	async getAll() {
 		return await axios.get<IBrandName[]>(BRANDS)
 	},
