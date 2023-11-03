@@ -1,3 +1,4 @@
+'use client'
 import { IDiscount } from '@/shared/interfaces/discount.interface'
 import { FC } from 'react'
 import s from './detailed-discount-item.module.scss'

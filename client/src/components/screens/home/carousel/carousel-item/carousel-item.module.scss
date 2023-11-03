@@ -1,0 +1,13 @@
+.item {
+	position: relative;
+
+	text-align: center;
+	padding: 5%;
+
+	> img {
+		width: 80%;
+		height: 80%;
+		object-fit: cover;
+		filter: brightness(60%);
+	}
+}

@@ -3,6 +3,12 @@ import { IUser } from '@/shared/interfaces/user.interface'
 
 const USERS_URL = '/api/users'
 
+export interface IChangeUser {
+	firstName?: string
+	lastName?: string
+	email?: string
+}
+
 export const UserService = {
 	async getProfile() {
 		return await instance<IUser>({
@@ -11,7 +17,7 @@ export const UserService = {
 		})
 	},
 
-	async updateProfile(data: IUser) {
+	async updateProfile(data: IChangeUser) {
 		await instance<IUser>({
 			method: 'PUT',
 			url: `${USERS_URL}/profile`,

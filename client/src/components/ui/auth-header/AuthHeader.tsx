@@ -18,7 +18,12 @@ const AuthHeader: FC = () => {
 				<span>Return Home</span>
 			</Link>
 			<div className={s.middle}>
-				<Image src='/images/logo/logo.png' width={240} height={75} alt='' />
+				<Image
+					src="/images/logo/logo.png"
+					width={240}
+					height={75}
+					alt=""
+				/>
 			</div>
 			<div className={s.right} onClick={() => setActiveMenu(true)}>
 				<FiMenu />

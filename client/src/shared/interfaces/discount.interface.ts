@@ -7,6 +7,7 @@ export interface IDiscount {
 	description: string[]
 	brand: IBrandImageNameId
 	conditions: string[]
+	discountCode: string
 }
 
 export interface IDiscountResponse {

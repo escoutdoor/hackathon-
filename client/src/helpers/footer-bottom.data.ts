@@ -74,6 +74,6 @@ export const footerBottomLink: IFooterBottomLink[] = [
 export const desc: IFooterBottomDesc[] = [
 	{
 		title: 'Where To Find Us',
-		text: 'Students Premium is operated by The Beans Group. Registered in England and Wales under company number 5486885.Registered office 1 Vincent Square, London, SW1 2PN.',
+		text: 'Students Premium is operated by D0bР94Ku. Registered in Dnipro Ukraine',
 	},
 ]

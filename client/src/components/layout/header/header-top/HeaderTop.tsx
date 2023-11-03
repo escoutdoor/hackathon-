@@ -26,15 +26,15 @@ const HeaderTop: FC = () => {
 					<Image
 						width={200}
 						height={60}
-						src='/images/logo/logo.png'
-						alt='logo'
+						src="/images/logo/logo.png"
+						alt="logo"
 					/>
 				</Link>
 
 				<div className={s.search} onClick={() => setIsModalOpen(true)}>
 					<FiSearch />
 					<p className={s.input}>
-						{query ? query : 'Search Student Beans'}
+						{query ? query : 'Search Students Premium'}
 					</p>
 				</div>
 				<HeaderAuthButtons />

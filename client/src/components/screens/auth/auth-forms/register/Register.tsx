@@ -12,12 +12,14 @@ import Loader from './loader/Loader'
 import CheckPage from './check-page/CheckPage'
 import { useSendCode } from '@/hooks/useSendCode'
 import Button from '@/components/ui/button/Button'
+import { useRouter } from 'next/navigation'
 
 const Register: FC<{
 	activePage: string
 	setActivePage: Dispatch<SetStateAction<string>>
 }> = ({ activePage, setActivePage }) => {
 	const { register } = useActions()
+	const { push } = useRouter()
 
 	const { sendEmail, verificationCode } = useSendCode({ setActivePage })
 
@@ -26,6 +28,7 @@ const Register: FC<{
 	const {
 		register: formRegister,
 		formState: { errors },
+		reset,
 		handleSubmit,
 		getValues,
 		control,
@@ -41,9 +44,9 @@ const Register: FC<{
 	const onSubmit: SubmitHandler<TRegisterSchema> = data => {
 		if (verifyCodeValue === verificationCode) {
 			setWrongCodeError(false)
-			console.log(data)
 
 			register(data)
+			push('/')
 		} else {
 			setWrongCodeError(true)
 		}

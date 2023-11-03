@@ -1,19 +1,19 @@
 .buttons {
 	display: flex;
-	align-items: center;
+	position: absolute;
 	justify-content: space-between;
-	position: relative;
-	top: -140px;
+	z-index: 99;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
 
 	.prev {
-		position: relative;
-		left: 20px;
+		margin-left: 20px;
 		z-index: 100;
 	}
 
 	.next {
-		position: relative;
-		right: 20px;
+		margin-right: 20px;
 		z-index: 100;
 	}
 

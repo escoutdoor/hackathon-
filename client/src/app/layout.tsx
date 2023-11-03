@@ -31,12 +31,10 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang='en'>
+		<html lang="en">
 			<body className={montserrat.className}>
 				<Providers>
-					<MainLayout>
-						<Providers>{children}</Providers>
-					</MainLayout>
+					<MainLayout>{children}</MainLayout>
 				</Providers>
 			</body>
 		</html>
