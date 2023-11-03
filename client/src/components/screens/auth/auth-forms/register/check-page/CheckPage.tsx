@@ -4,7 +4,12 @@ import { Dispatch, FC, SetStateAction } from 'react'
 import s from './check-page.module.scss'
 import Button from '@/components/ui/button/Button'
 import Image from 'next/image'
-import { FieldErrors, UseFormRegister, UseFormWatch } from 'react-hook-form'
+import {
+	FieldErrors,
+	UseFormGetValues,
+	UseFormRegister,
+	UseFormWatch,
+} from 'react-hook-form'
 import { TRegisterSchema } from '@/libs/schemas/register.schema'
 
 interface ICheckPage {
@@ -14,6 +19,7 @@ interface ICheckPage {
 	watch: UseFormWatch<TRegisterSchema>
 	verifyCodeValue: string
 	wrongCodeError: boolean
+	getValues: UseFormGetValues<TRegisterSchema>
 }
 
 const CheckPage: FC<ICheckPage> = ({
@@ -21,6 +27,7 @@ const CheckPage: FC<ICheckPage> = ({
 	errors,
 	verifyCodeValue,
 	wrongCodeError,
+	getValues,
 }) => {
 	return (
 		<>
@@ -47,14 +54,6 @@ const CheckPage: FC<ICheckPage> = ({
 				required
 				placeholder='Write here verification code'
 			/>
-
-			<Button
-				disabled={!verifyCodeValue}
-				style={{ marginTop: '20px' }}
-				type='submit'
-			>
-				Continue
-			</Button>
 		</>
 	)
 }
