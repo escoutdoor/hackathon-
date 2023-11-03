@@ -6,9 +6,21 @@ export interface IUser {
 	lastName: string
 
 	avatarPath: string
+
+	dateOfBirth: Date | string
+
+	student: IStudent
+
 	address?: IAddress
 
 	favorites?: string[]
+}
+
+export interface IStudent {
+	email: string
+	university: string
+
+	graduationYear: number
 }
 
 export interface IAddress {

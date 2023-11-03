@@ -14,4 +14,5 @@ export const returnDiscountFields = {
 			categoryName: true,
 		},
 	},
+	discountCode: true,
 }

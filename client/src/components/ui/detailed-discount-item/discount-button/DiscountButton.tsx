@@ -1,19 +1,22 @@
+'use client'
 import s from './discount-button.module.scss'
-import { FC } from 'react'
-import { useProfile } from '@/hooks/useProfile'
+import { FC, useState } from 'react'
 import { IDiscount } from '@/shared/interfaces/discount.interface'
+import { useDiscountCode } from '@/hooks/useDiscountCode'
 import Button from '../../button/Button'
 
 const DiscountButton: FC<{ item: IDiscount }> = ({ item }) => {
-	const { profile } = useProfile()
+	const [isLoading, setIsLoading] = useState(false)
 
-	const handleClick = () => {
-		console.log('handleClick')
-	}
+	const { sendDiscountCode } = useDiscountCode({
+		discountName: item.name,
+		discountCode: item.discountCode,
+		setIsLoading,
+	})
 
 	return (
 		<div className={s.container}>
-			<Button onClick={handleClick}>Get Code</Button>
+			<Button onClick={sendDiscountCode}>Get Code</Button>
 		</div>
 	)
 }

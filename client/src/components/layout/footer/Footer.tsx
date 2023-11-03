@@ -12,7 +12,6 @@ const Footer: FC = () => {
 	return (
 		<footer className={s.footer}>
 			<div className={s.footerWrap}>
-				<Banner />
 				<FooterBottom />
 			</div>
 		</footer>

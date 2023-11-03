@@ -27,6 +27,7 @@ export class UserDto {
 	@IsString()
 	lastName?: string
 
+	@IsString()
 	@IsEmail()
 	email: string
 

@@ -1,6 +1,6 @@
 'use client'
 import { NextPage } from 'next'
-import s from './Home.module.scss'
+import s from './home.module.scss'
 import { FiSearch } from 'react-icons/fi'
 import DiscountItem from '@/components/ui/discount-item/DiscountItem'
 import Carousel from './carousel/Carousel'
@@ -11,7 +11,7 @@ import { useState } from 'react'
 import 'swiper/css'
 const Home: NextPage = () => {
 	const { discounts, isLoading, length } = useFilteredDiscounts({
-		category: 'food-drink',
+		limit: 40,
 	})
 	const [isModalOpen, setIsModalOpen] = useState(false)
 	const onModalCloseRequest = (): void => {
@@ -25,19 +25,22 @@ const Home: NextPage = () => {
 					<h1 className={s.title}>
 						Making student life a little sweeter and a lot cheaper
 					</h1>
-					<div className={s.search} onClick={() => setIsModalOpen(true)}>
+					<div
+						className={s.search}
+						onClick={() => setIsModalOpen(true)}
+					>
 						<FiSearch />
 						<p className={s.input}>Search Students Premium</p>
 					</div>
 				</div>
 			</div>
-			<div className='wrapper'>
+			<div className="wrapper">
+				{discounts?.length && <Carousel discounts={discounts} />}
 				<DiscountList
 					discounts={discounts}
 					isLoading={isLoading}
 					length={length as number}
 				/>
-				<Carousel />
 			</div>
 			<Modal isOpen={isModalOpen} onCloseRequest={onModalCloseRequest} />
 		</div>

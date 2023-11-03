@@ -7,9 +7,11 @@ import { useActions } from '@/hooks/useActions'
 import Field from '@/components/ui/field/Field'
 import Button from '@/components/ui/button/Button'
 import s from './../auth-forms.module.scss'
+import { useRouter } from 'next/navigation'
 
 const Login: FC = () => {
 	const { login } = useActions()
+	const { push } = useRouter()
 
 	const {
 		register: register,
@@ -22,31 +24,35 @@ const Login: FC = () => {
 
 	const onSubmit: SubmitHandler<TLoginSchema> = data => {
 		login(data)
+
+		push('/')
 	}
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className={s.textBlock}>
 				<h2 className={s.title}>Hello again!</h2>
-				<span className={s.text}>Log in to your Student Beans account</span>
+				<span className={s.text}>
+					Log in to your Student Beans account
+				</span>
 			</div>
 
 			<Field
 				{...register('email')}
-				label='Email address'
+				label="Email address"
 				error={errors.email?.message}
-				type='email'
+				type="email"
 				required
 			/>
 			<Field
 				{...register('password')}
-				label='Password'
+				label="Password"
 				error={errors.password?.message}
-				type='password'
+				type="password"
 				required
 			/>
 			<div className={s.buttonBlock}>
-				<Button type='submit' disabled={!isValid}>
+				<Button type="submit" disabled={!isValid}>
 					Login
 				</Button>
 			</div>

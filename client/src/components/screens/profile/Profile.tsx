@@ -1,42 +1,64 @@
-import AuthHeader from '@/components/ui/auth-header/AuthHeader'
 import s from './profile.module.scss'
+import { FC } from 'react'
+import { IUser } from '@/shared/interfaces/user.interface'
+import AuthHeader from '@/components/ui/auth-header/AuthHeader'
 import Image from 'next/image'
 import NavBlock from '@/components/layout/navblock-profile/NavBlock'
-import { NextPage } from 'next'
+import moment from 'moment'
+import { getName } from '@/utils/getName'
+import Button from '@/components/ui/button/Button'
+import { useActions } from '@/hooks/useActions'
+import { useRouter } from 'next/navigation'
 
-const Profile: NextPage = () => {
+const Profile: FC<{ user: IUser }> = ({ user }) => {
+	const { logout } = useActions()
+	const { push } = useRouter()
+
+	const handleLogout = () => {
+		logout()
+		push('/')
+	}
+
 	return (
 		<>
-			<AuthHeader />
-			<NavBlock />
 			<div className={s.user}>
 				<div className={s.userTop}>
 					<Image
 						className={s.img}
 						width={150}
 						height={150}
-						src={'/images/avatars/no-avatar.png'}
-						alt="ava"
+						src={`/images/avatars/${user.avatarPath}`}
+						alt="avatar"
 					/>
 					<div className={s.userInfo}>
-						<p className={s.userName}>LastName Name</p>
+						<p className={s.userName}>{getName(user)}</p>
 						<p>
-							<span>University:</span> Dnipro University of
-							technology
+							<span>University:</span> {user.student.university}
 						</p>
 						<p>
-							<span>Graduation:</span> 2025
+							<span>Graduation:</span>{' '}
+							{user.student.graduationYear}
 						</p>
 					</div>
 				</div>
 				<div className={s.addInfo}>
 					<p>
-						<span>Email address:</span> test@gmail.com
+						<span>Email address:</span> {user.student.email}
 					</p>
 					<p>
-						<span>Birthday:</span> 10.10.2005
+						<span>Birthday:</span>{' '}
+						{moment(user.dateOfBirth).format('DD.MM.YYYY')}
 					</p>
 				</div>
+				<Button
+					style={{
+						marginTop: '30px',
+						width: '20%',
+					}}
+					onClick={handleLogout}
+				>
+					Log out
+				</Button>
 			</div>
 		</>
 	)
